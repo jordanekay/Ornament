@@ -1,0 +1,40 @@
+//
+//  ORNOrnamentConstants.h
+//  Ornament
+//
+//  Created by Jordan Kay on 7/19/13.
+//  Copyright (c) 2013 Jordan Kay. All rights reserved.
+//
+
+#define MIN_RECT_WIDTH 3.0f
+#define MIN_SECTION_CORNER_RADIUS (MIN_RECT_WIDTH - 1.0f)
+
+#define TABLE_INSETS UIEdgeInsetsMake(10.0f, 0.0f, 9.0f, 0.0f)
+#define TABLE_INSETS_PLAIN UIEdgeInsetsMake(-1.0f, 0.0f, 0.0f, 0.0f)
+#define TABLE_INSETS_CARD UIEdgeInsetsZero
+#define TABLE_INSETS_METAL UIEdgeInsetsMake(5.0f, 0.0f, 4.0f, 0.0f)
+
+#define SECTION_INSETS_PLAIN UIEdgeInsetsMake(-1.0f, -1.0f, -1.0f, -1.0f)
+#define SECTION_INSETS_GROUPED UIEdgeInsetsMake(10.0f, 8.0f, 10.0f, 8.0f)
+#define SECTION_INSETS_CARD UIEdgeInsetsMake(5.0f, 10.0f, 5.0f, 10.0f)
+#define SECTION_INSETS_METAL UIEdgeInsetsMake(8.0f, 15.0f, 8.0f, 15.0f)
+#define SECTION_INSETS_GROOVE UIEdgeInsetsMake(10.0f, 11.0f, 10.0f, 11.0f)
+
+#define SECTION_CORNER_RADIUS_PLAIN MIN_SECTION_CORNER_RADIUS
+#define SECTION_CORNER_RADIUS_GROUPED 10.0f
+#define SECTION_CORNER_RADIUS_GROUPED_ETCHED 10.0f
+#define SECTION_CORNER_RADIUS_CARD 6.0f
+#define SECTION_CORNER_RADIUS_METAL 6.0f
+#define SECTION_CORNER_RADIUS_GROOVE 4.5f
+
+#define SECTION_SHADOW_BLUR_GROUPED_ETCHED 0.0f
+#define SECTION_SHADOW_BLUR_CARD 5.0f
+#define SECTION_SHADOW_BLUR_GROOVE 2.0f
+#define SECTION_SHADOW_POSITION_GROUPED_ETCHED ORNPositionMake(0.0f, 1.0f)
+#define SECTION_SHADOW_POSITION_CARD ORNPositionMake(0.0f, 1.0f)
+
+#define SECTION_INNER_SHADOW_BLUR_GROUPED_ETCHED 2.0f
+#define SECTION_INNER_SHADOW_BLUR_GROOVE 3.0f
+
+#define SECTION_STROKE_WIDTH_GROOVE 0.5f
+#define CELL_SEPARATOR_HEIGHT_GROOVE 0.5f
