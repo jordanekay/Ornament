@@ -182,7 +182,9 @@ ORNPosition ORNPositionMake(CGFloat horizontal, CGFloat vertical)
 
 - (void)orn_getOrnamentMeasurement:(CGFloat *)measurement position:(ORNPosition *)position withOptions:(ORNOrnamentOptions)options
 {
-    if (![self conformsToProtocol:@protocol(ORNOrnamentable)]) return;
+    if (![self conformsToProtocol:@protocol(ORNOrnamentable)]) {
+        return;
+    }
     
     ORNOrnament *ornament = [self orn_ornamentWithOptions:options];
     [ornament getMeasurement:measurement position:position];
@@ -190,7 +192,9 @@ ORNPosition ORNPositionMake(CGFloat horizontal, CGFloat vertical)
 
 - (NSMutableDictionary *)_ornaments
 {
-    if (![self conformsToProtocol:@protocol(ORNOrnamentable)]) return nil;
+    if (![self conformsToProtocol:@protocol(ORNOrnamentable)]) {
+        return nil;
+    }
     
     NSMutableDictionary *ornaments = objc_getAssociatedObject(self, _cmd);
     if (!ornaments) {

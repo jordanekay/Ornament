@@ -14,7 +14,9 @@
 
 - (void)getMeasurement:(CGFloat *)measurement position:(ORNPosition *)position
 {
-    if (measurement) *measurement = self.width;
+    if (measurement) {
+        *measurement = self.width;
+    }
 }
 
 - (ORNOrnamentOptions)implicitOptions

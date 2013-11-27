@@ -15,8 +15,12 @@
 
 - (void)getMeasurement:(CGFloat *)measurement position:(ORNPosition *)position
 {
-    if (measurement) *measurement = self.blur;
-    if (position) *position = self.position;
+    if (measurement) {
+        *measurement = self.blur;
+    }
+    if (position) {
+        *position = self.position;
+    }
 }
 
 - (ORNOrnamentOptions)implicitOptions

@@ -14,8 +14,12 @@
 
 - (void)getMeasurement:(CGFloat *)measurement position:(ORNPosition *)position
 {
-    if (measurement) *measurement = self.radius;
-    if (position) *position = self.insets;
+    if (measurement) {
+        *measurement = self.radius;
+    }
+    if (position) {
+        *position = self.insets;
+    }
 }
 
 - (ORNOrnamentOptions)implicitOptions
