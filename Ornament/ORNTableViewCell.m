@@ -366,25 +366,20 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    [self _layoutBackgroundView];
-    if (self.accessoryView || self.accessoryType != UITableViewCellAccessoryNone)
-        [self _layoutAccessoryView];
-}
 
-- (void)layoutSublayersOfLayer:(ORNLayer *)layer
-{
-    [super layoutSublayersOfLayer:layer];
-    
-    if (layer == self.layer) {
-        [CATransaction begin];
-        [CATransaction setDisableActions:YES];
-        [self _layoutSeparatorLayer];
-        [self _layoutBorderLayer];
-        [self _layoutInnerLayer:_innerShadowLayer overStroke:YES];
-        [self _layoutInnerLayer:_shadeLayer overStroke:NO];
-        [self _colorInnerShadowLayers];
-        [CATransaction commit];
+    [self _layoutBackgroundView];
+    if (self.accessoryView || self.accessoryType != UITableViewCellAccessoryNone) {
+        [self _layoutAccessoryView];
     }
+
+    [CATransaction begin];
+    [CATransaction setDisableActions:YES];
+    [self _layoutSeparatorLayer];
+    [self _layoutBorderLayer];
+    [self _layoutInnerLayer:_innerShadowLayer overStroke:YES];
+    [self _layoutInnerLayer:_shadeLayer overStroke:NO];
+    [self _colorInnerShadowLayers];
+    [CATransaction commit];
 }
 
 #pragma mark - UITableViewCell

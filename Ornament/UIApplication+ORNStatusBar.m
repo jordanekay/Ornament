@@ -94,18 +94,18 @@ static ORNStatusBar *statusBar;
     return [self initWithOrnamentationStyle:ORNStatusBarStyleDefault];
 }
 
-- (void)layoutSublayersOfLayer:(CALayer *)layer
+- (void)layoutSubviews
 {
-    if (layer == self.layer) {
-        CGRect frame = self.layer.bounds;
-        self.backgroundLayer.frame = frame;
-        
-        CGFloat borderHeight;
-        [self getOrnamentMeasurement:&borderHeight position:NULL withOptions:ORNOrnamentTypeBorder];
-        frame.origin.y = frame.size.height - borderHeight;
-        frame.size.height = borderHeight;
-        self.borderLayer.frame = frame;
-    }
+    [super layoutSubviews];
+
+    CGRect frame = self.layer.bounds;
+    self.backgroundLayer.frame = frame;
+    
+    CGFloat borderHeight;
+    [self getOrnamentMeasurement:&borderHeight position:NULL withOptions:ORNOrnamentTypeBorder];
+    frame.origin.y = frame.size.height - borderHeight;
+    frame.size.height = borderHeight;
+    self.borderLayer.frame = frame;
 }
 
 #pragma mark - ORNOrnamentable
