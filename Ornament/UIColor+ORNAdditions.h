@@ -27,5 +27,6 @@
 - (UIColor *)orn_linenColor;
 - (UIColor *)orn_colorWithAlpha:(CGFloat)alpha;
 - (UIColor *)orn_colorWithNoise:(CGFloat)noise;
+- (UIColor *)orn_colorWithBrightnessMultiplier:(CGFloat)multiplier;
 
 @end

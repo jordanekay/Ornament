@@ -71,7 +71,7 @@ ORN_CACHED_COLOR(highlightedGrooveCellShadeColor, [UIColor clearColor]);
 
 // Header view
 ORN_CACHED_COLOR(plainHeaderTextColor, [UIColor whiteColor]);
-ORN_CACHED_COLOR(plainHeaderShadowColor, [UIColor blackColor]);
+ORN_CACHED_COLOR(plainHeaderShadowColor, [UIColor colorWithWhite:0.0f alpha:0.6f]);
 ORN_CACHED_COLOR(groupedHeaderTextColor, [UIColor orn_colorWithHex:0x505a6f]);
 ORN_CACHED_COLOR(groupedHeaderShadowColor, [UIColor whiteColor]);
 ORN_CACHED_COLOR(cardHeaderTextColor, [UIColor colorWithWhite:0.4f alpha:1.0f]);

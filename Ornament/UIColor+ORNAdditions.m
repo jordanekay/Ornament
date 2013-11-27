@@ -75,6 +75,21 @@ ORN_CACHED_COLOR(orn_pinstripeColor, [UIColor orn_groupedTableViewBackgroundColo
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
 
+- (UIColor *)orn_colorWithBrightnessMultiplier:(CGFloat)multiplier
+{
+    UIColor *color;
+    CGFloat hue, saturation, brightness, alpha;
+    if ([self getHue:&hue saturation:&saturation brightness:&brightness alpha:&alpha]) {
+        color = [UIColor colorWithHue:hue saturation:saturation brightness:brightness * multiplier alpha:alpha];
+    } else {
+        CGFloat white;
+        if ([self getWhite:&white alpha:&alpha]) {
+            color = [UIColor colorWithWhite:white * multiplier alpha:alpha];
+        }
+    }
+    return color;
+}
+
 - (UIColor *)orn_linenColor
 {
     UIColor *color;

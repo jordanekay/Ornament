@@ -94,7 +94,7 @@ static NSMutableDictionary *footers;
     UIEdgeInsets insets = self.tableView.contentInset;
     insets.top = _tableViewSectionInsets.bottom;
     if (!tableView.isGroupedStyle) {
-        insets.top += [ORNTableHeaderView tablePadding];
+        insets.top += 1.0f;
     }
     if ([UIDevice orn_isIOS7]) {
         CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
@@ -183,7 +183,7 @@ static NSMutableDictionary *footers;
 
 - (CGFloat)tableView:(ORNTableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    return (_tableViewSectionInsets.top < 0.0f) ? tableView.separatorHeight : 0.0f;
+    return (_tableViewSectionInsets.top < 0.0f && ![self tableView:tableView titleForHeaderInSection:section + 1]) ? tableView.separatorHeight : 0.0f;
 }
 
 #pragma mark UITableViewDataSource

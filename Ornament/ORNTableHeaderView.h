@@ -16,7 +16,6 @@
 
 + (CGFloat)defaultPadding;
 + (CGFloat)defaultPaddingTop;
-+ (CGFloat)tablePadding;
 + (CGFloat)minimumHeight;
 
 @end

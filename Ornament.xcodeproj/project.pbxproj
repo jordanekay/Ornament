@@ -44,6 +44,7 @@
 		45C2A3A1183A6C7E00A3A529 /* ORNTableViewColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C2A3A0183A6C7E00A3A529 /* ORNTableViewColor.m */; };
 		45C3798D183991AF00997F3F /* ORNSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C3798C183991AF00997F3F /* ORNSwizzle.m */; };
 		45C379901839AE2F00997F3F /* ORNTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C3798F1839AE2F00997F3F /* ORNTableHeaderView.m */; };
+		45C4EBF11846B6BE0016FC7D /* NSArray+ORNFunctional.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C4EBF01846B6BE0016FC7D /* NSArray+ORNFunctional.m */; };
 		45D05B14179C607A00DB5763 /* KGNoise.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D05B13179C607A00DB5763 /* KGNoise.m */; };
 /* End PBXBuildFile section */
 
@@ -125,6 +126,8 @@
 		45C3798C183991AF00997F3F /* ORNSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORNSwizzle.m; sourceTree = "<group>"; };
 		45C3798E1839AE2F00997F3F /* ORNTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORNTableHeaderView.h; sourceTree = "<group>"; };
 		45C3798F1839AE2F00997F3F /* ORNTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORNTableHeaderView.m; sourceTree = "<group>"; };
+		45C4EBEF1846B6BE0016FC7D /* NSArray+ORNFunctional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+ORNFunctional.h"; sourceTree = "<group>"; };
+		45C4EBF01846B6BE0016FC7D /* NSArray+ORNFunctional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ORNFunctional.m"; sourceTree = "<group>"; };
 		45D05B12179C607A00DB5763 /* KGNoise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGNoise.h; sourceTree = "<group>"; };
 		45D05B13179C607A00DB5763 /* KGNoise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGNoise.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -361,6 +364,8 @@
 				45C3798718393AE900997F3F /* ORNCaching.h */,
 				45C3798B183991AF00997F3F /* ORNSwizzle.h */,
 				45C3798C183991AF00997F3F /* ORNSwizzle.m */,
+				45C4EBEF1846B6BE0016FC7D /* NSArray+ORNFunctional.h */,
+				45C4EBF01846B6BE0016FC7D /* NSArray+ORNFunctional.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -475,6 +480,7 @@
 				456D896017B9454700344F90 /* UIApplication+ORNStatusBar.m in Sources */,
 				17CFB48118255EFF00A63485 /* ORNPath.m in Sources */,
 				4583E44217B9C5B900EF6DF6 /* ORNSwitch.m in Sources */,
+				45C4EBF11846B6BE0016FC7D /* NSArray+ORNFunctional.m in Sources */,
 				1718F1F517A8E6E300287D33 /* ORNOrnament.m in Sources */,
 				172E831D177F5C4900D25532 /* ORNAppDelegate.m in Sources */,
 				17CFB47818255DCD00A63485 /* ORNLine.m in Sources */,
