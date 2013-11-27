@@ -396,6 +396,7 @@
 
 - (void)prepareForReuse
 {
+    [super prepareForReuse];
     self.accessoryView = nil;
 }
 
