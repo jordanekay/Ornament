@@ -18,12 +18,12 @@
 
 #define BACKGROUND_ALPHA_PLAIN 0.9f
 #define BACKGROUND_BRIGHTNESS_MULTIPLIER 1.05f
-#define BACKGROUND_GRADIENT_LOCATIONS_PLAIN @[@0.0f, @0.05f, @0.1f, @0.95f, @1.0f]
+#define BACKGROUND_GRADIENT_LOCATIONS_PLAIN @[@0.0f, @0.05f, @0.1f, @0.8f, @0.95f, @1.0f]
 
-#define BACKGROUND_PLAIN [ORNOrnament ornamentWithColor:[UIColor orn_colorWithHex:0xa7bdce]]
+#define BACKGROUND_PLAIN [ORNOrnament ornamentWithColor:[UIColor orn_colorWithHex:0xa0a7ae]]
 #define BORDER_PLAIN [ORNOrnament ornamentWithColor:[UIColor orn_colorWithHex:0x5c6266]]
 #define TINT_PLAIN [ORNOrnament ornamentWithColor:[UIColor orn_colorWithHex:0xadb7bf]]
-#define SHADE_PLAIN [ORNOrnament ornamentWithColor:[UIColor orn_colorWithHex:0x7e8b93]]
+#define SHADE_PLAIN [ORNOrnament ornamentWithColor:[UIColor orn_colorWithHex:0x8a949c]]
 
 #define TITLE_FONT [UIFont orn_boldSystemFontOfSize:17.0f]
 #define TITLE_FONT_CARD [UIFont orn_boldSystemFontOfSize:16.0f]
@@ -51,7 +51,7 @@
     UIColor *borderColor = [view orn_ornamentWithOptions:ORNOrnamentTypeBorder].color;
 
     self.locations = BACKGROUND_GRADIENT_LOCATIONS_PLAIN;
-    self.colors = [@[borderColor, tintColor, shadeColor, backgroundColor, borderColor] orn_mapWithBlock:^(UIColor *color, NSUInteger idx) {
+    self.colors = [@[borderColor, tintColor, shadeColor, backgroundColor, backgroundColor, borderColor] orn_mapWithBlock:^(UIColor *color, NSUInteger idx) {
         UIColor *adjustedColor = [[color orn_colorWithAlpha:BACKGROUND_ALPHA_PLAIN] orn_colorWithBrightnessMultiplier:BACKGROUND_BRIGHTNESS_MULTIPLIER];
         return (id)adjustedColor.CGColor;
     }];
