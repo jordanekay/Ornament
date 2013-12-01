@@ -27,6 +27,13 @@ enum {
     BOOL _isStatusBarOpaque;
 }
 
+#pragma mark - UIViewController
+
+- (NSString *)title
+{
+    return @"Ornament";
+}
+
 #pragma mark - ORNTableViewController
 
 - (instancetype)initWithOrnamentationStyle:(ORNTableViewStyle)style

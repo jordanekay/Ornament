@@ -16,3 +16,27 @@
     }); \
     return NAME; \
 }
+
+#define ORN_CACHED_COLORS(...) \
+int i = 0; \
+int args[] = {__VA_ARGS__, 0}; \
+NSMutableDictionary *dict = [NSMutableDictionary dictionary]; \
+while ((args[i])) { \
+    static NSMutableDictionary *colors; \
+    static dispatch_once_t onceToken; \
+    dispatch_once(&onceToken, ^{ \
+        colors = [NSMutableDictionary dictionary]; \
+    }); \
+    int hex = args[i + 1]; \
+    NSNumber *value = @(hex); \
+    UIColor *color = colors[value]; \
+    if (!color) { \
+        color = [UIColor orn_colorWithHex:hex]; \
+        colors[value] = color; \
+    } \
+    dict[@(args[i])] = color; \
+    i += 2; \
+} \
+return dict; \
+
+#define ORN_CACHED_COLOR(NAME, ASSIGNMENT) ORN_CACHED_VALUE(UIColor *, NAME, ASSIGNMENT)

@@ -40,6 +40,8 @@
 		4583E44217B9C5B900EF6DF6 /* ORNSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 4583E44117B9C5B900EF6DF6 /* ORNSwitch.m */; };
 		45B223951782072200CE5827 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B223941782072200CE5827 /* QuartzCore.framework */; };
 		45B495B51786286B00341BB9 /* ORNTableViewCellCollection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45B495B41786286B00341BB9 /* ORNTableViewCellCollection.xib */; };
+		45B5EBCD1848281F0097A7B6 /* ORNNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B5EBCC1848281F0097A7B6 /* ORNNavigationBar.m */; };
+		45B5EBD018482BEC0097A7B6 /* ORNNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B5EBCF18482BEC0097A7B6 /* ORNNavigationController.m */; };
 		45C2868B179512B40081564A /* ORNTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C2868A179512B40081564A /* ORNTableView.m */; };
 		45C2A3A1183A6C7E00A3A529 /* ORNTableViewColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C2A3A0183A6C7E00A3A529 /* ORNTableViewColor.m */; };
 		45C3798D183991AF00997F3F /* ORNSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C3798C183991AF00997F3F /* ORNSwizzle.m */; };
@@ -118,6 +120,10 @@
 		4583E44317B9C69600EF6DF6 /* ORNBoolean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORNBoolean.h; sourceTree = "<group>"; };
 		45B223941782072200CE5827 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		45B495B41786286B00341BB9 /* ORNTableViewCellCollection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ORNTableViewCellCollection.xib; sourceTree = "<group>"; };
+		45B5EBCB1848281F0097A7B6 /* ORNNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORNNavigationBar.h; sourceTree = "<group>"; };
+		45B5EBCC1848281F0097A7B6 /* ORNNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORNNavigationBar.m; sourceTree = "<group>"; };
+		45B5EBCE18482BEC0097A7B6 /* ORNNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORNNavigationController.h; sourceTree = "<group>"; };
+		45B5EBCF18482BEC0097A7B6 /* ORNNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORNNavigationController.m; sourceTree = "<group>"; };
 		45C28689179512B40081564A /* ORNTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORNTableView.h; sourceTree = "<group>"; };
 		45C2868A179512B40081564A /* ORNTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ORNTableView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		45C2A39F183A6C7E00A3A529 /* ORNTableViewColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORNTableViewColor.h; sourceTree = "<group>"; };
@@ -254,6 +260,7 @@
 				17CFB47718255DCD00A63485 /* ORNLine.m */,
 				4507A57317A0BCCA00C63494 /* ORNOrnament.h */,
 				4507A57417A0BCCA00C63494 /* ORNOrnament.m */,
+				4553F387184A476800392DB9 /* ORNOrnamentMacros.h */,
 				17CFB47F18255EFF00A63485 /* ORNPath.h */,
 				17CFB48018255EFF00A63485 /* ORNPath.m */,
 				17CFB47318255D8F00A63485 /* ORNShadow.h */,
@@ -276,6 +283,8 @@
 		17CFB4831825616F00A63485 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				45B5EBCB1848281F0097A7B6 /* ORNNavigationBar.h */,
+				45B5EBCC1848281F0097A7B6 /* ORNNavigationBar.m */,
 				45C3798E1839AE2F00997F3F /* ORNTableHeaderView.h */,
 				45C3798F1839AE2F00997F3F /* ORNTableHeaderView.m */,
 				45C28689179512B40081564A /* ORNTableView.h */,
@@ -297,6 +306,8 @@
 		17CFB4841825619300A63485 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				45B5EBCE18482BEC0097A7B6 /* ORNNavigationController.h */,
+				45B5EBCF18482BEC0097A7B6 /* ORNNavigationController.m */,
 				1743FFFA177FB07D00EE55D2 /* ORNTableViewController.h */,
 				1743FFFB177FB07D00EE55D2 /* ORNTableViewController.m */,
 			);
@@ -480,6 +491,7 @@
 				45C2A3A1183A6C7E00A3A529 /* ORNTableViewColor.m in Sources */,
 				456D896017B9454700344F90 /* UIApplication+ORNStatusBar.m in Sources */,
 				17CFB48118255EFF00A63485 /* ORNPath.m in Sources */,
+				45B5EBCD1848281F0097A7B6 /* ORNNavigationBar.m in Sources */,
 				4583E44217B9C5B900EF6DF6 /* ORNSwitch.m in Sources */,
 				45C4EBF11846B6BE0016FC7D /* NSArray+ORNFunctional.m in Sources */,
 				1718F1F517A8E6E300287D33 /* ORNOrnament.m in Sources */,
@@ -499,6 +511,7 @@
 				17CFB48E1825632C00A63485 /* ORNTableViewCellContainerView.m in Sources */,
 				17CFB47218255CD300A63485 /* ORNLayout.m in Sources */,
 				17CFB47B18255E3200A63485 /* ORNShadowLayer.m in Sources */,
+				45B5EBD018482BEC0097A7B6 /* ORNNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

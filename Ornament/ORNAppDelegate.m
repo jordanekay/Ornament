@@ -8,6 +8,7 @@
 
 #import "ORNAppDelegate.h"
 #import "ORNDemoTableViewController.h"
+#import "ORNNavigationController.h"
 #import "UIApplication+ORNStatusBar.h"
 #import "UIColor+ORNAdditions.h"
 
@@ -20,7 +21,8 @@
     
     [application orn_setStatusBarStyle:ORNStatusBarStyleDefault];
     ORNDemoTableViewController *tableViewController = [[ORNDemoTableViewController alloc] initWithOrnamentationStyle:ORNTableViewStyleGroupedEtched];
-    self.window.rootViewController = tableViewController;
+    ORNNavigationController *navigationController = [[ORNNavigationController alloc] initWithRootViewController:tableViewController];
+    self.window.rootViewController = navigationController;
     [application orn_setStatusBarHidden:NO];
     
     return YES;
