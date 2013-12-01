@@ -32,9 +32,6 @@ typedef NS_ENUM(NSUInteger, ORNTableViewStyle) {
 @property (nonatomic) CGFloat separatorHeight;
 @property (nonatomic, readonly) UIImage *backgroundImage;
 @property (nonatomic, readonly) UIImage *highlightedBackgroundImage;
-@property (nonatomic, readonly) ORNTableViewStyle ornamentationStyle;
-@property (nonatomic, readonly) BOOL isGroupedStyle;
-@property (nonatomic, readonly) BOOL usesUppercaseSectionHeaderTitles;
 @property (nonatomic) BOOL pinsHeaderViewsToTop;
 
 @end

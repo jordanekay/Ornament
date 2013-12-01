@@ -10,7 +10,7 @@
 
 @protocol ORNColorable <NSObject>
 
-- (void)colorInView:(UIView<ORNOrnamentable> *)view withOptions:(ORNOrnamentOptions)options;
+- (void)colorInView:(UIView<ORNOrnamentable> *)view withOptions:(ORNOrnamentOptions)options, ... NS_REQUIRES_NIL_TERMINATION;
 
 @property (nonatomic, readonly) BOOL needsRecoloringOnLayout;
 

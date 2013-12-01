@@ -8,8 +8,6 @@
 
 #import "ORNCaching.h"
 
-#define ORN_CACHED_COLOR(NAME, ASSIGNMENT) ORN_CACHED_VALUE(UIColor *, NAME, ASSIGNMENT)
-
 @interface UIColor (ORNAdditions)
 
 // Interface colors

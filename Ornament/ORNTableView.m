@@ -24,6 +24,8 @@
 
 @implementation ORNTableView
 
+@synthesize ornamentationStyle = _ornamentationStyle;
+
 - (instancetype)initWithFrame:(CGRect)frame ornamentationStyle:(ORNTableViewStyle)style
 {
     if ([super initWithFrame:frame style:UITableViewStylePlain]) {
@@ -42,16 +44,6 @@
 {
     return _highlightedBackgroundImage ?: (_highlightedBackgroundImage = [self _backgroundImageWithOptions:ORNOrnamentStateHighlighted]);
 }
-
-- (BOOL)isGroupedStyle
-{
-    return (self.ornamentationStyle != ORNTableViewStylePlain);
-}
-
-- (BOOL)usesUppercaseSectionHeaderTitles
-{
-    return (self.ornamentationStyle == ORNTableViewStyleMetal);
-}
     
 - (UIImage *)_backgroundImageWithOptions:(ORNOrnamentOptions)options
 {
@@ -61,9 +53,9 @@
     CGFloat strokeWidth = 0.0f;
     CGFloat borderWidth = 0.0f;
 
-    [self getOrnamentMeasurement:&radius position:&insets withOptions:ORNOrnamentTableViewScopeSection | ORNOrnamentTypeLayout];
-    [self getOrnamentMeasurement:&strokeWidth position:NULL withOptions:ORNOrnamentTableViewScopeSection | ORNOrnamentTypeStroke];
-    [self getOrnamentMeasurement:&borderWidth position:NULL withOptions:ORNOrnamentTableViewScopeSection | ORNOrnamentTypeBorder];
+    [self orn_getOrnamentMeasurement:&radius position:&insets withOptions:ORNOrnamentTableViewScopeSection | ORNOrnamentTypeLayout];
+    [self orn_getOrnamentMeasurement:&strokeWidth position:NULL withOptions:ORNOrnamentTableViewScopeSection | ORNOrnamentTypeStroke];
+    [self orn_getOrnamentMeasurement:&borderWidth position:NULL withOptions:ORNOrnamentTableViewScopeSection | ORNOrnamentTypeBorder];
     
     CGFloat strokeBorderWidth = strokeWidth + borderWidth;
     CGFloat innerRadius = MAX((radius - strokeBorderWidth) * 2, MIN_SECTION_CORNER_RADIUS);
@@ -93,12 +85,12 @@
     CGContextSaveGState(context);
     
     [self setOuterShadowInRect:strokeRect radius:radius options:ORNOrnamentTableViewScopeSection | options];
-    [strokePath colorInView:self withOptions:ORNOrnamentTableViewScopeSection | ORNOrnamentTypeStroke | options];
-    [borderPath colorInView:self withOptions:ORNOrnamentTableViewScopeSection | ORNOrnamentTypeBorder | options];
+    [strokePath colorInView:self withOptions:ORNOrnamentTableViewScopeSection | ORNOrnamentTypeStroke | options, nil];
+    [borderPath colorInView:self withOptions:ORNOrnamentTableViewScopeSection | ORNOrnamentTypeBorder | options, nil];
     if (options & ORNOrnamentStateDefault) {
-        [backgroundPath colorInView:self withOptions:ORNOrnamentTableViewScopeSection | ORNOrnamentTypeBackground | ORNOrnamentStateDefault];
+        [backgroundPath colorInView:self withOptions:ORNOrnamentTableViewScopeSection | ORNOrnamentTypeBackground | ORNOrnamentStateDefault, nil];
     } else if (options & ORNOrnamentStateHighlighted) {
-        [backgroundPath colorInView:self withOptions:ORNOrnamentTableViewScopeCell | ORNOrnamentTypeBackground |  ORNOrnamentStateHighlighted];
+        [backgroundPath colorInView:self withOptions:ORNOrnamentTableViewScopeCell | ORNOrnamentTypeBackground |  ORNOrnamentStateHighlighted, nil];
     }
     [self setInnerShadowInRect:backgroundRect withStrokeRect:strokeRect strokeWidth:strokeWidth radius:radius options:ORNOrnamentTableViewScopeSection | options withoutOptions:ORNOrnamentShadowPositionSides];
     
@@ -234,9 +226,9 @@
     [self orn_setShadowInRect:rect withStrokeRect:strokeRect strokeWidth:strokeWidth radius:radius options:options withoutOptions:ORNOrnamentShadowPositionOutside | withoutOptions];
 }
 
-- (void)getOrnamentMeasurement:(CGFloat *)measurement position:(ORNPosition *)position withOptions:(ORNOrnamentOptions)options
+- (NSArray *)colorsForOptionsList:(NSArray *)list
 {
-    [self orn_getOrnamentMeasurement:measurement position:position withOptions:options];
+    return [self orn_colorsForOptionsList:list];
 }
 
 @end

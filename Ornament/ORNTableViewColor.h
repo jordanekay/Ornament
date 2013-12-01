@@ -70,12 +70,12 @@
 
 // Header view
 + (UIColor *)plainHeaderTextColor;
-+ (UIColor *)plainHeaderShadowColor;
++ (UIColor *)plainHeaderTextShadowColor;
 + (UIColor *)groupedHeaderTextColor;
-+ (UIColor *)groupedHeaderShadowColor;
++ (UIColor *)groupedHeaderTextShadowColor;
 + (UIColor *)cardHeaderTextColor;
 + (UIColor *)metalHeaderTextColor;
-+ (UIColor *)metalHeaderShadowColor;
++ (UIColor *)metalHeaderTextShadowColor;
 + (UIColor *)grooveHeaderTextColor;
 
 @end

@@ -18,7 +18,6 @@ typedef NS_ENUM(NSUInteger, ORNSwitchStyle) {
 
 @interface ORNSwitch : UISwitch <ORNBoolean, ORNOrnamentable>
 
-@property (nonatomic) ORNSwitchStyle ornamentationStyle;
 @property (nonatomic) NSIndexPath *containingCellIndexPath;
 @property (nonatomic, weak) id<ORNSwitchDelegate> delegate;
 

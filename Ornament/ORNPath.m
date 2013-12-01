@@ -29,7 +29,7 @@
 
 #pragma mark ORNColorable
 
-- (void)colorInView:(UIView<ORNOrnamentable> *)view withOptions:(ORNOrnamentOptions)options
+- (void)colorInView:(UIView<ORNOrnamentable> *)view withOptions:(ORNOrnamentOptions)options, ...
 {
     UIColor *color = [view orn_ornamentWithOptions:options].color;
     [color setFill];

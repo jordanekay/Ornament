@@ -13,12 +13,6 @@
 
 static NSMutableDictionary *footers;
 
-@interface ORNTableViewController ()
-
-@property (nonatomic) ORNTableView *tableView;
-
-@end
-
 @implementation ORNTableViewController
 {
     UIEdgeInsets _tableViewInsets;
@@ -36,18 +30,26 @@ static NSMutableDictionary *footers;
 
 - (void)setOrnamentationStyle:(ORNTableViewStyle)style
 {
-    [self setOrnamentationStyle:style animated:NO];
-}
-
-- (void)setOrnamentationStyle:(ORNTableViewStyle)style animated:(BOOL)animated
-{
     if (_ornamentationStyle != style) {
         _ornamentationStyle = style;
         UIView *view = self.view;
-        [self loadView];
+        [self _setupTableView];
+        [self _layoutTableView:YES];
         [[UIApplication sharedApplication] orn_setStatusBarHidden:NO];
         [view removeFromSuperview];
     }
+}
+
+- (BOOL)isGroupedStyle
+{
+    ORNTableView *tableView = (ORNTableView *)self.tableView;
+    return (tableView.ornamentationStyle != ORNTableViewStylePlain);
+}
+
+- (BOOL)usesUppercaseSectionHeaderTitles
+{
+    ORNTableView *tableView = (ORNTableView *)self.tableView;
+    return (tableView.ornamentationStyle == ORNTableViewStyleMetal);
 }
 
 - (BOOL)_sectionBreakAboveForIndexPath:(NSIndexPath *)indexPath
@@ -58,6 +60,53 @@ static NSMutableDictionary *footers;
 - (BOOL)_sectionBreakBelowForIndexPath:(NSIndexPath *)indexPath
 {
     return (indexPath.row == [self tableView:self.tableView numberOfRowsInSection:indexPath.section] - 1);
+}
+
+- (void)_setupTableView
+{
+    UIView *view = [[UIView alloc] init];
+
+    ORNTableView *tableView = [[ORNTableView alloc] initWithFrame:CGRectZero ornamentationStyle:self.ornamentationStyle];
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    tableView.pinsHeaderViewsToTop = (self.ornamentationStyle == ORNTableViewStylePlain);
+    [view addSubview:tableView];
+
+    [tableView ornament];
+    if ([tableView.delegate respondsToSelector:@selector(ornamentTableView:)]) {
+        [tableView.delegate performSelector:@selector(ornamentTableView:) withObject:tableView];
+    }
+    [tableView orn_getOrnamentMeasurement:NULL position:&_tableViewInsets withOptions:ORNOrnamentTableViewScopeTable | ORNOrnamentTypeLayout];
+    [tableView orn_getOrnamentMeasurement:NULL position:&_tableViewSectionInsets withOptions:ORNOrnamentTableViewScopeSection | ORNOrnamentTypeLayout];
+
+    self.view = view;
+}
+
+- (void)_layoutTableView:(BOOL)hasLaidOut
+{
+    UIEdgeInsets insets = self.tableView.contentInset;
+    insets.bottom = _tableViewSectionInsets.bottom - _tableViewInsets.bottom;
+    
+    if (self.isGroupedStyle || self.navigationController) {
+        insets.top += 1.0f;
+    }
+    if (hasLaidOut && self.navigationController.navigationBar.isTranslucent) {
+        CGFloat navBarHeight = self.navigationController.navigationBar.bounds.size.height;
+        insets.top += navBarHeight;
+    }
+    if ([UIDevice orn_isIOS7] && (hasLaidOut || !self.navigationController)) {
+        CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
+        insets.top += statusBarHeight;
+    }
+
+    UIEdgeInsets scrollIndicatorInsets = self.tableView.scrollIndicatorInsets;
+    scrollIndicatorInsets.top = insets.top;
+    self.tableView.scrollIndicatorInsets = scrollIndicatorInsets;
+
+    insets.top += _tableViewSectionInsets.bottom;
+    self.tableView.contentInset = insets;
+    self.tableView.sectionHeaderHeight = MAX(_tableViewSectionInsets.top + _tableViewSectionInsets.bottom + [ORNTableHeaderView defaultPadding], [ORNTableHeaderView minimumHeight]);
 }
 
 #pragma mark - NSObject
@@ -73,37 +122,8 @@ static NSMutableDictionary *footers;
 
 - (void)loadView
 {
-    UIView *view = [[UIView alloc] initWithFrame:CGRectZero];
-    
-    ORNTableView *tableView = [[ORNTableView alloc] initWithFrame:CGRectZero ornamentationStyle:self.ornamentationStyle];
-    tableView.delegate = self;
-    tableView.dataSource = self;
-    tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    tableView.pinsHeaderViewsToTop = (self.ornamentationStyle == ORNTableViewStylePlain);
-    [view addSubview:tableView];
-
-    [tableView ornament];
-    if ([tableView.delegate respondsToSelector:@selector(ornamentTableView:)]) {
-        [tableView.delegate performSelector:@selector(ornamentTableView:) withObject:tableView];
-    }
-
-    [tableView getOrnamentMeasurement:NULL position:&_tableViewInsets withOptions:ORNOrnamentTableViewScopeTable | ORNOrnamentTypeLayout];
-    [tableView getOrnamentMeasurement:NULL position:&_tableViewSectionInsets withOptions:ORNOrnamentTableViewScopeSection | ORNOrnamentTypeLayout];
-    self.view = view;
-    
-    UIEdgeInsets insets = self.tableView.contentInset;
-    insets.top = _tableViewSectionInsets.bottom;
-    if (!tableView.isGroupedStyle) {
-        insets.top += 1.0f;
-    }
-    if ([UIDevice orn_isIOS7]) {
-        CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
-        insets.top += statusBarHeight;
-    }
-    insets.bottom = _tableViewSectionInsets.bottom - _tableViewInsets.bottom;
-    self.tableView.contentInset = insets;
-
-    self.tableView.sectionHeaderHeight = MAX(_tableViewSectionInsets.top + _tableViewSectionInsets.bottom + [ORNTableHeaderView defaultPadding], [ORNTableHeaderView minimumHeight]);
+    [self _setupTableView];
+    [self _layoutTableView:NO];
 }
 
 - (BOOL)shouldAutorotate
@@ -143,7 +163,11 @@ static NSMutableDictionary *footers;
     static NSString *identifier = @"ORNTableHeaderView";
     ORNTableHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:identifier];
     if (!headerView) {
-        headerView = [[ORNTableHeaderView alloc] initWithTableView:tableView reuseIdentifier:identifier];
+        headerView = [[ORNTableHeaderView alloc] initWithReuseIdentifier:identifier];
+        headerView.ornamentationStyle = tableView.ornamentationStyle;
+        headerView.groupedStyle = self.isGroupedStyle;
+        headerView.usesUppercaseTitles = self.usesUppercaseSectionHeaderTitles;
+        [headerView ornament];
     }
 
     return headerView;

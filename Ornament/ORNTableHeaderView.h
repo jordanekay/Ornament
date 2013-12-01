@@ -11,11 +11,11 @@
 
 @interface ORNTableHeaderView : UITableViewHeaderFooterView <ORNOrnamentable>
 
-- (instancetype)initWithTableView:(ORNTableView *)tableView reuseIdentifier:(NSString *)reuseIdentifier;
-- (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier __unavailable;
-
 + (CGFloat)defaultPadding;
 + (CGFloat)defaultPaddingTop;
 + (CGFloat)minimumHeight;
+
+@property (nonatomic) BOOL usesUppercaseTitles;
+@property (nonatomic, getter = isGroupedStyle) BOOL groupedStyle;
 
 @end

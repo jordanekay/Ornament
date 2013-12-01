@@ -10,6 +10,8 @@
 
 @implementation ORNSwitch
 
+@synthesize ornamentationStyle = _ornamentationStyle;
+
 - (void)_valueChanged
 {
     if (self.containingCellIndexPath && [self.delegate respondsToSelector:@selector(switch:didSetOn:forIndexPath:)]) {
@@ -57,9 +59,9 @@
     return [self orn_isOrnamentedWithOptions:options];
 }
 
-- (void)getOrnamentMeasurement:(CGFloat *)measurement position:(ORNPosition *)position withOptions:(ORNOrnamentOptions)options
+- (NSArray *)colorsForOptionsList:(NSArray *)list
 {
-    [self orn_getOrnamentMeasurement:measurement position:position withOptions:options];
+    return nil;
 }
 
 @end

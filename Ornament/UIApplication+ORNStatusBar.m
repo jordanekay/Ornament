@@ -18,15 +18,12 @@
 
 #define BACKGROUND_COLOR_DEFAULT [UIColor colorWithWhite:0.98f alpha:1.0f]
 #define SHADE_COLOR_DEFAULT [UIColor colorWithWhite:0.0f alpha:0.2f]
-#define BORDER_COLOR_DEFAULT [UIColor colorWithWhite:0.65f alpha:1.0f]
+#define BORDER_COLOR_DEFAULT [UIColor colorWithWhite:0.6f alpha:1.0f]
 
 @interface ORNStatusBar : UIView <ORNOrnamentable>
 
-- (instancetype)initWithOrnamentationStyle:(ORNStatusBarStyle)style;
-
 @property (nonatomic) ORNGradientLayer *backgroundLayer;
 @property (nonatomic) ORNLayer *borderLayer;
-@property (nonatomic, readonly) ORNStatusBarStyle ornamentationStyle;
 
 @end
 
@@ -43,7 +40,8 @@ static ORNStatusBar *statusBar;
 {
     if ([UIDevice orn_isIOS7]) {
         [statusBar removeFromSuperview];
-        statusBar = [[ORNStatusBar alloc] initWithOrnamentationStyle:style];
+        statusBar = [[ORNStatusBar alloc] init];
+        statusBar.ornamentationStyle = style;
         statusBar.hidden = YES;
         [statusBar ornament];
         [self.keyWindow addSubview:statusBar];
@@ -76,22 +74,16 @@ static ORNStatusBar *statusBar;
 
 @synthesize ornamentationStyle = _ornamentationStyle;
 
-- (instancetype)initWithOrnamentationStyle:(ORNStatusBarStyle)style
+#pragma mark - UIView
+
+- (instancetype)initWithFrame:(CGRect)frame
 {
     if ([super initWithFrame:(CGRect){.size = {WIDTH, HEIGHT}}]) {
-        _ornamentationStyle = style;
         _backgroundLayer = [ORNGradientLayer layer];
         _borderLayer = [ORNLayer layer];
     }
 
     return self;
-}
-
-#pragma mark - UIView
-
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    return [self initWithOrnamentationStyle:ORNStatusBarStyleDefault];
 }
 
 - (void)layoutSubviews
@@ -102,7 +94,7 @@ static ORNStatusBar *statusBar;
     self.backgroundLayer.frame = frame;
     
     CGFloat borderHeight;
-    [self getOrnamentMeasurement:&borderHeight position:NULL withOptions:ORNOrnamentTypeBorder];
+    [self orn_getOrnamentMeasurement:&borderHeight position:NULL withOptions:ORNOrnamentTypeBorder];
     frame.origin.y = frame.size.height - borderHeight;
     frame.size.height = borderHeight;
     self.borderLayer.frame = frame;
@@ -115,15 +107,14 @@ static ORNStatusBar *statusBar;
     switch (self.ornamentationStyle) {
         case ORNStatusBarStyleDefault:
             self.backgroundColor = BACKGROUND_COLOR_DEFAULT;
-            [self ornament:[ORNOrnament ornamentWithColor:SHADE_COLOR_DEFAULT] withOptions:ORNOrnamentTypeShade];
             [self ornament:[ORNOrnament lineWithColor:BORDER_COLOR_DEFAULT] withOptions:ORNOrnamentTypeBorder];
             break;
         case ORNStatusBarStyleLightContent:
             break;
     }
     
-    [self.backgroundLayer colorInView:self withOptions:ORNOrnamentTypeShade];
-    [self.borderLayer colorInView:self withOptions:ORNOrnamentTypeBorder];
+    [self.backgroundLayer colorInView:self withOptions:ORNOrnamentTypeShade, nil];
+    [self.borderLayer colorInView:self withOptions:ORNOrnamentTypeBorder, nil];
     [self.layer addSublayer:self.backgroundLayer];
     [self.layer addSublayer:self.borderLayer];
     [self setNeedsLayout];
@@ -139,9 +130,9 @@ static ORNStatusBar *statusBar;
     return [self orn_isOrnamentedWithOptions:options];
 }
 
-- (void)getOrnamentMeasurement:(CGFloat *)measurement position:(ORNPosition *)position withOptions:(ORNOrnamentOptions)options
+- (NSArray *)colorsForOptionsList:(NSArray *)list
 {
-    [self orn_getOrnamentMeasurement:measurement position:position withOptions:options];
+    return @[SHADE_COLOR_DEFAULT];
 }
 
 @end

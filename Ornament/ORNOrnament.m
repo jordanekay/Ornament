@@ -126,6 +126,20 @@ ORNPosition ORNPositionMake(CGFloat horizontal, CGFloat vertical)
     return NO;
 }
 
+- (NSArray *)orn_colorsForOptionsList:(NSArray *)list
+{
+    NSMutableArray *colors = [NSMutableArray arrayWithCapacity:[list count]];
+    for (NSNumber *value in list) {
+        ORNOrnamentOptions options = [value unsignedIntegerValue];
+        UIColor *color = [self orn_ornamentWithOptions:options].color;
+        if (color) {
+            [colors addObject:color];
+        }
+    }
+    return colors;
+}
+
+
 - (void)orn_setShadowInRect:(CGRect)rect withStrokeRect:(CGRect)strokeRect strokeWidth:(CGFloat)strokeWidth radius:(CGFloat)radius options:(ORNOrnamentOptions)options withoutOptions:(ORNOrnamentOptions)withoutOptions
 {
     options |= ORNOrnamentTypeShadow;

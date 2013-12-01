@@ -108,6 +108,7 @@
 		450953E817990148009B4F0F /* UIDevice+ORNVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+ORNVersion.h"; sourceTree = "<group>"; };
 		450953E917990148009B4F0F /* UIDevice+ORNVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+ORNVersion.m"; sourceTree = "<group>"; };
 		4527B21117B0611C00B71580 /* ORNTableViewOrnaments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORNTableViewOrnaments.h; sourceTree = "<group>"; };
+		4553F387184A476800392DB9 /* ORNOrnamentMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORNOrnamentMacros.h; sourceTree = "<group>"; };
 		4556433A1799271900339505 /* ORNTableViewCellCollectionDark.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ORNTableViewCellCollectionDark.xib; sourceTree = "<group>"; };
 		4556433C1799279700339505 /* ORNTableViewConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORNTableViewConstants.h; sourceTree = "<group>"; };
 		456D895E17B9454700344F90 /* UIApplication+ORNStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+ORNStatusBar.h"; sourceTree = "<group>"; };

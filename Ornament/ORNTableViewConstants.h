@@ -1,5 +1,5 @@
 //
-//  ORNOrnamentConstants.h
+//  ORNTableViewConstants.h
 //  Ornament
 //
 //  Created by Jordan Kay on 7/19/13.

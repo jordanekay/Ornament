@@ -71,12 +71,12 @@ ORN_CACHED_COLOR(highlightedGrooveCellShadeColor, [UIColor clearColor]);
 
 // Header view
 ORN_CACHED_COLOR(plainHeaderTextColor, [UIColor whiteColor]);
-ORN_CACHED_COLOR(plainHeaderShadowColor, [UIColor colorWithWhite:0.0f alpha:0.6f]);
+ORN_CACHED_COLOR(plainHeaderTextShadowColor, [UIColor colorWithWhite:0.0f alpha:0.6f]);
 ORN_CACHED_COLOR(groupedHeaderTextColor, [UIColor orn_colorWithHex:0x505a6f]);
-ORN_CACHED_COLOR(groupedHeaderShadowColor, [UIColor whiteColor]);
+ORN_CACHED_COLOR(groupedHeaderTextShadowColor, [UIColor whiteColor]);
 ORN_CACHED_COLOR(cardHeaderTextColor, [UIColor colorWithWhite:0.4f alpha:1.0f]);
 ORN_CACHED_COLOR(metalHeaderTextColor, [UIColor orn_colorWithHex:0xbbd3f3]);
-ORN_CACHED_COLOR(metalHeaderShadowColor, [UIColor blackColor]);
+ORN_CACHED_COLOR(metalHeaderTextShadowColor, [UIColor blackColor]);
 ORN_CACHED_COLOR(grooveHeaderTextColor, [UIColor orn_colorWithHex:0x7d7871]);
 
 @end

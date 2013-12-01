@@ -44,7 +44,7 @@ static NSMutableDictionary *images;
 
 #pragma mark ORNColorable
 
-- (void)colorInView:(UIView<ORNOrnamentable> *)view withOptions:(ORNOrnamentOptions)options
+- (void)colorInView:(UIView<ORNOrnamentable> *)view withOptions:(ORNOrnamentOptions)options, ...
 {
     ORNShadow *shadow = (ORNShadow *)[view orn_ornamentWithOptions:options];
 

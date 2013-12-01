@@ -116,9 +116,9 @@
         self.backgroundColor = [UIColor clearColor];
         _separatorLayer.backgroundColor = hostTableView.separatorColor.CGColor;
 
-        [hostTableView getOrnamentMeasurement:&_radius position:&_insets withOptions:ORNOrnamentTableViewScopeSection | ORNOrnamentTypeLayout];
-        [hostTableView getOrnamentMeasurement:&_strokeWidth position:NULL withOptions:ORNOrnamentTableViewScopeSection | ORNOrnamentTypeStroke];
-        [hostTableView getOrnamentMeasurement:&_borderWidth position:NULL withOptions:ORNOrnamentTableViewScopeCell | ORNOrnamentTypeBorder];
+        [hostTableView orn_getOrnamentMeasurement:&_radius position:&_insets withOptions:ORNOrnamentTableViewScopeSection | ORNOrnamentTypeLayout];
+        [hostTableView orn_getOrnamentMeasurement:&_strokeWidth position:NULL withOptions:ORNOrnamentTableViewScopeSection | ORNOrnamentTypeStroke];
+        [hostTableView orn_getOrnamentMeasurement:&_borderWidth position:NULL withOptions:ORNOrnamentTableViewScopeCell | ORNOrnamentTypeBorder];
         
         [self _addBorderLayer];
         [self _addInnerShadowLayers];
@@ -233,7 +233,7 @@
     [self.backgroundView.layer addSublayer:layer];
     layer.hidden = !!(options | ORNOrnamentStateHighlighted);
     if (!layer.needsRecoloringOnLayout) {
-        [layer colorInView:self.hostTableView withOptions:options];
+        [layer colorInView:self.hostTableView withOptions:options, nil];
     }
 }
 
@@ -311,7 +311,7 @@
 - (void)_fillBorderLayerHighlighted:(BOOL)highlighted
 {
     ORNOrnamentOptions options = ORNOrnamentTableViewScopeCell | ORNOrnamentTypeBorder | (highlighted ? ORNOrnamentStateHighlighted : ORNOrnamentStateDefault);
-    [self.borderLayer colorInView:self.hostTableView withOptions:options];
+    [self.borderLayer colorInView:self.hostTableView withOptions:options, nil];
 }
 
 - (void)_layoutInnerLayer:(CALayer *)layer overStroke:(BOOL)overStroke
@@ -345,13 +345,13 @@
     if (_innerShadowLayer) {
         _innerShadowLayer.roundedCorners = roundedCorners;
         if (_innerShadowLayer.needsRecoloringOnLayout) {
-            [_innerShadowLayer colorInView:self.hostTableView withOptions:options | ORNOrnamentStateDefault];
+            [_innerShadowLayer colorInView:self.hostTableView withOptions:options | ORNOrnamentStateDefault, nil];
         }
     }
     if (_highlightedInnerShadowLayer) {
         _highlightedInnerShadowLayer.roundedCorners = roundedCorners;
         if (_highlightedInnerShadowLayer.needsRecoloringOnLayout) {
-            [_highlightedInnerShadowLayer colorInView:self.hostTableView withOptions:options | ORNOrnamentStateHighlighted];
+            [_highlightedInnerShadowLayer colorInView:self.hostTableView withOptions:options | ORNOrnamentStateHighlighted, nil];
         }
     }
 }
