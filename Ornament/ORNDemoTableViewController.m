@@ -7,6 +7,7 @@
 //
 
 #import "ORNDemoTableViewController.h"
+#import "ORNNavigationController.h"
 #import "ORNTableViewCell.h"
 #import "UIColor+ORNAdditions.h"
 
@@ -36,9 +37,9 @@ enum {
 
 #pragma mark - ORNTableViewController
 
-- (instancetype)initWithOrnamentationStyle:(ORNTableViewStyle)style
+- (instancetype)initWithTableViewStyle:(ORNTableViewStyle)style
 {
-    if (self = [super initWithOrnamentationStyle:style]) {
+    if (self = [super initWithTableViewStyle:style]) {
         _sections = @[@[@"Plain", @"Grouped", @"Grouped Etched", @"Grouped Card", @"Grouped Metal", @"Grouped Groove", @"Custom"],
                       @[@"Current Style", @"Opaque Status Bar"],
                       @[@"More…"]];
@@ -69,7 +70,30 @@ enum {
 {
     [super tableView:tableView didSelectRowAtIndexPath:indexPath];
     if (indexPath.section == ORNDemoTableViewSectionStyles) {
-        self.ornamentationStyle = indexPath.row;
+        self.tableViewStyle = indexPath.row;
+
+        ORNNavigationController *navigationController = (ORNNavigationController *)self.navigationController;
+        if (navigationController) {
+            ORNNavigationBarStyle navigationBarStyle;
+            switch (self.tableViewStyle) {
+                case ORNTableViewStylePlain:
+                case ORNTableViewStyleMetal:
+                    navigationBarStyle = ORNNavigationBarStyleBlackTranslucent;
+                    break;
+                case ORNTableViewStyleGrouped:
+                case ORNTableViewStyleCard:
+                case ORNTableViewStyleCustom:
+                    navigationBarStyle = ORNNavigationBarStyleBlue;
+                    break;
+                case ORNTableViewStyleGroupedEtched:
+                    navigationBarStyle = ORNNavigationBarStyleBlueSimple;
+                    break;
+                case ORNTableViewStyleGroove:
+                    navigationBarStyle = ORNNavigationBarStyleBlack;
+                    break;
+            }
+            navigationController.navigationBarStyle = navigationBarStyle;
+        }
     }
 }
 
@@ -80,7 +104,7 @@ enum {
     ORNTableViewCell *cell = (ORNTableViewCell *)[super tableView:tableView cellForRowAtIndexPath:indexPath];
     NSString *text = _sections[indexPath.section][indexPath.row];
     if (indexPath.section == ORNDemoTableViewSectionOptions && indexPath.row == ORNDemoTableViewStatsCurrentStyle) {
-        NSString *style = _sections[ORNDemoTableViewSectionStyles][self.ornamentationStyle];
+        NSString *style = _sections[ORNDemoTableViewSectionStyles][self.tableViewStyle];
         cell.textContents = @[text, style];
     } else {
         cell.textContents = @[text];
@@ -124,7 +148,7 @@ enum {
 {
     switch (indexPath.section) {
         case ORNDemoTableViewSectionStyles:
-            return (indexPath.row == self.ornamentationStyle) ? ORNTableViewCellAccessoryCheckmark : ORNTableViewCellAccessoryNone;
+            return (indexPath.row == self.tableViewStyle) ? ORNTableViewCellAccessoryCheckmark : ORNTableViewCellAccessoryNone;
         case ORNDemoTableViewSectionOptions:
             switch (indexPath.row) {
                 case ORNDemoTableViewStatsCurrentStyle:

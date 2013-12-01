@@ -11,6 +11,30 @@
 
 @implementation ORNNavigationController
 
+- (instancetype)initWithRootViewController:(UIViewController *)rootViewController navigationBarStyle:(ORNNavigationBarStyle)style
+{
+    if (self = [super initWithNavigationBarClass:[ORNNavigationBar class] toolbarClass:nil]) {
+        ((ORNNavigationBar *)self.navigationBar).ornamentationStyle = style;
+        [self pushViewController:rootViewController animated:NO];
+    }
+    return self;
+}
+
+- (void)setNavigationBarStyle:(ORNNavigationBarStyle)navigationBarStyle
+{
+    ORNNavigationBar *navigationBar = (ORNNavigationBar *)self.navigationBar;
+    navigationBar.ornamentationStyle = navigationBarStyle;
+    [CATransaction commit];
+    [CATransaction setDisableActions:YES];
+    [navigationBar ornament];
+    [CATransaction begin];
+}
+
+- (ORNNavigationBarStyle)navigationBarStyle
+{
+    return ((ORNNavigationBar *)self.navigationBar).ornamentationStyle;
+}
+
 #pragma mark - UIViewController
 
 - (void)viewDidLoad
@@ -23,10 +47,7 @@
 
 - (instancetype)initWithRootViewController:(UIViewController *)rootViewController
 {
-    if (self = [super initWithNavigationBarClass:[ORNNavigationBar class] toolbarClass:nil]) {
-        [self pushViewController:rootViewController animated:NO];
-    }
-    return self;
+    return [self initWithRootViewController:rootViewController navigationBarStyle:ORNNavigationBarStyleBlue];
 }
 
 @end

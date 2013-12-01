@@ -20,8 +20,8 @@
     [self.window makeKeyAndVisible];
     
     [application orn_setStatusBarStyle:ORNStatusBarStyleDefault];
-    ORNDemoTableViewController *tableViewController = [[ORNDemoTableViewController alloc] initWithOrnamentationStyle:ORNTableViewStyleGroupedEtched];
-    ORNNavigationController *navigationController = [[ORNNavigationController alloc] initWithRootViewController:tableViewController];
+    ORNDemoTableViewController *tableViewController = [[ORNDemoTableViewController alloc] initWithTableViewStyle:ORNTableViewStyleGroupedEtched];
+    ORNNavigationController *navigationController = [[ORNNavigationController alloc] initWithRootViewController:tableViewController navigationBarStyle:ORNNavigationBarStyleBlueSimple];
     self.window.rootViewController = navigationController;
     [application orn_setStatusBarHidden:NO];
     

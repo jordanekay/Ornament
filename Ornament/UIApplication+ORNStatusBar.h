@@ -8,7 +8,8 @@
 
 typedef NS_ENUM(NSUInteger, ORNStatusBarStyle) {
     ORNStatusBarStyleDefault,
-    ORNStatusBarStyleLightContent
+    ORNStatusBarStyleLightContent,
+    ORNStatusBarStyleLightContentTranslucent
 };
 
 @interface UIApplication (ORNStatusBar)

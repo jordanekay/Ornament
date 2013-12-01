@@ -19,19 +19,20 @@ static NSMutableDictionary *footers;
     UIEdgeInsets _tableViewSectionInsets;
 }
 
-- (instancetype)initWithOrnamentationStyle:(ORNTableViewStyle)style
+- (instancetype)initWithTableViewStyle:(ORNTableViewStyle)style
 {
     if ([super initWithStyle:UITableViewStylePlain]) {
-        _ornamentationStyle = style;
+        _tableViewStyle = style;
     }
 
     return self;
 }
 
-- (void)setOrnamentationStyle:(ORNTableViewStyle)style
+- (void)setTableViewStyle:(ORNTableViewStyle)style
 {
-    if (_ornamentationStyle != style) {
-        _ornamentationStyle = style;
+    if (_tableViewStyle != style) {
+        _tableViewStyle = style;
+
         UIView *view = self.view;
         [self _setupTableView];
         [self _layoutTableView:YES];
@@ -66,11 +67,11 @@ static NSMutableDictionary *footers;
 {
     UIView *view = [[UIView alloc] init];
 
-    ORNTableView *tableView = [[ORNTableView alloc] initWithFrame:CGRectZero ornamentationStyle:self.ornamentationStyle];
+    ORNTableView *tableView = [[ORNTableView alloc] initWithFrame:CGRectZero ornamentationStyle:self.tableViewStyle];
     tableView.delegate = self;
     tableView.dataSource = self;
     tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    tableView.pinsHeaderViewsToTop = (self.ornamentationStyle == ORNTableViewStylePlain);
+    tableView.pinsHeaderViewsToTop = (self.tableViewStyle == ORNTableViewStylePlain);
     [view addSubview:tableView];
 
     [tableView ornament];
@@ -91,13 +92,13 @@ static NSMutableDictionary *footers;
     if (self.isGroupedStyle || self.navigationController) {
         insets.top += 1.0f;
     }
-    if (hasLaidOut && self.navigationController.navigationBar.isTranslucent) {
-        CGFloat navBarHeight = self.navigationController.navigationBar.bounds.size.height;
-        insets.top += navBarHeight;
-    }
     if ([UIDevice orn_isIOS7] && (hasLaidOut || !self.navigationController)) {
         CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
         insets.top += statusBarHeight;
+    }
+    if (!([UIDevice orn_isIOS7] && !hasLaidOut) && self.navigationController.navigationBar.isTranslucent) {
+        CGFloat navBarHeight = self.navigationController.navigationBar.bounds.size.height;
+        insets.top += navBarHeight;
     }
 
     UIEdgeInsets scrollIndicatorInsets = self.tableView.scrollIndicatorInsets;
@@ -135,7 +136,7 @@ static NSMutableDictionary *footers;
 
 - (instancetype)initWithStyle:(UITableViewStyle)style
 {
-    return [self initWithOrnamentationStyle:ORNTableViewStylePlain];
+    return [self initWithTableViewStyle:ORNTableViewStylePlain];
 }
 
 - (UITableView *)tableView
@@ -220,7 +221,7 @@ static NSMutableDictionary *footers;
     if (!cell) {
         NSString *template = [self tableView:tableView templateForRowAtIndexPath:indexPath];
         cell = [[ORNTableViewCell alloc] initWithOrnamentationStyle:style template:template reuseIdentifier:identifier];
-        cell.highlightsContents = (self.ornamentationStyle != ORNTableViewStyleGroove);
+        cell.highlightsContents = (self.tableViewStyle != ORNTableViewStyleGroove);
         cell.hostTableView = tableView;
     }
     cell.accessoryType = [self tableView:tableView cellAccessoryTypeForRowAtIndexPath:indexPath];
@@ -237,7 +238,7 @@ static NSMutableDictionary *footers;
 
 - (NSString *)tableView:(ORNTableView *)tableView templateForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return (self.ornamentationStyle == ORNTableViewStyleMetal) ? @"ORNTableViewCellCollectionDark" : @"ORNTableViewCellCollection";
+    return (self.tableViewStyle == ORNTableViewStyleMetal) ? @"ORNTableViewCellCollectionDark" : @"ORNTableViewCellCollection";
 }
 
 - (ORNTableViewCellStyle)tableView:(ORNTableView *)tableView cellStyleForRowAtIndexPath:(NSIndexPath *)indexPath

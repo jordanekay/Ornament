@@ -11,9 +11,9 @@
 
 @interface ORNTableViewController : UITableViewController <ORNTableViewDelegate, ORNSwitchDelegate>
 
-- (instancetype)initWithOrnamentationStyle:(ORNTableViewStyle)style;
+- (instancetype)initWithTableViewStyle:(ORNTableViewStyle)style;
 
-@property (nonatomic) ORNTableViewStyle ornamentationStyle;
+@property (nonatomic) ORNTableViewStyle tableViewStyle;
 @property (nonatomic, readonly) BOOL isGroupedStyle;
 @property (nonatomic, readonly) BOOL usesUppercaseSectionHeaderTitles;
 

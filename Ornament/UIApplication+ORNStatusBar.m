@@ -8,6 +8,8 @@
 
 #import "ORNColorable.h"
 #import "ORNGradientLayer.h"
+#import "ORNNavigationBar.h"
+#import "ORNNavigationController.h"
 #import "ORNLayer.h"
 #import "ORNOrnament.h"
 #import "UIApplication+ORNStatusBar.h"
@@ -16,9 +18,11 @@
 #define WIDTH [UIApplication sharedApplication].keyWindow.bounds.size.width
 #define HEIGHT ([UIDevice orn_isIOS7] ? 21.0f : 20.0f)
 
-#define BACKGROUND_COLOR_DEFAULT [UIColor colorWithWhite:0.98f alpha:1.0f]
-#define SHADE_COLOR_DEFAULT [UIColor colorWithWhite:0.0f alpha:0.2f]
-#define BORDER_COLOR_DEFAULT [UIColor colorWithWhite:0.6f alpha:1.0f]
+#define BACKGROUND_COLOR [UIColor colorWithWhite:0.98f alpha:1.0f]
+#define BACKGROUND_COLOR_LIGHT_CONTENT [UIColor blackColor]
+#define BACKGROUND_COLOR_LIGHT_CONTENT_TRANSLUCENT [UIColor colorWithWhite:0.0f alpha:0.4f]
+#define SHADE_COLOR [UIColor colorWithWhite:0.0f alpha:0.2f]
+#define BORDER_COLOR [UIColor colorWithWhite:0.6f alpha:1.0f]
 
 @interface ORNStatusBar : UIView <ORNOrnamentable>
 
@@ -42,7 +46,6 @@ static ORNStatusBar *statusBar;
         [statusBar removeFromSuperview];
         statusBar = [[ORNStatusBar alloc] init];
         statusBar.ornamentationStyle = style;
-        statusBar.hidden = YES;
         [statusBar ornament];
         [self.keyWindow addSubview:statusBar];
     }
@@ -106,13 +109,17 @@ static ORNStatusBar *statusBar;
 {
     switch (self.ornamentationStyle) {
         case ORNStatusBarStyleDefault:
-            self.backgroundColor = BACKGROUND_COLOR_DEFAULT;
-            [self ornament:[ORNOrnament lineWithColor:BORDER_COLOR_DEFAULT] withOptions:ORNOrnamentTypeBorder];
+            self.backgroundColor = BACKGROUND_COLOR;
+            [self ornament:[ORNOrnament lineWithColor:BORDER_COLOR] withOptions:ORNOrnamentTypeBorder];
             break;
         case ORNStatusBarStyleLightContent:
+            self.backgroundColor = BACKGROUND_COLOR_LIGHT_CONTENT;
+            break;
+        case ORNStatusBarStyleLightContentTranslucent:
+            self.backgroundColor = BACKGROUND_COLOR_LIGHT_CONTENT_TRANSLUCENT;
             break;
     }
-    
+
     [self.backgroundLayer colorInView:self withOptions:ORNOrnamentTypeShade, nil];
     [self.borderLayer colorInView:self withOptions:ORNOrnamentTypeBorder, nil];
     [self.layer addSublayer:self.backgroundLayer];
@@ -132,7 +139,7 @@ static ORNStatusBar *statusBar;
 
 - (NSArray *)colorsForOptionsList:(NSArray *)list
 {
-    return @[SHADE_COLOR_DEFAULT];
+    return @[SHADE_COLOR];
 }
 
 @end
