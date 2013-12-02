@@ -8,6 +8,7 @@
 
 #import "ORNBoolean.h"
 #import "ORNOrnament.h"
+#import "TTSwitch.h"
 
 typedef NS_ENUM(NSUInteger, ORNSwitchStyle) {
     ORNSwitchStyleDefault,
@@ -16,7 +17,7 @@ typedef NS_ENUM(NSUInteger, ORNSwitchStyle) {
 
 @protocol ORNSwitchDelegate;
 
-@interface ORNSwitch : UISwitch <ORNBoolean, ORNOrnamentable>
+@interface ORNSwitch : TTSwitch <ORNBoolean, ORNOrnamentable>
 
 @property (nonatomic) NSIndexPath *containingCellIndexPath;
 @property (nonatomic, weak) id<ORNSwitchDelegate> delegate;

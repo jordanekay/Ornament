@@ -22,6 +22,7 @@
 #import "UIFont+ORNSystem.h"
 
 #define ACCESSORY_PADDING ([UIDevice orn_isIOS7] ? -9.0f : 16.0f)
+#define SWITCH_PADDING ([UIDevice orn_isIOS7] ? -4.0f : 0.0f)
 #define LAYOUT_ADJUSTMENT ([UIDevice orn_isIOS7] ? 1.0f : 0.0f)
 #define ANIMATION_DURATION .5f
 
@@ -269,7 +270,7 @@
     
     CGRect accessoryFrame = accessoryView.frame;
     CGRect containerFrame = self.containerView.frame;
-    accessoryFrame.origin.x -= _insets.right;
+    accessoryFrame.origin.x -= (_insets.right + SWITCH_PADDING);
     accessoryFrame.origin.y = floorf((containerFrame.size.height - accessoryFrame.size.height) / 2);
     
     if (self.sectionBreakAbove) {
@@ -401,7 +402,7 @@
     switch (accessory) {
         case ORNTableViewCellAccessorySwitch:
             if(!self.accessoryView) {
-                self.accessoryView = [[ORNSwitch alloc] initWithFrame:CGRectZero];
+                self.accessoryView = [[ORNSwitch alloc] init];
             }
             break;
         case ORNTableViewCellAccessoryImage:

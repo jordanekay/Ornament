@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Jordan Kay. All rights reserved.
 //
 
+#import "ORNAppearance.h"
 #import "ORNAppDelegate.h"
 #import "ORNDemoTableViewController.h"
 #import "ORNNavigationController.h"
@@ -18,6 +19,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
+    [ORNAppearance setupAppearance];
     
     [application orn_setStatusBarStyle:ORNStatusBarStyleDefault];
     ORNDemoTableViewController *tableViewController = [[ORNDemoTableViewController alloc] initWithTableViewStyle:ORNTableViewStyleGroupedEtched];
