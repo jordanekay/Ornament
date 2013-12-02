@@ -12,6 +12,7 @@
 @interface ORNTableViewController : UITableViewController <ORNTableViewDelegate, ORNSwitchDelegate>
 
 - (instancetype)initWithTableViewStyle:(ORNTableViewStyle)style;
+- (instancetype)initWithStyle:(UITableViewStyle)style __unavailable;
 
 @property (nonatomic) ORNTableViewStyle tableViewStyle;
 @property (nonatomic, readonly) BOOL isGroupedStyle;

@@ -43,6 +43,11 @@
     [(ORNNavigationBar *)self.navigationBar ornament];
 }
 
+- (BOOL)shouldAutorotate
+{
+    return [self.visibleViewController shouldAutorotate];
+}
+
 #pragma mark - UINavigationController
 
 - (instancetype)initWithRootViewController:(UIViewController *)rootViewController

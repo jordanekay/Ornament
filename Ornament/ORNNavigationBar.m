@@ -75,20 +75,20 @@
 {
     if ([UIDevice orn_isIOS7]) {
         self.barStyle = (self.isBlackStyle) ? UIBarStyleBlack : UIBarStyleDefault;
-
-        ORNStatusBarStyle statusBarStyle;
-        if (self.isBlackStyle) {
-            statusBarStyle = (self.isTranslucentStyle) ? ORNStatusBarStyleLightContentTranslucent : ORNStatusBarStyleLightContent;
-        } else {
-            statusBarStyle = ORNStatusBarStyleDefault;
-        }
-        [[UIApplication sharedApplication] orn_setStatusBarStyle:statusBarStyle];
     } else {
         self.barStyle = UIBarStyleBlackTranslucent;
         [self setShadowImage:[UIImage new]];
         [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleBlackTranslucent;
     }
     [self setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+
+    ORNStatusBarStyle statusBarStyle;
+    if (self.isBlackStyle) {
+        statusBarStyle = (self.isTranslucentStyle) ? ORNStatusBarStyleLightContentTranslucent : ORNStatusBarStyleLightContent;
+    } else {
+        statusBarStyle = ([UIDevice orn_isIOS7]) ? ORNStatusBarStyleDefault : ORNStatusBarStyleLightContent;
+    }
+    [[UIApplication sharedApplication] orn_setStatusBarStyle:statusBarStyle];
 
     self.titleTextAttributes = @{UITextAttributeFont: TITLE_FONT, UITextAttributeTextColor: TITLE_TEXT_COLOR, UITextAttributeTextShadowColor: TITLE_TEXT_SHADOW_COLOR, UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:TITLE_TEXT_SHADOW_OFFSET]};
     [self setTitleVerticalPositionAdjustment:TITLE_ADJUSTMENT forBarMetrics:UIBarMetricsDefault];

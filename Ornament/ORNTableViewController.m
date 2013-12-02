@@ -92,7 +92,7 @@ static NSMutableDictionary *footers;
     if (self.isGroupedStyle || self.navigationController) {
         insets.top += 1.0f;
     }
-    if ([UIDevice orn_isIOS7] && (hasLaidOut || !self.navigationController)) {
+    if (![UIDevice orn_isIOS7] || (hasLaidOut || !self.navigationController)) {
         CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
         insets.top += statusBarHeight;
     }
@@ -127,17 +127,12 @@ static NSMutableDictionary *footers;
     [self _layoutTableView:NO];
 }
 
-- (BOOL)shouldAutorotate
+- (BOOL)wantsFullScreenLayout
 {
-    return NO;
+    return YES;
 }
 
 #pragma mark - UITableViewController
-
-- (instancetype)initWithStyle:(UITableViewStyle)style
-{
-    return [self initWithTableViewStyle:ORNTableViewStylePlain];
-}
 
 - (UITableView *)tableView
 {

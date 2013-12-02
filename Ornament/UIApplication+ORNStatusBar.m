@@ -20,7 +20,7 @@
 
 #define BACKGROUND_COLOR [UIColor colorWithWhite:0.98f alpha:1.0f]
 #define BACKGROUND_COLOR_LIGHT_CONTENT [UIColor blackColor]
-#define BACKGROUND_COLOR_LIGHT_CONTENT_TRANSLUCENT [UIColor colorWithWhite:0.0f alpha:0.4f]
+#define BACKGROUND_COLOR_LIGHT_CONTENT_TRANSLUCENT ([UIDevice orn_isIOS7] ? [UIColor colorWithWhite:0.0f alpha:0.4f] : [UIColor clearColor])
 #define SHADE_COLOR [UIColor colorWithWhite:0.0f alpha:0.2f]
 #define BORDER_COLOR [UIColor colorWithWhite:0.6f alpha:1.0f]
 
@@ -42,13 +42,11 @@ static ORNStatusBar *statusBar;
 
 - (void)orn_setStatusBarStyle:(ORNStatusBarStyle)style animated:(BOOL)animated
 {
-    if ([UIDevice orn_isIOS7]) {
-        [statusBar removeFromSuperview];
-        statusBar = [[ORNStatusBar alloc] init];
-        statusBar.ornamentationStyle = style;
-        [statusBar ornament];
-        [self.keyWindow addSubview:statusBar];
-    }
+    [statusBar removeFromSuperview];
+    statusBar = [[ORNStatusBar alloc] init];
+    statusBar.ornamentationStyle = style;
+    [statusBar ornament];
+    [self.keyWindow addSubview:statusBar];
 }
 
 - (void)orn_setStatusBarHidden:(BOOL)hidden
@@ -58,11 +56,9 @@ static ORNStatusBar *statusBar;
 
 - (void)orn_setStatusBarHidden:(BOOL)hidden animated:(BOOL)animated
 {
-    if ([UIDevice orn_isIOS7]) {
-        statusBar.hidden = hidden;
-        if (!hidden) {
-            [statusBar.superview bringSubviewToFront:statusBar];
-        }
+    statusBar.hidden = hidden;
+    if (!hidden) {
+        [statusBar.superview bringSubviewToFront:statusBar];
     }
 }
 
@@ -139,7 +135,7 @@ static ORNStatusBar *statusBar;
 
 - (NSArray *)colorsForOptionsList:(NSArray *)list
 {
-    return @[SHADE_COLOR];
+    return (self.ornamentationStyle == ORNStatusBarStyleLightContentTranslucent) ? nil : @[SHADE_COLOR];
 }
 
 @end

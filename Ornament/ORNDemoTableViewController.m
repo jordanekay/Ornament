@@ -35,6 +35,11 @@ enum {
     return @"Ornament";
 }
 
+- (BOOL)shouldAutorotate
+{
+    return NO;
+}
+
 #pragma mark - ORNTableViewController
 
 - (instancetype)initWithTableViewStyle:(ORNTableViewStyle)style
