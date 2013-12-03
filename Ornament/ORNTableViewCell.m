@@ -400,6 +400,9 @@
 {
     ORNTableViewCellAccessory accessory = (ORNTableViewCellAccessory)type;
     switch (accessory) {
+        case ORNTableViewCellAccessoryCheckmark:
+            self.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icn_checkmark"]];
+            break;
         case ORNTableViewCellAccessorySwitch:
             if(!self.accessoryView) {
                 self.accessoryView = [[ORNSwitch alloc] init];
