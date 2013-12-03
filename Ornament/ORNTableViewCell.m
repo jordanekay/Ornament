@@ -22,8 +22,8 @@
 #import "UIFont+ORNSystem.h"
 
 #define ACCESSORY_PADDING ([UIDevice orn_isIOS7] ? -9.0f : 16.0f)
-#define IMAGE_PADDING 2.0f
-#define CONTROL_PADDING 1.0f
+#define IMAGE_PADDING ([UIDevice orn_isIOS7] ? -4.0f : 2.0f)
+#define CONTROL_PADDING ([UIDevice orn_isIOS7] ? -4.0f : 10.0f)
 #define LAYOUT_ADJUSTMENT ([UIDevice orn_isIOS7] ? 1.0f : 0.0f)
 #define ANIMATION_DURATION .5f
 
