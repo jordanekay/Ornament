@@ -20,7 +20,7 @@
 
 #define BACKGROUND_COLOR [UIColor colorWithWhite:0.98f alpha:1.0f]
 #define BACKGROUND_COLOR_LIGHT_CONTENT [UIColor blackColor]
-#define BACKGROUND_COLOR_LIGHT_CONTENT_TRANSLUCENT ([UIDevice orn_isIOS7] ? [UIColor colorWithWhite:0.0f alpha:0.4f] : [UIColor clearColor])
+#define BACKGROUND_COLOR_LIGHT_CONTENT_TRANSLUCENT ([UIDevice orn_isIOS7] ? [UIColor colorWithWhite:0.0f alpha:0.6f] : [UIColor clearColor])
 #define SHADE_COLOR [UIColor colorWithWhite:0.0f alpha:0.2f]
 #define BORDER_COLOR [UIColor colorWithWhite:0.6f alpha:1.0f]
 
