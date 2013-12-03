@@ -20,8 +20,8 @@ typedef NS_ENUM(NSUInteger, ORNTableViewCellStyle) {
 
 typedef NS_ENUM(NSUInteger, ORNTableViewCellAccessory) {
     ORNTableViewCellAccessoryNone,
-    ORNTableViewCellAccessoryDisclosureIndicator,
-    ORNTableViewCellAccessoryDetailDisclosureButton,
+    ORNTableViewCellAccessoryChevron,
+    ORNTableViewCellAccessoryDetailButton,
     ORNTableViewCellAccessoryCheckmark,
     ORNTableViewCellAccessorySwitch,
     ORNTableViewCellAccessoryImage

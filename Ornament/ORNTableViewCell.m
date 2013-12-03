@@ -22,7 +22,8 @@
 #import "UIFont+ORNSystem.h"
 
 #define ACCESSORY_PADDING ([UIDevice orn_isIOS7] ? -9.0f : 16.0f)
-#define SWITCH_PADDING ([UIDevice orn_isIOS7] ? -4.0f : 0.0f)
+#define IMAGE_PADDING 2.0f
+#define CONTROL_PADDING 1.0f
 #define LAYOUT_ADJUSTMENT ([UIDevice orn_isIOS7] ? 1.0f : 0.0f)
 #define ANIMATION_DURATION .5f
 
@@ -270,7 +271,8 @@
     
     CGRect accessoryFrame = accessoryView.frame;
     CGRect containerFrame = self.containerView.frame;
-    accessoryFrame.origin.x -= (_insets.right + SWITCH_PADDING);
+    CGFloat padding = ([self.accessoryView isKindOfClass:[UIImageView class]]) ? IMAGE_PADDING : CONTROL_PADDING;
+    accessoryFrame.origin.x -= (_insets.right + padding);
     accessoryFrame.origin.y = floorf((containerFrame.size.height - accessoryFrame.size.height) / 2);
     
     if (self.sectionBreakAbove) {
@@ -403,6 +405,9 @@
         case ORNTableViewCellAccessoryCheckmark:
             self.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icn_checkmark"]];
             break;
+        case ORNTableViewCellAccessoryChevron:
+            self.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icn_chevron"] highlightedImage:[UIImage imageNamed:@"icn_chevron_selected"]];
+            break;
         case ORNTableViewCellAccessorySwitch:
             if(!self.accessoryView) {
                 self.accessoryView = [[ORNSwitch alloc] init];
@@ -426,7 +431,11 @@
         self.backgroundView.image = [self customHighlightedBackgroundImageForRoundedCorners:self.roundedCorners] ?: self.hostTableView.backgroundImage;
     }
     self.containerView.highlighted = highlighted;
-    
+
+    if ([self.accessoryView isKindOfClass:[UIImageView class]]) {
+        ((UIImageView *)self.accessoryView).highlighted = highlighted;
+    }
+
     [CATransaction begin];
     [CATransaction setDisableActions:YES];
     _innerShadowLayer.hidden = highlighted;
