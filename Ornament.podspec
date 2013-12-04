@@ -2,6 +2,7 @@ Pod::Spec.new do |s|
   s.name         = 'Ornament'
   s.version      = '0.1.0'
   s.summary      = 'Ornament is a set of APIs used to provide visual ornamentation for iOS apps.'
+  s.requires_arc = true
   s.author = {
     'Jordan Kay' => 'jordanekay@mac.com'
   }
