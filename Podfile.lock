@@ -1,0 +1,14 @@
+PODS:
+  - TTSwitch (0.0.5)
+
+DEPENDENCIES:
+  - TTSwitch (from `https://github.com/jordanekay/TTSwitch.git`)
+
+EXTERNAL SOURCES:
+  TTSwitch:
+    :git: https://github.com/jordanekay/TTSwitch.git
+
+SPEC CHECKSUMS:
+  TTSwitch: 6f915da3c66d6c02c79a2761460b11143d6294fb
+
+COCOAPODS: 0.28.0

@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Jordan Kay. All rights reserved.
 //
 
+#import <TTSwitch/TTSwitch.h>
 #import "ORNBoolean.h"
 #import "ORNOrnament.h"
-#import "TTSwitch.h"
 
 typedef NS_ENUM(NSUInteger, ORNSwitchStyle) {
     ORNSwitchStyleDefault,
