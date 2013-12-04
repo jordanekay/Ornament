@@ -1,14 +1,19 @@
 PODS:
+  - KGNoise (1.2.0)
   - TTSwitch (0.0.5)
 
 DEPENDENCIES:
+  - KGNoise (from `https://github.com/jordanekay/KGNoise.git`)
   - TTSwitch (from `https://github.com/jordanekay/TTSwitch.git`)
 
 EXTERNAL SOURCES:
+  KGNoise:
+    :git: https://github.com/jordanekay/KGNoise.git
   TTSwitch:
     :git: https://github.com/jordanekay/TTSwitch.git
 
 SPEC CHECKSUMS:
+  KGNoise: b21f0a389b4b94589b76f331ad9083643a79d6e7
   TTSwitch: 6f915da3c66d6c02c79a2761460b11143d6294fb
 
 COCOAPODS: 0.28.0

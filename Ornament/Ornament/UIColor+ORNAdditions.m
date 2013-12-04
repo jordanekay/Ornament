@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Jordan Kay. All rights reserved.
 //
 
+#import <KGNoise/KGNoise.h>
 #import "ORNCaching.h"
-#import "KGNoise.h"
 #import "UIColor+ORNAdditions.h"
 
 #define DEFAULT_PINSTRIPE_COLOR_1 [UIColor orn_colorWithHex:0xd6dae4]

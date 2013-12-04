@@ -12,4 +12,5 @@ Pod::Spec.new do |s|
   }
   s.source_files = 'Ornament/Ornament/*.{h,m}'
   s.dependency     'TTSwitch'
+  s.dependency     'KGNoise'
 end
