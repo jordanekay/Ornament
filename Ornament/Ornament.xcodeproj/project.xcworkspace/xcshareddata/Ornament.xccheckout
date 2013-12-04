@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>1BF3A15E-0055-49C9-9DEE-1985F530E330</string>
+	<string>837BB735-D7FB-4E39-AC0C-8B714E31C594</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Ornament</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -14,11 +14,11 @@
 		<string>https://github.com/jordanekay/Ornament.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Ornament.xcworkspace</string>
+	<string>Ornament.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>69D8E4A0-0081-4D7A-A367-759713149215</key>
-		<string>..</string>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/jordanekay/Ornament.git</string>

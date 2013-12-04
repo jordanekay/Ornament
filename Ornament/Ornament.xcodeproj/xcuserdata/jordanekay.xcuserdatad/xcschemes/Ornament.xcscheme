@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F22F54B7BE6A4C92B2A11319"
-               BuildableName = "libPods-TTSwitch.a"
-               BlueprintName = "Pods-TTSwitch"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               BlueprintIdentifier = "172E8308177F5C4700D25532"
+               BuildableName = "Ornament.app"
+               BlueprintName = "Ornament"
+               ReferencedContainer = "container:Ornament.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,7 +28,26 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "172E8323177F5C4900D25532"
+               BuildableName = "OrnamentTests.xctest"
+               BlueprintName = "OrnamentTests"
+               ReferencedContainer = "container:Ornament.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "172E8308177F5C4700D25532"
+            BuildableName = "Ornament.app"
+            BlueprintName = "Ornament"
+            ReferencedContainer = "container:Ornament.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -39,6 +58,15 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "172E8308177F5C4700D25532"
+            BuildableName = "Ornament.app"
+            BlueprintName = "Ornament"
+            ReferencedContainer = "container:Ornament.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -48,6 +76,15 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "172E8308177F5C4700D25532"
+            BuildableName = "Ornament.app"
+            BlueprintName = "Ornament"
+            ReferencedContainer = "container:Ornament.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
