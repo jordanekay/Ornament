@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
     :git => 'https://github.com/jordanekay/Ornament.git',
     :tag => '0.1.0'
   }
-  s.source_files = 'Ornament/Ornament/*.{h,m}'
+  s.source_files = 'Ornament/Ornament/**/*.{h,m}'
   s.dependency     'TTSwitch'
   s.dependency     'KGNoise'
 end
