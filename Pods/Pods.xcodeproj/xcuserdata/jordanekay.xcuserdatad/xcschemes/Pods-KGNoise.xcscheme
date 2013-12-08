@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B165990B34C349358B774AD3"
+               BlueprintIdentifier = "F013DAB09A92404EA4876663"
                BuildableName = "libPods-KGNoise.a"
                BlueprintName = "Pods-KGNoise"
                ReferencedContainer = "container:Pods.xcodeproj">

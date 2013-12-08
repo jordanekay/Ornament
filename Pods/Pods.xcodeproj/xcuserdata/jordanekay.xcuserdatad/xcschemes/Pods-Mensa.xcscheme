@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "24D61510FC5B43E194F9D247"
-               BuildableName = "libPods-TTSwitch.a"
-               BlueprintName = "Pods-TTSwitch"
+               BlueprintIdentifier = "07F27069054F457D86F88520"
+               BuildableName = "libPods-Mensa.a"
+               BlueprintName = "Pods-Mensa"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

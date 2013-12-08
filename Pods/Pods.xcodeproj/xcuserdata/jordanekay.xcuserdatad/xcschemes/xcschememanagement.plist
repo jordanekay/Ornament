@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Mensa.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-TTSwitch.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>049CCBAF80944749930176E5</key>
+		<key>07F27069054F457D86F88520</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B165990B34C349358B774AD3</key>
+		<key>24D61510FC5B43E194F9D247</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E65023B9A2ED4B3B9BE89325</key>
+		<key>3B197CD6F2B04189AB11269E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F013DAB09A92404EA4876663</key>
 		<dict>
 			<key>primary</key>
 			<true/>
