@@ -11,6 +11,7 @@ Pod::Spec.new do |s|
     :tag => '0.1.0'
   }
   s.source_files = 'Ornament/Ornament/**/*.{h,m}'
+  s.dependency     'Mensa'
   s.dependency     'TTSwitch'
   s.dependency     'KGNoise'
 end
