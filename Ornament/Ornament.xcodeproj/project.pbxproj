@@ -7,53 +7,53 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		170ABAAB17BA1142009B9969 /* bg_linen.png in Resources */ = {isa = PBXBuildFile; fileRef = 170ABAA917BA1142009B9969 /* bg_linen.png */; };
-		170ABAAC17BA1142009B9969 /* bg_linen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 170ABAAA17BA1142009B9969 /* bg_linen@2x.png */; };
-		1718F1F517A8E6E300287D33 /* ORNOrnament.m in Sources */ = {isa = PBXBuildFile; fileRef = 4507A57417A0BCCA00C63494 /* ORNOrnament.m */; };
 		172E830D177F5C4800D25532 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 172E830C177F5C4800D25532 /* Foundation.framework */; };
 		172E830F177F5C4800D25532 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 172E830E177F5C4800D25532 /* CoreGraphics.framework */; };
 		172E8311177F5C4800D25532 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 172E8310177F5C4800D25532 /* UIKit.framework */; };
-		172E831D177F5C4900D25532 /* ORNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 172E831C177F5C4900D25532 /* ORNAppDelegate.m */; };
 		172E8327177F5C4900D25532 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 172E830C177F5C4800D25532 /* Foundation.framework */; };
 		172E8328177F5C4900D25532 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 172E8310177F5C4800D25532 /* UIKit.framework */; };
 		172E8330177F5C4900D25532 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 172E832E177F5C4900D25532 /* InfoPlist.strings */; };
 		172E8332177F5C4900D25532 /* OrnamentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 172E8331177F5C4900D25532 /* OrnamentTests.m */; };
-		172E833D177FA67F00D25532 /* ORNTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 172E833C177F5CE100D25532 /* ORNTableViewCell.m */; };
-		1743FFFC177FB07D00EE55D2 /* ORNTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1743FFFB177FB07D00EE55D2 /* ORNTableViewController.m */; };
-		177E603F177FEA6A009486B4 /* UIFont+ORNSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 177E603E177FEA6A009486B4 /* UIFont+ORNSystem.m */; };
-		177E6045177FFE03009486B4 /* UIColor+ORNAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 177E6044177FFE03009486B4 /* UIColor+ORNAdditions.m */; };
-		177E604817800317009486B4 /* ORNDemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 177E604717800317009486B4 /* ORNDemoTableViewController.m */; };
-		17CFB46F18255B0500A63485 /* ORNLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CFB46E18255B0500A63485 /* ORNLayer.m */; };
-		17CFB47218255CD300A63485 /* ORNLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CFB47118255CD300A63485 /* ORNLayout.m */; };
-		17CFB47518255D8F00A63485 /* ORNShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CFB47418255D8F00A63485 /* ORNShadow.m */; };
-		17CFB47818255DCD00A63485 /* ORNLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CFB47718255DCD00A63485 /* ORNLine.m */; };
-		17CFB47B18255E3200A63485 /* ORNShadowLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CFB47A18255E3200A63485 /* ORNShadowLayer.m */; };
-		17CFB47E18255EA300A63485 /* ORNGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CFB47D18255EA300A63485 /* ORNGradientLayer.m */; };
-		17CFB48118255EFF00A63485 /* ORNPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CFB48018255EFF00A63485 /* ORNPath.m */; };
-		17CFB48E1825632C00A63485 /* ORNTableViewCellContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CFB48D1825632C00A63485 /* ORNTableViewCellContainerView.m */; };
 		2F259CE4A2964631A8271726 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E6971354147143AFBDEEB707 /* libPods.a */; };
-		450953EA17990148009B4F0F /* UIDevice+ORNVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 450953E917990148009B4F0F /* UIDevice+ORNVersion.m */; };
-		4556433B1799271900339505 /* ORNTableViewCellCollectionDark.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4556433A1799271900339505 /* ORNTableViewCellCollectionDark.xib */; };
-		456D896017B9454700344F90 /* UIApplication+ORNStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 456D895F17B9454700344F90 /* UIApplication+ORNStatusBar.m */; };
-		4583E44217B9C5B900EF6DF6 /* ORNSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 4583E44117B9C5B900EF6DF6 /* ORNSwitch.m */; };
 		45B223951782072200CE5827 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B223941782072200CE5827 /* QuartzCore.framework */; };
-		45B495B51786286B00341BB9 /* ORNTableViewCellCollection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45B495B41786286B00341BB9 /* ORNTableViewCellCollection.xib */; };
-		45B5EBCD1848281F0097A7B6 /* ORNNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B5EBCC1848281F0097A7B6 /* ORNNavigationBar.m */; };
-		45B5EBD018482BEC0097A7B6 /* ORNNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B5EBCF18482BEC0097A7B6 /* ORNNavigationController.m */; };
-		45C2868B179512B40081564A /* ORNTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C2868A179512B40081564A /* ORNTableView.m */; };
-		45C2A3A1183A6C7E00A3A529 /* ORNTableViewColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C2A3A0183A6C7E00A3A529 /* ORNTableViewColor.m */; };
-		45C3798D183991AF00997F3F /* ORNSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C3798C183991AF00997F3F /* ORNSwizzle.m */; };
-		45C379901839AE2F00997F3F /* ORNTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C3798F1839AE2F00997F3F /* ORNTableHeaderView.m */; };
-		45C4EBF11846B6BE0016FC7D /* NSArray+ORNFunctional.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C4EBF01846B6BE0016FC7D /* NSArray+ORNFunctional.m */; };
-		45E93461184BFD9A00CBF9F6 /* ORNAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E93460184BFD9A00CBF9F6 /* ORNAppearance.m */; };
-		45E93485184E421400CBF9F6 /* icn_checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45E93483184E421400CBF9F6 /* icn_checkmark@2x.png */; };
-		45E93486184E421400CBF9F6 /* icn_checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 45E93484184E421400CBF9F6 /* icn_checkmark.png */; };
-		45E9348E184E519E00CBF9F6 /* icn_chevron.png in Resources */ = {isa = PBXBuildFile; fileRef = 45E9348C184E519E00CBF9F6 /* icn_chevron.png */; };
-		45E93490184E521600CBF9F6 /* icn_chevron@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45E9348F184E521600CBF9F6 /* icn_chevron@2x.png */; };
-		45E93493184E535E00CBF9F6 /* icn_chevron_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 45E93491184E535E00CBF9F6 /* icn_chevron_selected.png */; };
-		45E93494184E535E00CBF9F6 /* icn_chevron_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45E93492184E535E00CBF9F6 /* icn_chevron_selected@2x.png */; };
 		45E93499184EBF2D00CBF9F6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E93497184EBF2D00CBF9F6 /* main.m */; };
 		45E9349B184EBFEE00CBF9F6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45E9349A184EBFEE00CBF9F6 /* Images.xcassets */; };
+		45F7407B1854301600478D29 /* UIApplication+ORNStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F7407A1854301600478D29 /* UIApplication+ORNStatusBar.m */; };
+		45F740841854302F00478D29 /* bg_linen.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F7407C1854302F00478D29 /* bg_linen.png */; };
+		45F740851854302F00478D29 /* bg_linen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F7407D1854302F00478D29 /* bg_linen@2x.png */; };
+		45F740861854302F00478D29 /* icn_checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F7407E1854302F00478D29 /* icn_checkmark.png */; };
+		45F740871854302F00478D29 /* icn_checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F7407F1854302F00478D29 /* icn_checkmark@2x.png */; };
+		45F740881854302F00478D29 /* icn_chevron_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F740801854302F00478D29 /* icn_chevron_selected.png */; };
+		45F740891854302F00478D29 /* icn_chevron_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F740811854302F00478D29 /* icn_chevron_selected@2x.png */; };
+		45F7408A1854302F00478D29 /* icn_chevron.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F740821854302F00478D29 /* icn_chevron.png */; };
+		45F7408B1854302F00478D29 /* icn_chevron@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F740831854302F00478D29 /* icn_chevron@2x.png */; };
+		45F7408E1854304E00478D29 /* UIColor+ORNAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F7408D1854304E00478D29 /* UIColor+ORNAdditions.m */; };
+		45F740911854307200478D29 /* ORNSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740901854307200478D29 /* ORNSwitch.m */; };
+		45F740941854309400478D29 /* UIDevice+ORNVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740931854309400478D29 /* UIDevice+ORNVersion.m */; };
+		45F74097185430AB00478D29 /* UIFont+ORNSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F74096185430AB00478D29 /* UIFont+ORNSystem.m */; };
+		45F7409D185437AF00478D29 /* ORNNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F7409A185437AF00478D29 /* ORNNavigationController.m */; };
+		45F7409E185437AF00478D29 /* ORNTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F7409C185437AF00478D29 /* ORNTableViewController.m */; };
+		45F740A41854382700478D29 /* NSArray+ORNFunctional.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740A01854382700478D29 /* NSArray+ORNFunctional.m */; };
+		45F740A51854382700478D29 /* ORNSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740A31854382700478D29 /* ORNSwizzle.m */; };
+		45F740B8185438C700478D29 /* ORNAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740A7185438C700478D29 /* ORNAppearance.m */; };
+		45F740B9185438C700478D29 /* ORNNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740A9185438C700478D29 /* ORNNavigationBar.m */; };
+		45F740BA185438C700478D29 /* ORNTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740AB185438C700478D29 /* ORNTableHeaderView.m */; };
+		45F740BB185438C700478D29 /* ORNTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740AD185438C700478D29 /* ORNTableView.m */; };
+		45F740BC185438C700478D29 /* ORNTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740AF185438C700478D29 /* ORNTableViewCell.m */; };
+		45F740BD185438C700478D29 /* ORNTableViewCellCollection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45F740B0185438C700478D29 /* ORNTableViewCellCollection.xib */; };
+		45F740BE185438C700478D29 /* ORNTableViewCellCollectionDark.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45F740B1185438C700478D29 /* ORNTableViewCellCollectionDark.xib */; };
+		45F740BF185438C700478D29 /* ORNTableViewCellContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740B3185438C700478D29 /* ORNTableViewCellContainerView.m */; };
+		45F740C0185438C700478D29 /* ORNTableViewColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740B5185438C700478D29 /* ORNTableViewColor.m */; };
+		45F740C5185438E700478D29 /* ORNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740C2185438E700478D29 /* ORNAppDelegate.m */; };
+		45F740C6185438E700478D29 /* ORNDemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740C4185438E700478D29 /* ORNDemoTableViewController.m */; };
+		45F740D91854391200478D29 /* ORNGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740C91854391200478D29 /* ORNGradientLayer.m */; };
+		45F740DA1854391200478D29 /* ORNLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740CB1854391200478D29 /* ORNLayer.m */; };
+		45F740DB1854391200478D29 /* ORNLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740CD1854391200478D29 /* ORNLayout.m */; };
+		45F740DC1854391200478D29 /* ORNLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740CF1854391200478D29 /* ORNLine.m */; };
+		45F740DD1854391200478D29 /* ORNOrnament.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740D11854391200478D29 /* ORNOrnament.m */; };
+		45F740DE1854391200478D29 /* ORNPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740D41854391200478D29 /* ORNPath.m */; };
+		45F740DF1854391200478D29 /* ORNShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740D61854391200478D29 /* ORNShadow.m */; };
+		45F740E01854391200478D29 /* ORNShadowLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740D81854391200478D29 /* ORNShadowLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,88 +67,88 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		170ABAA917BA1142009B9969 /* bg_linen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_linen.png; sourceTree = "<group>"; };
-		170ABAAA17BA1142009B9969 /* bg_linen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_linen@2x.png"; sourceTree = "<group>"; };
 		172E8309177F5C4800D25532 /* Ornament.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ornament.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		172E830C177F5C4800D25532 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		172E830E177F5C4800D25532 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		172E8310177F5C4800D25532 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		172E831B177F5C4900D25532 /* ORNAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ORNAppDelegate.h; path = Ornament/ORNAppDelegate.h; sourceTree = "<group>"; };
-		172E831C177F5C4900D25532 /* ORNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ORNAppDelegate.m; path = Ornament/ORNAppDelegate.m; sourceTree = "<group>"; };
 		172E8324177F5C4900D25532 /* OrnamentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrnamentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		172E832D177F5C4900D25532 /* OrnamentTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OrnamentTests-Info.plist"; sourceTree = "<group>"; };
 		172E832F177F5C4900D25532 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		172E8331177F5C4900D25532 /* OrnamentTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrnamentTests.m; sourceTree = "<group>"; };
-		172E833B177F5CE100D25532 /* ORNTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORNTableViewCell.h; sourceTree = "<group>"; };
-		172E833C177F5CE100D25532 /* ORNTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORNTableViewCell.m; sourceTree = "<group>"; };
-		1743FFFA177FB07D00EE55D2 /* ORNTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORNTableViewController.h; sourceTree = "<group>"; };
-		1743FFFB177FB07D00EE55D2 /* ORNTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORNTableViewController.m; sourceTree = "<group>"; };
-		177E603D177FEA6A009486B4 /* UIFont+ORNSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+ORNSystem.h"; sourceTree = "<group>"; };
-		177E603E177FEA6A009486B4 /* UIFont+ORNSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+ORNSystem.m"; sourceTree = "<group>"; };
-		177E6043177FFE03009486B4 /* UIColor+ORNAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ORNAdditions.h"; sourceTree = "<group>"; };
-		177E6044177FFE03009486B4 /* UIColor+ORNAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ORNAdditions.m"; sourceTree = "<group>"; };
-		177E604617800317009486B4 /* ORNDemoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNDemoTableViewController.h; path = Ornament/ORNDemoTableViewController.h; sourceTree = "<group>"; };
-		177E604717800317009486B4 /* ORNDemoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORNDemoTableViewController.m; path = Ornament/ORNDemoTableViewController.m; sourceTree = "<group>"; };
-		17BCF89117ADDBF8006C5775 /* ORNColorable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORNColorable.h; sourceTree = "<group>"; };
-		17CFB46D18255B0500A63485 /* ORNLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORNLayer.h; sourceTree = "<group>"; };
-		17CFB46E18255B0500A63485 /* ORNLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORNLayer.m; sourceTree = "<group>"; };
-		17CFB47018255CD300A63485 /* ORNLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORNLayout.h; sourceTree = "<group>"; };
-		17CFB47118255CD300A63485 /* ORNLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORNLayout.m; sourceTree = "<group>"; };
-		17CFB47318255D8F00A63485 /* ORNShadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORNShadow.h; sourceTree = "<group>"; };
-		17CFB47418255D8F00A63485 /* ORNShadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORNShadow.m; sourceTree = "<group>"; };
-		17CFB47618255DCD00A63485 /* ORNLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORNLine.h; sourceTree = "<group>"; };
-		17CFB47718255DCD00A63485 /* ORNLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORNLine.m; sourceTree = "<group>"; };
-		17CFB47918255E3200A63485 /* ORNShadowLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORNShadowLayer.h; sourceTree = "<group>"; };
-		17CFB47A18255E3200A63485 /* ORNShadowLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORNShadowLayer.m; sourceTree = "<group>"; };
-		17CFB47C18255EA300A63485 /* ORNGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORNGradientLayer.h; sourceTree = "<group>"; };
-		17CFB47D18255EA300A63485 /* ORNGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORNGradientLayer.m; sourceTree = "<group>"; };
-		17CFB47F18255EFF00A63485 /* ORNPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORNPath.h; sourceTree = "<group>"; };
-		17CFB48018255EFF00A63485 /* ORNPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORNPath.m; sourceTree = "<group>"; };
-		17CFB48C1825632C00A63485 /* ORNTableViewCellContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORNTableViewCellContainerView.h; sourceTree = "<group>"; };
-		17CFB48D1825632C00A63485 /* ORNTableViewCellContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORNTableViewCellContainerView.m; sourceTree = "<group>"; };
 		2B916954D4384BD99E73178F /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = "<group>"; };
-		4507A57317A0BCCA00C63494 /* ORNOrnament.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORNOrnament.h; sourceTree = "<group>"; };
-		4507A57417A0BCCA00C63494 /* ORNOrnament.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORNOrnament.m; sourceTree = "<group>"; };
-		450953E817990148009B4F0F /* UIDevice+ORNVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+ORNVersion.h"; sourceTree = "<group>"; };
-		450953E917990148009B4F0F /* UIDevice+ORNVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+ORNVersion.m"; sourceTree = "<group>"; };
-		4527B21117B0611C00B71580 /* ORNTableViewOrnaments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORNTableViewOrnaments.h; sourceTree = "<group>"; };
-		4553F387184A476800392DB9 /* ORNOrnamentMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORNOrnamentMacros.h; sourceTree = "<group>"; };
-		4556433A1799271900339505 /* ORNTableViewCellCollectionDark.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ORNTableViewCellCollectionDark.xib; sourceTree = "<group>"; };
-		4556433C1799279700339505 /* ORNTableViewConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORNTableViewConstants.h; sourceTree = "<group>"; };
-		456D895E17B9454700344F90 /* UIApplication+ORNStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+ORNStatusBar.h"; sourceTree = "<group>"; };
-		456D895F17B9454700344F90 /* UIApplication+ORNStatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+ORNStatusBar.m"; sourceTree = "<group>"; };
-		4583E44017B9C5B900EF6DF6 /* ORNSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORNSwitch.h; sourceTree = "<group>"; };
-		4583E44117B9C5B900EF6DF6 /* ORNSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORNSwitch.m; sourceTree = "<group>"; };
-		4583E44317B9C69600EF6DF6 /* ORNBoolean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORNBoolean.h; sourceTree = "<group>"; };
 		45B223941782072200CE5827 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		45B495B41786286B00341BB9 /* ORNTableViewCellCollection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ORNTableViewCellCollection.xib; sourceTree = "<group>"; };
-		45B5EBCB1848281F0097A7B6 /* ORNNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORNNavigationBar.h; sourceTree = "<group>"; };
-		45B5EBCC1848281F0097A7B6 /* ORNNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORNNavigationBar.m; sourceTree = "<group>"; };
-		45B5EBCE18482BEC0097A7B6 /* ORNNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORNNavigationController.h; sourceTree = "<group>"; };
-		45B5EBCF18482BEC0097A7B6 /* ORNNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORNNavigationController.m; sourceTree = "<group>"; };
-		45C28689179512B40081564A /* ORNTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORNTableView.h; sourceTree = "<group>"; };
-		45C2868A179512B40081564A /* ORNTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ORNTableView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		45C2A39F183A6C7E00A3A529 /* ORNTableViewColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORNTableViewColor.h; sourceTree = "<group>"; };
-		45C2A3A0183A6C7E00A3A529 /* ORNTableViewColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORNTableViewColor.m; sourceTree = "<group>"; };
-		45C3798718393AE900997F3F /* ORNCaching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORNCaching.h; sourceTree = "<group>"; };
-		45C3798B183991AF00997F3F /* ORNSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORNSwizzle.h; sourceTree = "<group>"; };
-		45C3798C183991AF00997F3F /* ORNSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORNSwizzle.m; sourceTree = "<group>"; };
-		45C3798E1839AE2F00997F3F /* ORNTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORNTableHeaderView.h; sourceTree = "<group>"; };
-		45C3798F1839AE2F00997F3F /* ORNTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORNTableHeaderView.m; sourceTree = "<group>"; };
-		45C4EBEF1846B6BE0016FC7D /* NSArray+ORNFunctional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+ORNFunctional.h"; sourceTree = "<group>"; };
-		45C4EBF01846B6BE0016FC7D /* NSArray+ORNFunctional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ORNFunctional.m"; sourceTree = "<group>"; };
-		45E9345F184BFD9A00CBF9F6 /* ORNAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORNAppearance.h; sourceTree = "<group>"; };
-		45E93460184BFD9A00CBF9F6 /* ORNAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORNAppearance.m; sourceTree = "<group>"; };
-		45E93483184E421400CBF9F6 /* icn_checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icn_checkmark@2x.png"; sourceTree = "<group>"; };
-		45E93484184E421400CBF9F6 /* icn_checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icn_checkmark.png; sourceTree = "<group>"; };
-		45E9348C184E519E00CBF9F6 /* icn_chevron.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icn_chevron.png; sourceTree = "<group>"; };
-		45E9348F184E521600CBF9F6 /* icn_chevron@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icn_chevron@2x.png"; sourceTree = "<group>"; };
-		45E93491184E535E00CBF9F6 /* icn_chevron_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icn_chevron_selected.png; sourceTree = "<group>"; };
-		45E93492184E535E00CBF9F6 /* icn_chevron_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icn_chevron_selected@2x.png"; sourceTree = "<group>"; };
 		45E93495184EBF2D00CBF9F6 /* Example-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Example-Info.plist"; path = "Example/Example-Info.plist"; sourceTree = SOURCE_ROOT; };
 		45E93496184EBF2D00CBF9F6 /* Example-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Example-Prefix.pch"; path = "Example/Example-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		45E93497184EBF2D00CBF9F6 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Example/main.m; sourceTree = SOURCE_ROOT; };
 		45E9349A184EBFEE00CBF9F6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Example/Images.xcassets; sourceTree = SOURCE_ROOT; };
+		45F740791854301600478D29 /* UIApplication+ORNStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIApplication+ORNStatusBar.h"; path = "Application/UIApplication+ORNStatusBar.h"; sourceTree = "<group>"; };
+		45F7407A1854301600478D29 /* UIApplication+ORNStatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+ORNStatusBar.m"; path = "Application/UIApplication+ORNStatusBar.m"; sourceTree = "<group>"; };
+		45F7407C1854302F00478D29 /* bg_linen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg_linen.png; path = Assets/bg_linen.png; sourceTree = "<group>"; };
+		45F7407D1854302F00478D29 /* bg_linen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg_linen@2x.png"; path = "Assets/bg_linen@2x.png"; sourceTree = "<group>"; };
+		45F7407E1854302F00478D29 /* icn_checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icn_checkmark.png; path = Assets/icn_checkmark.png; sourceTree = "<group>"; };
+		45F7407F1854302F00478D29 /* icn_checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icn_checkmark@2x.png"; path = "Assets/icn_checkmark@2x.png"; sourceTree = "<group>"; };
+		45F740801854302F00478D29 /* icn_chevron_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icn_chevron_selected.png; path = Assets/icn_chevron_selected.png; sourceTree = "<group>"; };
+		45F740811854302F00478D29 /* icn_chevron_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icn_chevron_selected@2x.png"; path = "Assets/icn_chevron_selected@2x.png"; sourceTree = "<group>"; };
+		45F740821854302F00478D29 /* icn_chevron.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icn_chevron.png; path = Assets/icn_chevron.png; sourceTree = "<group>"; };
+		45F740831854302F00478D29 /* icn_chevron@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icn_chevron@2x.png"; path = "Assets/icn_chevron@2x.png"; sourceTree = "<group>"; };
+		45F7408C1854304E00478D29 /* UIColor+ORNAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+ORNAdditions.h"; path = "Color/UIColor+ORNAdditions.h"; sourceTree = "<group>"; };
+		45F7408D1854304E00478D29 /* UIColor+ORNAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+ORNAdditions.m"; path = "Color/UIColor+ORNAdditions.m"; sourceTree = "<group>"; };
+		45F7408F1854307200478D29 /* ORNSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNSwitch.h; path = Controls/ORNSwitch.h; sourceTree = "<group>"; };
+		45F740901854307200478D29 /* ORNSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORNSwitch.m; path = Controls/ORNSwitch.m; sourceTree = "<group>"; };
+		45F740921854309400478D29 /* UIDevice+ORNVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIDevice+ORNVersion.h"; path = "Device/UIDevice+ORNVersion.h"; sourceTree = "<group>"; };
+		45F740931854309400478D29 /* UIDevice+ORNVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+ORNVersion.m"; path = "Device/UIDevice+ORNVersion.m"; sourceTree = "<group>"; };
+		45F74095185430AB00478D29 /* UIFont+ORNSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+ORNSystem.h"; path = "Font/UIFont+ORNSystem.h"; sourceTree = "<group>"; };
+		45F74096185430AB00478D29 /* UIFont+ORNSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+ORNSystem.m"; path = "Font/UIFont+ORNSystem.m"; sourceTree = "<group>"; };
+		45F74098185430C800478D29 /* ORNBoolean.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ORNBoolean.h; path = Models/ORNBoolean.h; sourceTree = "<group>"; };
+		45F74099185437AF00478D29 /* ORNNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNNavigationController.h; path = "View Controllers/ORNNavigationController.h"; sourceTree = "<group>"; };
+		45F7409A185437AF00478D29 /* ORNNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORNNavigationController.m; path = "View Controllers/ORNNavigationController.m"; sourceTree = "<group>"; };
+		45F7409B185437AF00478D29 /* ORNTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNTableViewController.h; path = "View Controllers/ORNTableViewController.h"; sourceTree = "<group>"; };
+		45F7409C185437AF00478D29 /* ORNTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORNTableViewController.m; path = "View Controllers/ORNTableViewController.m"; sourceTree = "<group>"; };
+		45F7409F1854382700478D29 /* NSArray+ORNFunctional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+ORNFunctional.h"; path = "Utilities/NSArray+ORNFunctional.h"; sourceTree = "<group>"; };
+		45F740A01854382700478D29 /* NSArray+ORNFunctional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+ORNFunctional.m"; path = "Utilities/NSArray+ORNFunctional.m"; sourceTree = "<group>"; };
+		45F740A11854382700478D29 /* ORNCaching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNCaching.h; path = Utilities/ORNCaching.h; sourceTree = "<group>"; };
+		45F740A21854382700478D29 /* ORNSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNSwizzle.h; path = Utilities/ORNSwizzle.h; sourceTree = "<group>"; };
+		45F740A31854382700478D29 /* ORNSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORNSwizzle.m; path = Utilities/ORNSwizzle.m; sourceTree = "<group>"; };
+		45F740A6185438C700478D29 /* ORNAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNAppearance.h; path = Views/ORNAppearance.h; sourceTree = "<group>"; };
+		45F740A7185438C700478D29 /* ORNAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORNAppearance.m; path = Views/ORNAppearance.m; sourceTree = "<group>"; };
+		45F740A8185438C700478D29 /* ORNNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNNavigationBar.h; path = Views/ORNNavigationBar.h; sourceTree = "<group>"; };
+		45F740A9185438C700478D29 /* ORNNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORNNavigationBar.m; path = Views/ORNNavigationBar.m; sourceTree = "<group>"; };
+		45F740AA185438C700478D29 /* ORNTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNTableHeaderView.h; path = Views/ORNTableHeaderView.h; sourceTree = "<group>"; };
+		45F740AB185438C700478D29 /* ORNTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORNTableHeaderView.m; path = Views/ORNTableHeaderView.m; sourceTree = "<group>"; };
+		45F740AC185438C700478D29 /* ORNTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNTableView.h; path = Views/ORNTableView.h; sourceTree = "<group>"; };
+		45F740AD185438C700478D29 /* ORNTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORNTableView.m; path = Views/ORNTableView.m; sourceTree = "<group>"; };
+		45F740AE185438C700478D29 /* ORNTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNTableViewCell.h; path = Views/ORNTableViewCell.h; sourceTree = "<group>"; };
+		45F740AF185438C700478D29 /* ORNTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORNTableViewCell.m; path = Views/ORNTableViewCell.m; sourceTree = "<group>"; };
+		45F740B0185438C700478D29 /* ORNTableViewCellCollection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ORNTableViewCellCollection.xib; path = Views/ORNTableViewCellCollection.xib; sourceTree = "<group>"; };
+		45F740B1185438C700478D29 /* ORNTableViewCellCollectionDark.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ORNTableViewCellCollectionDark.xib; path = Views/ORNTableViewCellCollectionDark.xib; sourceTree = "<group>"; };
+		45F740B2185438C700478D29 /* ORNTableViewCellContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNTableViewCellContainerView.h; path = Views/ORNTableViewCellContainerView.h; sourceTree = "<group>"; };
+		45F740B3185438C700478D29 /* ORNTableViewCellContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORNTableViewCellContainerView.m; path = Views/ORNTableViewCellContainerView.m; sourceTree = "<group>"; };
+		45F740B4185438C700478D29 /* ORNTableViewColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNTableViewColor.h; path = Views/ORNTableViewColor.h; sourceTree = "<group>"; };
+		45F740B5185438C700478D29 /* ORNTableViewColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORNTableViewColor.m; path = Views/ORNTableViewColor.m; sourceTree = "<group>"; };
+		45F740B6185438C700478D29 /* ORNTableViewConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNTableViewConstants.h; path = Views/ORNTableViewConstants.h; sourceTree = "<group>"; };
+		45F740B7185438C700478D29 /* ORNTableViewOrnaments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNTableViewOrnaments.h; path = Views/ORNTableViewOrnaments.h; sourceTree = "<group>"; };
+		45F740C1185438E700478D29 /* ORNAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNAppDelegate.h; path = Example/ORNAppDelegate.h; sourceTree = "<group>"; };
+		45F740C2185438E700478D29 /* ORNAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORNAppDelegate.m; path = Example/ORNAppDelegate.m; sourceTree = "<group>"; };
+		45F740C3185438E700478D29 /* ORNDemoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNDemoTableViewController.h; path = Example/ORNDemoTableViewController.h; sourceTree = "<group>"; };
+		45F740C4185438E700478D29 /* ORNDemoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORNDemoTableViewController.m; path = Example/ORNDemoTableViewController.m; sourceTree = "<group>"; };
+		45F740C71854391200478D29 /* ORNColorable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNColorable.h; path = Ornamentation/ORNColorable.h; sourceTree = "<group>"; };
+		45F740C81854391200478D29 /* ORNGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNGradientLayer.h; path = Ornamentation/ORNGradientLayer.h; sourceTree = "<group>"; };
+		45F740C91854391200478D29 /* ORNGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORNGradientLayer.m; path = Ornamentation/ORNGradientLayer.m; sourceTree = "<group>"; };
+		45F740CA1854391200478D29 /* ORNLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNLayer.h; path = Ornamentation/ORNLayer.h; sourceTree = "<group>"; };
+		45F740CB1854391200478D29 /* ORNLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORNLayer.m; path = Ornamentation/ORNLayer.m; sourceTree = "<group>"; };
+		45F740CC1854391200478D29 /* ORNLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNLayout.h; path = Ornamentation/ORNLayout.h; sourceTree = "<group>"; };
+		45F740CD1854391200478D29 /* ORNLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORNLayout.m; path = Ornamentation/ORNLayout.m; sourceTree = "<group>"; };
+		45F740CE1854391200478D29 /* ORNLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNLine.h; path = Ornamentation/ORNLine.h; sourceTree = "<group>"; };
+		45F740CF1854391200478D29 /* ORNLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORNLine.m; path = Ornamentation/ORNLine.m; sourceTree = "<group>"; };
+		45F740D01854391200478D29 /* ORNOrnament.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNOrnament.h; path = Ornamentation/ORNOrnament.h; sourceTree = "<group>"; };
+		45F740D11854391200478D29 /* ORNOrnament.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORNOrnament.m; path = Ornamentation/ORNOrnament.m; sourceTree = "<group>"; };
+		45F740D21854391200478D29 /* ORNOrnamentMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNOrnamentMacros.h; path = Ornamentation/ORNOrnamentMacros.h; sourceTree = "<group>"; };
+		45F740D31854391200478D29 /* ORNPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNPath.h; path = Ornamentation/ORNPath.h; sourceTree = "<group>"; };
+		45F740D41854391200478D29 /* ORNPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORNPath.m; path = Ornamentation/ORNPath.m; sourceTree = "<group>"; };
+		45F740D51854391200478D29 /* ORNShadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNShadow.h; path = Ornamentation/ORNShadow.h; sourceTree = "<group>"; };
+		45F740D61854391200478D29 /* ORNShadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORNShadow.m; path = Ornamentation/ORNShadow.m; sourceTree = "<group>"; };
+		45F740D71854391200478D29 /* ORNShadowLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNShadowLayer.h; path = Ornamentation/ORNShadowLayer.h; sourceTree = "<group>"; };
+		45F740D81854391200478D29 /* ORNShadowLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORNShadowLayer.m; path = Ornamentation/ORNShadowLayer.m; sourceTree = "<group>"; };
 		E6971354147143AFBDEEB707 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -261,24 +261,24 @@
 		17CFB46C18255A9F00A63485 /* Ornamentation */ = {
 			isa = PBXGroup;
 			children = (
-				17BCF89117ADDBF8006C5775 /* ORNColorable.h */,
-				17CFB47C18255EA300A63485 /* ORNGradientLayer.h */,
-				17CFB47D18255EA300A63485 /* ORNGradientLayer.m */,
-				17CFB46D18255B0500A63485 /* ORNLayer.h */,
-				17CFB46E18255B0500A63485 /* ORNLayer.m */,
-				17CFB47018255CD300A63485 /* ORNLayout.h */,
-				17CFB47118255CD300A63485 /* ORNLayout.m */,
-				17CFB47618255DCD00A63485 /* ORNLine.h */,
-				17CFB47718255DCD00A63485 /* ORNLine.m */,
-				4507A57317A0BCCA00C63494 /* ORNOrnament.h */,
-				4507A57417A0BCCA00C63494 /* ORNOrnament.m */,
-				4553F387184A476800392DB9 /* ORNOrnamentMacros.h */,
-				17CFB47F18255EFF00A63485 /* ORNPath.h */,
-				17CFB48018255EFF00A63485 /* ORNPath.m */,
-				17CFB47318255D8F00A63485 /* ORNShadow.h */,
-				17CFB47418255D8F00A63485 /* ORNShadow.m */,
-				17CFB47918255E3200A63485 /* ORNShadowLayer.h */,
-				17CFB47A18255E3200A63485 /* ORNShadowLayer.m */,
+				45F740C71854391200478D29 /* ORNColorable.h */,
+				45F740C81854391200478D29 /* ORNGradientLayer.h */,
+				45F740C91854391200478D29 /* ORNGradientLayer.m */,
+				45F740CA1854391200478D29 /* ORNLayer.h */,
+				45F740CB1854391200478D29 /* ORNLayer.m */,
+				45F740CC1854391200478D29 /* ORNLayout.h */,
+				45F740CD1854391200478D29 /* ORNLayout.m */,
+				45F740CE1854391200478D29 /* ORNLine.h */,
+				45F740CF1854391200478D29 /* ORNLine.m */,
+				45F740D01854391200478D29 /* ORNOrnament.h */,
+				45F740D11854391200478D29 /* ORNOrnament.m */,
+				45F740D21854391200478D29 /* ORNOrnamentMacros.h */,
+				45F740D31854391200478D29 /* ORNPath.h */,
+				45F740D41854391200478D29 /* ORNPath.m */,
+				45F740D51854391200478D29 /* ORNShadow.h */,
+				45F740D61854391200478D29 /* ORNShadow.m */,
+				45F740D71854391200478D29 /* ORNShadowLayer.h */,
+				45F740D81854391200478D29 /* ORNShadowLayer.m */,
 			);
 			name = Ornamentation;
 			sourceTree = "<group>";
@@ -286,8 +286,8 @@
 		17CFB4821825615600A63485 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
-				4583E44017B9C5B900EF6DF6 /* ORNSwitch.h */,
-				4583E44117B9C5B900EF6DF6 /* ORNSwitch.m */,
+				45F7408F1854307200478D29 /* ORNSwitch.h */,
+				45F740901854307200478D29 /* ORNSwitch.m */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -295,24 +295,24 @@
 		17CFB4831825616F00A63485 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				45E9345F184BFD9A00CBF9F6 /* ORNAppearance.h */,
-				45E93460184BFD9A00CBF9F6 /* ORNAppearance.m */,
-				45B5EBCB1848281F0097A7B6 /* ORNNavigationBar.h */,
-				45B5EBCC1848281F0097A7B6 /* ORNNavigationBar.m */,
-				45C3798E1839AE2F00997F3F /* ORNTableHeaderView.h */,
-				45C3798F1839AE2F00997F3F /* ORNTableHeaderView.m */,
-				45C28689179512B40081564A /* ORNTableView.h */,
-				45C2868A179512B40081564A /* ORNTableView.m */,
-				172E833B177F5CE100D25532 /* ORNTableViewCell.h */,
-				172E833C177F5CE100D25532 /* ORNTableViewCell.m */,
-				45B495B41786286B00341BB9 /* ORNTableViewCellCollection.xib */,
-				4556433A1799271900339505 /* ORNTableViewCellCollectionDark.xib */,
-				17CFB48C1825632C00A63485 /* ORNTableViewCellContainerView.h */,
-				17CFB48D1825632C00A63485 /* ORNTableViewCellContainerView.m */,
-				4556433C1799279700339505 /* ORNTableViewConstants.h */,
-				4527B21117B0611C00B71580 /* ORNTableViewOrnaments.h */,
-				45C2A39F183A6C7E00A3A529 /* ORNTableViewColor.h */,
-				45C2A3A0183A6C7E00A3A529 /* ORNTableViewColor.m */,
+				45F740A6185438C700478D29 /* ORNAppearance.h */,
+				45F740A7185438C700478D29 /* ORNAppearance.m */,
+				45F740A8185438C700478D29 /* ORNNavigationBar.h */,
+				45F740A9185438C700478D29 /* ORNNavigationBar.m */,
+				45F740AA185438C700478D29 /* ORNTableHeaderView.h */,
+				45F740AB185438C700478D29 /* ORNTableHeaderView.m */,
+				45F740AC185438C700478D29 /* ORNTableView.h */,
+				45F740AD185438C700478D29 /* ORNTableView.m */,
+				45F740AE185438C700478D29 /* ORNTableViewCell.h */,
+				45F740AF185438C700478D29 /* ORNTableViewCell.m */,
+				45F740B0185438C700478D29 /* ORNTableViewCellCollection.xib */,
+				45F740B1185438C700478D29 /* ORNTableViewCellCollectionDark.xib */,
+				45F740B2185438C700478D29 /* ORNTableViewCellContainerView.h */,
+				45F740B3185438C700478D29 /* ORNTableViewCellContainerView.m */,
+				45F740B4185438C700478D29 /* ORNTableViewColor.h */,
+				45F740B5185438C700478D29 /* ORNTableViewColor.m */,
+				45F740B6185438C700478D29 /* ORNTableViewConstants.h */,
+				45F740B7185438C700478D29 /* ORNTableViewOrnaments.h */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -320,10 +320,10 @@
 		17CFB4841825619300A63485 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				45B5EBCE18482BEC0097A7B6 /* ORNNavigationController.h */,
-				45B5EBCF18482BEC0097A7B6 /* ORNNavigationController.m */,
-				1743FFFA177FB07D00EE55D2 /* ORNTableViewController.h */,
-				1743FFFB177FB07D00EE55D2 /* ORNTableViewController.m */,
+				45F74099185437AF00478D29 /* ORNNavigationController.h */,
+				45F7409A185437AF00478D29 /* ORNNavigationController.m */,
+				45F7409B185437AF00478D29 /* ORNTableViewController.h */,
+				45F7409C185437AF00478D29 /* ORNTableViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -331,8 +331,8 @@
 		17CFB485182561CD00A63485 /* Device */ = {
 			isa = PBXGroup;
 			children = (
-				450953E817990148009B4F0F /* UIDevice+ORNVersion.h */,
-				450953E917990148009B4F0F /* UIDevice+ORNVersion.m */,
+				45F740921854309400478D29 /* UIDevice+ORNVersion.h */,
+				45F740931854309400478D29 /* UIDevice+ORNVersion.m */,
 			);
 			name = Device;
 			sourceTree = "<group>";
@@ -340,8 +340,8 @@
 		17CFB486182561DD00A63485 /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				177E603D177FEA6A009486B4 /* UIFont+ORNSystem.h */,
-				177E603E177FEA6A009486B4 /* UIFont+ORNSystem.m */,
+				45F74095185430AB00478D29 /* UIFont+ORNSystem.h */,
+				45F74096185430AB00478D29 /* UIFont+ORNSystem.m */,
 			);
 			name = Font;
 			sourceTree = "<group>";
@@ -349,8 +349,8 @@
 		17CFB487182561EC00A63485 /* Color */ = {
 			isa = PBXGroup;
 			children = (
-				177E6043177FFE03009486B4 /* UIColor+ORNAdditions.h */,
-				177E6044177FFE03009486B4 /* UIColor+ORNAdditions.m */,
+				45F7408C1854304E00478D29 /* UIColor+ORNAdditions.h */,
+				45F7408D1854304E00478D29 /* UIColor+ORNAdditions.m */,
 			);
 			name = Color;
 			sourceTree = "<group>";
@@ -358,8 +358,8 @@
 		17CFB488182561FE00A63485 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				456D895E17B9454700344F90 /* UIApplication+ORNStatusBar.h */,
-				456D895F17B9454700344F90 /* UIApplication+ORNStatusBar.m */,
+				45F740791854301600478D29 /* UIApplication+ORNStatusBar.h */,
+				45F7407A1854301600478D29 /* UIApplication+ORNStatusBar.m */,
 			);
 			name = Application;
 			sourceTree = "<group>";
@@ -367,7 +367,7 @@
 		17CFB4891825624500A63485 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4583E44317B9C69600EF6DF6 /* ORNBoolean.h */,
+				45F74098185430C800478D29 /* ORNBoolean.h */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -375,14 +375,14 @@
 		450953EB17990415009B4F0F /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				170ABAA917BA1142009B9969 /* bg_linen.png */,
-				170ABAAA17BA1142009B9969 /* bg_linen@2x.png */,
-				45E93483184E421400CBF9F6 /* icn_checkmark@2x.png */,
-				45E93484184E421400CBF9F6 /* icn_checkmark.png */,
-				45E9348C184E519E00CBF9F6 /* icn_chevron.png */,
-				45E9348F184E521600CBF9F6 /* icn_chevron@2x.png */,
-				45E93491184E535E00CBF9F6 /* icn_chevron_selected.png */,
-				45E93492184E535E00CBF9F6 /* icn_chevron_selected@2x.png */,
+				45F7407C1854302F00478D29 /* bg_linen.png */,
+				45F7407D1854302F00478D29 /* bg_linen@2x.png */,
+				45F7407E1854302F00478D29 /* icn_checkmark.png */,
+				45F7407F1854302F00478D29 /* icn_checkmark@2x.png */,
+				45F740801854302F00478D29 /* icn_chevron_selected.png */,
+				45F740811854302F00478D29 /* icn_chevron_selected@2x.png */,
+				45F740821854302F00478D29 /* icn_chevron.png */,
+				45F740831854302F00478D29 /* icn_chevron@2x.png */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -390,11 +390,11 @@
 		45C3798A1839919E00997F3F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				45C3798718393AE900997F3F /* ORNCaching.h */,
-				45C3798B183991AF00997F3F /* ORNSwizzle.h */,
-				45C3798C183991AF00997F3F /* ORNSwizzle.m */,
-				45C4EBEF1846B6BE0016FC7D /* NSArray+ORNFunctional.h */,
-				45C4EBF01846B6BE0016FC7D /* NSArray+ORNFunctional.m */,
+				45F7409F1854382700478D29 /* NSArray+ORNFunctional.h */,
+				45F740A01854382700478D29 /* NSArray+ORNFunctional.m */,
+				45F740A11854382700478D29 /* ORNCaching.h */,
+				45F740A21854382700478D29 /* ORNSwizzle.h */,
+				45F740A31854382700478D29 /* ORNSwizzle.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -402,10 +402,10 @@
 		45E9349C184EC00800CBF9F6 /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				172E831B177F5C4900D25532 /* ORNAppDelegate.h */,
-				172E831C177F5C4900D25532 /* ORNAppDelegate.m */,
-				177E604617800317009486B4 /* ORNDemoTableViewController.h */,
-				177E604717800317009486B4 /* ORNDemoTableViewController.m */,
+				45F740C1185438E700478D29 /* ORNAppDelegate.h */,
+				45F740C2185438E700478D29 /* ORNAppDelegate.m */,
+				45F740C3185438E700478D29 /* ORNDemoTableViewController.h */,
+				45F740C4185438E700478D29 /* ORNDemoTableViewController.m */,
 				45E9349A184EBFEE00CBF9F6 /* Images.xcassets */,
 			);
 			name = Example;
@@ -492,17 +492,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45E93486184E421400CBF9F6 /* icn_checkmark.png in Resources */,
-				45E93485184E421400CBF9F6 /* icn_checkmark@2x.png in Resources */,
-				45E93494184E535E00CBF9F6 /* icn_chevron_selected@2x.png in Resources */,
-				170ABAAB17BA1142009B9969 /* bg_linen.png in Resources */,
+				45F740891854302F00478D29 /* icn_chevron_selected@2x.png in Resources */,
+				45F740BE185438C700478D29 /* ORNTableViewCellCollectionDark.xib in Resources */,
 				45E9349B184EBFEE00CBF9F6 /* Images.xcassets in Resources */,
-				45B495B51786286B00341BB9 /* ORNTableViewCellCollection.xib in Resources */,
-				170ABAAC17BA1142009B9969 /* bg_linen@2x.png in Resources */,
-				4556433B1799271900339505 /* ORNTableViewCellCollectionDark.xib in Resources */,
-				45E93490184E521600CBF9F6 /* icn_chevron@2x.png in Resources */,
-				45E9348E184E519E00CBF9F6 /* icn_chevron.png in Resources */,
-				45E93493184E535E00CBF9F6 /* icn_chevron_selected.png in Resources */,
+				45F7408A1854302F00478D29 /* icn_chevron.png in Resources */,
+				45F740881854302F00478D29 /* icn_chevron_selected.png in Resources */,
+				45F740841854302F00478D29 /* bg_linen.png in Resources */,
+				45F740BD185438C700478D29 /* ORNTableViewCellCollection.xib in Resources */,
+				45F740861854302F00478D29 /* icn_checkmark.png in Resources */,
+				45F7408B1854302F00478D29 /* icn_chevron@2x.png in Resources */,
+				45F740851854302F00478D29 /* bg_linen@2x.png in Resources */,
+				45F740871854302F00478D29 /* icn_checkmark@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,33 +554,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				177E603F177FEA6A009486B4 /* UIFont+ORNSystem.m in Sources */,
-				177E6045177FFE03009486B4 /* UIColor+ORNAdditions.m in Sources */,
-				45C2A3A1183A6C7E00A3A529 /* ORNTableViewColor.m in Sources */,
-				456D896017B9454700344F90 /* UIApplication+ORNStatusBar.m in Sources */,
-				17CFB48118255EFF00A63485 /* ORNPath.m in Sources */,
-				45B5EBCD1848281F0097A7B6 /* ORNNavigationBar.m in Sources */,
-				4583E44217B9C5B900EF6DF6 /* ORNSwitch.m in Sources */,
-				45C4EBF11846B6BE0016FC7D /* NSArray+ORNFunctional.m in Sources */,
-				1718F1F517A8E6E300287D33 /* ORNOrnament.m in Sources */,
-				172E831D177F5C4900D25532 /* ORNAppDelegate.m in Sources */,
-				17CFB47818255DCD00A63485 /* ORNLine.m in Sources */,
-				17CFB47E18255EA300A63485 /* ORNGradientLayer.m in Sources */,
-				17CFB46F18255B0500A63485 /* ORNLayer.m in Sources */,
-				450953EA17990148009B4F0F /* UIDevice+ORNVersion.m in Sources */,
-				45C2868B179512B40081564A /* ORNTableView.m in Sources */,
-				17CFB47518255D8F00A63485 /* ORNShadow.m in Sources */,
-				177E604817800317009486B4 /* ORNDemoTableViewController.m in Sources */,
-				172E833D177FA67F00D25532 /* ORNTableViewCell.m in Sources */,
-				1743FFFC177FB07D00EE55D2 /* ORNTableViewController.m in Sources */,
-				45C3798D183991AF00997F3F /* ORNSwizzle.m in Sources */,
-				45C379901839AE2F00997F3F /* ORNTableHeaderView.m in Sources */,
-				17CFB48E1825632C00A63485 /* ORNTableViewCellContainerView.m in Sources */,
-				17CFB47218255CD300A63485 /* ORNLayout.m in Sources */,
-				45E93461184BFD9A00CBF9F6 /* ORNAppearance.m in Sources */,
-				17CFB47B18255E3200A63485 /* ORNShadowLayer.m in Sources */,
+				45F740911854307200478D29 /* ORNSwitch.m in Sources */,
+				45F74097185430AB00478D29 /* UIFont+ORNSystem.m in Sources */,
+				45F740BF185438C700478D29 /* ORNTableViewCellContainerView.m in Sources */,
+				45F740DD1854391200478D29 /* ORNOrnament.m in Sources */,
+				45F740DB1854391200478D29 /* ORNLayout.m in Sources */,
+				45F740D91854391200478D29 /* ORNGradientLayer.m in Sources */,
+				45F7409E185437AF00478D29 /* ORNTableViewController.m in Sources */,
+				45F740C6185438E700478D29 /* ORNDemoTableViewController.m in Sources */,
+				45F740C5185438E700478D29 /* ORNAppDelegate.m in Sources */,
+				45F740DA1854391200478D29 /* ORNLayer.m in Sources */,
+				45F740C0185438C700478D29 /* ORNTableViewColor.m in Sources */,
+				45F740B8185438C700478D29 /* ORNAppearance.m in Sources */,
+				45F7407B1854301600478D29 /* UIApplication+ORNStatusBar.m in Sources */,
+				45F7408E1854304E00478D29 /* UIColor+ORNAdditions.m in Sources */,
+				45F740DE1854391200478D29 /* ORNPath.m in Sources */,
+				45F740BC185438C700478D29 /* ORNTableViewCell.m in Sources */,
+				45F7409D185437AF00478D29 /* ORNNavigationController.m in Sources */,
+				45F740B9185438C700478D29 /* ORNNavigationBar.m in Sources */,
+				45F740A41854382700478D29 /* NSArray+ORNFunctional.m in Sources */,
+				45F740941854309400478D29 /* UIDevice+ORNVersion.m in Sources */,
+				45F740A51854382700478D29 /* ORNSwizzle.m in Sources */,
+				45F740BB185438C700478D29 /* ORNTableView.m in Sources */,
+				45F740BA185438C700478D29 /* ORNTableHeaderView.m in Sources */,
+				45F740DF1854391200478D29 /* ORNShadow.m in Sources */,
 				45E93499184EBF2D00CBF9F6 /* main.m in Sources */,
-				45B5EBD018482BEC0097A7B6 /* ORNNavigationController.m in Sources */,
+				45F740DC1854391200478D29 /* ORNLine.m in Sources */,
+				45F740E01854391200478D29 /* ORNShadowLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,10 +6,11 @@
 //  Copyright (c) 2013 Jordan Kay. All rights reserved.
 //
 
+#import <Mensa/MNSTableViewController.h>
 #import "ORNSwitch.h"
 #import "ORNTableView.h"
 
-@interface ORNTableViewController : UITableViewController <ORNTableViewDelegate, ORNSwitchDelegate>
+@interface ORNTableViewController : MNSTableViewController <ORNTableViewDelegate, ORNSwitchDelegate>
 
 - (instancetype)initWithTableViewStyle:(ORNTableViewStyle)style;
 - (instancetype)initWithStyle:(UITableViewStyle)style __unavailable;
