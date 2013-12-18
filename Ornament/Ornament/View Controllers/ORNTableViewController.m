@@ -217,8 +217,8 @@ static NSMutableDictionary *footers;
         NSString *template = [self tableView:tableView templateForRowAtIndexPath:indexPath];
         cell = [[ORNTableViewCell alloc] initWithOrnamentationStyle:style template:template reuseIdentifier:identifier];
         cell.highlightsContents = (self.tableViewStyle != ORNTableViewStyleGroove);
-        cell.hostTableView = tableView;
     }
+    cell.hostTableView = tableView;
     cell.accessoryType = [self tableView:tableView cellAccessoryTypeForRowAtIndexPath:indexPath];
     // TODO: leftAccessoryView
     if ([cell.accessoryView isKindOfClass:[ORNSwitch class]]) {
