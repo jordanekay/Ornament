@@ -52,7 +52,7 @@
 
 - (instancetype)initWithOrnamentationStyle:(ORNTableViewCellStyle)style template:(NSString *)temp reuseIdentifier:(NSString *)reuseIdentifier
 {
-    if ([super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier]) {
+    if (self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier]) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.backgroundView = [[UIImageView alloc] initWithFrame:CGRectZero];
 

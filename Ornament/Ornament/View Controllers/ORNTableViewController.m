@@ -21,7 +21,7 @@ static NSMutableDictionary *footers;
 
 - (instancetype)initWithTableViewStyle:(ORNTableViewStyle)style
 {
-    if ([super initWithStyle:UITableViewStylePlain]) {
+    if (self = [super initWithStyle:UITableViewStylePlain]) {
         _tableViewStyle = style;
     }
 

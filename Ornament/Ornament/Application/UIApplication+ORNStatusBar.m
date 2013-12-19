@@ -77,7 +77,7 @@ static ORNStatusBar *statusBar;
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
-    if ([super initWithFrame:(CGRect){.size = {WIDTH, HEIGHT}}]) {
+    if (self = [super initWithFrame:(CGRect){.size = {WIDTH, HEIGHT}}]) {
         _backgroundLayer = [ORNGradientLayer layer];
         _borderLayer = [ORNLayer layer];
     }

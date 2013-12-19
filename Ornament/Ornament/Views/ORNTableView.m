@@ -28,7 +28,7 @@
 
 - (instancetype)initWithFrame:(CGRect)frame ornamentationStyle:(ORNTableViewStyle)style
 {
-    if ([super initWithFrame:frame style:UITableViewStylePlain]) {
+    if (self = [super initWithFrame:frame style:UITableViewStylePlain]) {
         _ornamentationStyle = style;
     }
 
@@ -129,7 +129,6 @@
     ORNOrnament *cellShadeHighlighted = CELL_SHADE_HIGHLIGHTED;
     ORNOrnament *cellBorderHighlighted = CELL_BORDER_HIGHLIGHTED;
 
-    CGFloat sectionCornerRadius = [ORNOrnament defaultCornerRadius];
     ORNOrnamentOptions cellBorderHighlightedOptions = ORNOrnamentTableViewScopeCell | ORNOrnamentTypeBorder | ORNOrnamentStateHighlighted;
 
     self.separatorColor = [ORNTableViewColor plainCellSeparatorColor];
@@ -149,7 +148,6 @@
             [self ornament:SECTION_LAYOUT_GROUPED withOptions:ORNOrnamentTableViewScopeSection];
             break;
         case ORNTableViewStyleGroupedEtched:
-            sectionCornerRadius = SECTION_CORNER_RADIUS_GROUPED_ETCHED;
             sectionBackground = SECTION_BACKGROUND_GROUPED_ETCHED;
             sectionStroke = SECTION_STROKE_GROUPED_ETCHED;
             self.backgroundColor = [ORNTableViewColor groupedEtchedBackgroundColor];
@@ -161,7 +159,6 @@
             break;
         case ORNTableViewStyleCard:
             tableLayout = TABLE_LAYOUT_CARD;
-            sectionCornerRadius = SECTION_CORNER_RADIUS_CARD;
             self.superview.backgroundColor = [ORNTableViewColor cardBackgroundColor];
             self.separatorColor = [ORNTableViewColor cardCellSeparatorColor];
             [self ornament:SECTION_LAYOUT_CARD withOptions:ORNOrnamentTableViewScopeSection];
@@ -171,7 +168,6 @@
             tableLayout = TABLE_LAYOUT_METAL;
             sectionBackground = SECTION_BACKGROUND_METAL;
             sectionStroke = SECTION_STROKE_METAL;
-            sectionCornerRadius = SECTION_CORNER_RADIUS_METAL;
             cellBackgroundHighlighted = CELL_BACKGROUND_HIGHLIGHTED_METAL;
             cellBorderHighlighted = CELL_BORDER_HIGHLIGHTED_METAL;
             cellShadeHighlighted = CELL_SHADE_HIGHLIGHTED_METAL;
