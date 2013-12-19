@@ -15,6 +15,7 @@
 		172E8330177F5C4900D25532 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 172E832E177F5C4900D25532 /* InfoPlist.strings */; };
 		172E8332177F5C4900D25532 /* OrnamentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 172E8331177F5C4900D25532 /* OrnamentTests.m */; };
 		2F259CE4A2964631A8271726 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E6971354147143AFBDEEB707 /* libPods.a */; };
+		45A1B8F81862A1F4005EFF49 /* ORNNavigationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45A1B8F71862A1F4005EFF49 /* ORNNavigationController.xib */; };
 		45B223951782072200CE5827 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B223941782072200CE5827 /* QuartzCore.framework */; };
 		45E93499184EBF2D00CBF9F6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E93497184EBF2D00CBF9F6 /* main.m */; };
 		45E9349B184EBFEE00CBF9F6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45E9349A184EBFEE00CBF9F6 /* Images.xcassets */; };
@@ -76,6 +77,7 @@
 		172E832F177F5C4900D25532 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		172E8331177F5C4900D25532 /* OrnamentTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrnamentTests.m; sourceTree = "<group>"; };
 		2B916954D4384BD99E73178F /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		45A1B8F71862A1F4005EFF49 /* ORNNavigationController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ORNNavigationController.xib; sourceTree = "<group>"; };
 		45B223941782072200CE5827 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		45E93495184EBF2D00CBF9F6 /* Example-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Example-Info.plist"; path = "Example/Example-Info.plist"; sourceTree = SOURCE_ROOT; };
 		45E93496184EBF2D00CBF9F6 /* Example-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Example-Prefix.pch"; path = "Example/Example-Prefix.pch"; sourceTree = SOURCE_ROOT; };
@@ -322,6 +324,7 @@
 			children = (
 				45F74099185437AF00478D29 /* ORNNavigationController.h */,
 				45F7409A185437AF00478D29 /* ORNNavigationController.m */,
+				45A1B8F71862A1F4005EFF49 /* ORNNavigationController.xib */,
 				45F7409B185437AF00478D29 /* ORNTableViewController.h */,
 				45F7409C185437AF00478D29 /* ORNTableViewController.m */,
 			);
@@ -495,6 +498,7 @@
 				45F740891854302F00478D29 /* icn_chevron_selected@2x.png in Resources */,
 				45F740BE185438C700478D29 /* ORNTableViewCellCollectionDark.xib in Resources */,
 				45E9349B184EBFEE00CBF9F6 /* Images.xcassets in Resources */,
+				45A1B8F81862A1F4005EFF49 /* ORNNavigationController.xib in Resources */,
 				45F7408A1854302F00478D29 /* icn_chevron.png in Resources */,
 				45F740881854302F00478D29 /* icn_chevron_selected.png in Resources */,
 				45F740841854302F00478D29 /* bg_linen.png in Resources */,

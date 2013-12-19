@@ -90,7 +90,13 @@
     }
     [[UIApplication sharedApplication] orn_setStatusBarStyle:statusBarStyle];
 
-    self.titleTextAttributes = @{UITextAttributeFont: TITLE_FONT, UITextAttributeTextColor: TITLE_TEXT_COLOR, UITextAttributeTextShadowColor: TITLE_TEXT_SHADOW_COLOR, UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:TITLE_TEXT_SHADOW_OFFSET]};
+    NSDictionary *appearanceAttributes = [UINavigationBar appearance].titleTextAttributes;
+    UIFont *titleFont = appearanceAttributes[UITextAttributeFont] ?: TITLE_FONT;
+    UIColor *titleTextColor = appearanceAttributes[UITextAttributeTextColor] ?: TITLE_TEXT_COLOR;
+    UIColor *titleTextShadowColor = appearanceAttributes[UITextAttributeTextShadowColor] ?: TITLE_TEXT_SHADOW_COLOR;
+    NSValue *titleTextShadowOffset = appearanceAttributes[UITextAttributeTextShadowOffset] ?: [NSValue valueWithUIOffset:TITLE_TEXT_SHADOW_OFFSET];
+    self.titleTextAttributes = @{UITextAttributeFont: titleFont, UITextAttributeTextColor: titleTextColor, UITextAttributeTextShadowColor: titleTextShadowColor, UITextAttributeTextShadowOffset: titleTextShadowOffset};
+
     [self setTitleVerticalPositionAdjustment:TITLE_ADJUSTMENT forBarMetrics:UIBarMetricsDefault];
     [self.ornamentationLayer removeFromSuperlayer];
     [self.layer insertSublayer:self.ornamentationLayer atIndex:0];

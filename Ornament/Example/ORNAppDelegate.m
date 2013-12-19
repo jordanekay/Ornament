@@ -12,6 +12,7 @@
 #import "ORNNavigationController.h"
 #import "UIApplication+ORNStatusBar.h"
 #import "UIColor+ORNAdditions.h"
+#import "UIDevice+ORNVersion.h"
 
 @implementation ORNAppDelegate
 
@@ -22,11 +23,23 @@
     [ORNAppearance setupAppearance];
     
     [application orn_setStatusBarStyle:ORNStatusBarStyleDefault];
-    ORNDemoTableViewController *tableViewController = [[ORNDemoTableViewController alloc] initWithTableViewStyle:ORNTableViewStyleGroupedEtched];
-    ORNNavigationController *navigationController = [[ORNNavigationController alloc] initWithRootViewController:tableViewController navigationBarStyle:ORNNavigationBarStyleBlueSimple];
+    ORNDemoTableViewController *tableViewController = [[ORNDemoTableViewController alloc] initWithTableViewStyle:ORNTableViewStyleGrouped];
+    ORNNavigationController *navigationController = [[ORNNavigationController alloc] initWithRootViewController:tableViewController];
     self.window.rootViewController = navigationController;
     [application orn_setStatusBarHidden:NO];
-    
+
+    CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
+    if ([UIDevice orn_isIOS7]) {
+        CGRect frame = navigationController.view.frame;
+        frame.origin.y += statusBarHeight;
+        frame.size.height -= statusBarHeight;
+        navigationController.view.frame = frame;
+    } else {
+        CGRect frame = navigationController.navigationBar.frame;
+        frame.size.height += statusBarHeight;
+        navigationController.navigationBar.frame = frame;
+    }
+
     return YES;
 }
 

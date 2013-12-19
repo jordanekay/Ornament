@@ -8,10 +8,15 @@
 
 #import "ORNNavigationBar.h"
 
-@interface ORNNavigationController : UINavigationController
+@interface ORNNavigationController : UIViewController
 
+- (instancetype)initWithRootViewController:(UIViewController *)rootViewController;
 - (instancetype)initWithRootViewController:(UIViewController *)rootViewController navigationBarStyle:(ORNNavigationBarStyle)style;
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated;
+- (UIViewController *)popViewControllerAnimated:(BOOL)animated;
 
 @property (nonatomic) ORNNavigationBarStyle navigationBarStyle;
+@property (nonatomic) IBOutlet ORNNavigationBar *navigationBar;
+@property (nonatomic, copy, readonly) NSArray *viewControllers;
 
 @end
