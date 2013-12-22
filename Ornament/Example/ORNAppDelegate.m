@@ -34,10 +34,6 @@
         frame.origin.y += statusBarHeight;
         frame.size.height -= statusBarHeight;
         navigationController.view.frame = frame;
-    } else {
-        CGRect frame = navigationController.navigationBar.frame;
-        frame.size.height += statusBarHeight;
-        navigationController.navigationBar.frame = frame;
     }
 
     return YES;

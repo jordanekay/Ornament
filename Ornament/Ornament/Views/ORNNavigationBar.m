@@ -14,6 +14,7 @@
 #import "UIColor+ORNAdditions.h"
 #import "UIDevice+ORNVersion.h"
 #import "UIFont+ORNSystem.h"
+#import "UIImage+ORNAdditions.h"
 
 #define TITLE_FONT [UIFont orn_boldSystemFontOfSize:20.0f]
 #define TITLE_TEXT_COLOR [UIColor whiteColor]
@@ -32,6 +33,8 @@
 #define STATUS_BAR_COLOR [UIColor colorWithWhite:0.0f alpha:0.4f]
 #define GRADIENT_LOCATIONS @[@0.0f, @0.02f, @0.5f, @0.5f, @0.98f, @1.0f]
 #define GRADIENT_LOCATIONS_SIMPLE @[@0.0f, @0.05f, @0.98f, @1.0f]
+
+#define BAR_BUTTON_CONTENT_INSETS UIEdgeInsetsMake(0.0f, 8.0f, 0.0f, 8.0f)
 
 @interface ORNNavigationBar ()
 
@@ -61,17 +64,7 @@
     return (self.ornamentationStyle == ORNNavigationBarStyleBlackTranslucent);
 }
 
-#pragma mark - UIView
-
-- (void)layoutSubviews
-{
-    [super layoutSubviews];
-    self.ornamentationLayer.frame = self.layer.bounds;
-}
-
-#pragma mark - ORNOrnamentable
-
-- (void)ornament
+- (void)_setupStatusBar
 {
     if ([UIDevice orn_isIOS7]) {
         self.barStyle = (self.isBlackStyle) ? UIBarStyleBlack : UIBarStyleDefault;
@@ -89,14 +82,20 @@
         statusBarStyle = ([UIDevice orn_isIOS7]) ? ORNStatusBarStyleDefault : ORNStatusBarStyleLightContent;
     }
     [[UIApplication sharedApplication] orn_setStatusBarStyle:statusBarStyle];
+}
 
+- (void)_setupTitleLabel
+{
     NSDictionary *appearanceAttributes = [UINavigationBar appearance].titleTextAttributes;
     UIFont *titleFont = appearanceAttributes[UITextAttributeFont] ?: TITLE_FONT;
     UIColor *titleTextColor = appearanceAttributes[UITextAttributeTextColor] ?: TITLE_TEXT_COLOR;
     UIColor *titleTextShadowColor = appearanceAttributes[UITextAttributeTextShadowColor] ?: TITLE_TEXT_SHADOW_COLOR;
     NSValue *titleTextShadowOffset = appearanceAttributes[UITextAttributeTextShadowOffset] ?: [NSValue valueWithUIOffset:TITLE_TEXT_SHADOW_OFFSET];
     self.titleTextAttributes = @{UITextAttributeFont: titleFont, UITextAttributeTextColor: titleTextColor, UITextAttributeTextShadowColor: titleTextShadowColor, UITextAttributeTextShadowOffset: titleTextShadowOffset};
+}
 
+- (void)_setupBackground
+{
     [self setTitleVerticalPositionAdjustment:TITLE_ADJUSTMENT forBarMetrics:UIBarMetricsDefault];
     [self.ornamentationLayer removeFromSuperlayer];
     [self.layer insertSublayer:self.ornamentationLayer atIndex:0];
@@ -108,6 +107,62 @@
         self.ornamentationLayer.locations = GRADIENT_LOCATIONS;
         [self.ornamentationLayer colorInView:self withOptions:ORNOrnamentTypeTint | ORNOrnamentTypeBorder, ORNOrnamentTypeTint | ORNOrnamentTypeBackground, ORNOrnamentTypeTint | ORNOrnamentTypeShade, ORNOrnamentTypeBackground, ORNOrnamentTypeBackground | ORNOrnamentTypeShade, ORNOrnamentTypeBorder, nil];
     }
+}
+
+- (void)_setupBarButtons
+{
+    NSMutableString *backgroundImageName = [NSMutableString stringWithString:@"bg_bar_button"];
+    if (self.isBlackStyle) {
+        [backgroundImageName appendString:@"_black"];
+        if (self.isTranslucentStyle) {
+            [backgroundImageName appendString:@"_translucent"];
+        }
+    } else {
+        [backgroundImageName appendString:@"_blue"];
+    }
+    NSString *backgroundImageNameSelected = [backgroundImageName stringByAppendingString:@"_selected"];
+
+    UIImage *barButtonBackgroundImage = [[UIImage imageNamed:backgroundImageName] orn_buttonBackgroundImage];
+    UIImage *barButtonBackgroundImageHighlighted = [[UIImage imageNamed:backgroundImageNameSelected] orn_buttonBackgroundImage];
+
+    for (UIButton *button in @[self.leftBarButton, self.rightBarButton]) {
+        [button setBackgroundImage:barButtonBackgroundImage forState:UIControlStateNormal];
+        [button setBackgroundImage:barButtonBackgroundImageHighlighted forState:UIControlStateHighlighted];
+        [button setContentEdgeInsets:BAR_BUTTON_CONTENT_INSETS];
+    }
+}
+
+#pragma mark - UIView
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    self.ornamentationLayer.frame = self.layer.bounds;
+}
+
+#pragma mark - UINavigationBar
+
+- (void)pushNavigationItem:(UINavigationItem *)item animated:(BOOL)animated
+{
+    [super pushNavigationItem:item animated:animated];
+    self.item = item;
+}
+
+- (UINavigationItem *)popNavigationItemAnimated:(BOOL)animated
+{
+    UINavigationItem *poppedItem = [super popNavigationItemAnimated:animated];
+    self.item = self.topItem;
+    return poppedItem;
+}
+
+#pragma mark - ORNOrnamentable
+
+- (void)ornament
+{
+    [self _setupStatusBar];
+    [self _setupTitleLabel];
+    [self _setupBackground];
+    [self _setupBarButtons];
 }
 
 - (ORNGradientLayer *)ornamentationLayer

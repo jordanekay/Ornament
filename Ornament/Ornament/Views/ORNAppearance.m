@@ -20,9 +20,6 @@
 
 + (void)setupAppearance
 {
-    NSDictionary *attributes = @{UITextAttributeFont: TITLE_FONT, UITextAttributeTextColor: TITLE_TEXT_COLOR, UITextAttributeTextShadowColor: TITLE_TEXT_SHADOW_COLOR, UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:TITLE_TEXT_SHADOW_OFFSET]};
-    [[UIBarButtonItem appearance] setTitleTextAttributes:attributes forState:UIControlStateNormal];
-
     [[ORNSwitch appearance] setTrackImage:[UIImage imageNamed:@"round-switch-track"]];
     [[ORNSwitch appearance] setOverlayImage:[UIImage imageNamed:@"round-switch-overlay"]];
     [[ORNSwitch appearance] setTrackMaskImage:[UIImage imageNamed:@"round-switch-mask"]];

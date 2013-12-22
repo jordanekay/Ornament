@@ -17,6 +17,7 @@
 
 @property (nonatomic) ORNNavigationBarStyle navigationBarStyle;
 @property (nonatomic) IBOutlet ORNNavigationBar *navigationBar;
+@property (nonatomic, readonly) UIViewController *visibleViewController;
 @property (nonatomic, copy, readonly) NSArray *viewControllers;
 
 @end

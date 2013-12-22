@@ -17,4 +17,8 @@ typedef NS_ENUM(NSUInteger, ORNNavigationBarStyle) {
 
 @interface ORNNavigationBar : UINavigationBar <ORNOrnamentable>
 
+@property (nonatomic) UINavigationItem *item;
+@property (nonatomic) IBOutlet UIButton *leftBarButton;
+@property (nonatomic) IBOutlet UIButton *rightBarButton;
+
 @end

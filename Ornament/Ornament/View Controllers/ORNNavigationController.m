@@ -6,8 +6,10 @@
 //  Copyright (c) 2013 Jordan Kay. All rights reserved.
 //
 
+#import <objc/runtime.h>
 #import "ORNNavigationBar.h"
 #import "ORNNavigationController.h"
+#import "ORNSwizzle.h"
 #import "UIDevice+ORNVersion.h"
 
 #define ANIMATION_DURATION .35
@@ -18,8 +20,23 @@
 
 @end
 
+@interface ORNNavigationItem : UINavigationItem
+
+@property (nonatomic, weak) ORNNavigationBar *navigationBar;
+
+@end
+
+@interface UIViewController (ORNNavigationController)
+
+- (void)orn_setNavigationController:(ORNNavigationController *)navigationController;
+- (ORNNavigationController *)orn_navigationController;
+- (UINavigationItem *)orn_navigationItem;
+
+@end
+
 @implementation ORNNavigationController
 {
+    UIView *_viewToPush;
     ORNNavigationBarStyle _navigationBarStyle;
 }
 
@@ -42,10 +59,15 @@
 {
     UIViewController *lastViewController = [self.viewControllers lastObject];
     self.viewControllers = [self.viewControllers arrayByAddingObject:viewController];
-    [self _replaceViewController:lastViewController withViewController:viewController animated:animated];
 
-    UINavigationItem *item = [[UINavigationItem alloc] initWithTitle:viewController.title];
+    _viewToPush = self.view;
+    ORNNavigationItem *item = [[ORNNavigationItem alloc] initWithTitle:viewController.title];
+    item.navigationBar = self.navigationBar;
+    [viewController orn_setNavigationController:self];
+
+    [self _replaceViewController:lastViewController withViewController:viewController animated:animated];
     [self.navigationBar pushNavigationItem:item animated:animated];
+    _viewToPush = nil;
 }
 
 - (UIViewController *)popViewControllerAnimated:(BOOL)animated
@@ -68,13 +90,10 @@
     return self.navigationBar.ornamentationStyle;
 }
 
-//- (void)setViewControllers:(NSArray *)viewControllers
-//{
-//    if (_viewControllers != viewControllers) {
-//        _viewControllers = [viewControllers copy];
-//        NSLog(@"%@", [[viewControllers lastObject] title]);
-//    }
-//}
+- (UIViewController *)visibleViewController
+{
+    return [self.viewControllers lastObject];
+}
 
 - (void)_replaceViewController:(UIViewController *)lastViewController withViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
@@ -113,6 +132,15 @@
     }
 }
 
+#pragma mark - NSObject
+
++ (void)initialize
+{
+    if (self == [ORNNavigationController class]) {
+        ORNSwizzle([UIViewController class], @selector(navigationItem), @selector(orn_navigationItem));
+    }
+}
+
 #pragma mark - UIViewController
 
 - (void)viewDidLoad
@@ -121,9 +149,88 @@
     self.navigationBarStyle = _navigationBarStyle;
 }
 
-//- (BOOL)shouldAutorotate
-//{
-////    return [self.visibleViewController shouldAutorotate];
-//}
+- (BOOL)shouldAutorotate
+{
+    return [self.visibleViewController shouldAutorotate];
+}
+
+@end
+
+@implementation ORNNavigationItem
+{
+    NSMutableDictionary *_barButtonActions;
+}
+
+@synthesize navigationBar = navigationBar_;
+
+- (void)setNavigationBar:(ORNNavigationBar *)navigationBar
+{
+    navigationBar_ = navigationBar;
+    navigationBar.item = self;
+}
+
+- (void)_barButtonAction:(UIButton *)sender
+{
+    [_barButtonActions[@(sender.hash)] invoke];
+}
+
+#pragma mark - UINavigationItem
+
+- (instancetype)initWithTitle:(NSString *)title
+{
+    if (self = [super initWithTitle:title]) {
+        _barButtonActions = [NSMutableDictionary dictionary];
+    }
+    return self;
+}
+
+- (void)setLeftBarButtonItem:(UIBarButtonItem *)buttonItem
+{
+    [self _setBarButton:self.navigationBar.leftBarButton forBarButtonItem:buttonItem];
+}
+
+- (void)setRightBarButtonItem:(UIBarButtonItem *)buttonItem
+{
+    [self _setBarButton:self.navigationBar.rightBarButton forBarButtonItem:buttonItem];
+}
+
+- (void)_setBarButton:(UIButton *)button forBarButtonItem:(UIBarButtonItem *)item
+{
+    if (item) {
+        [button setTitle:item.title forState:UIControlStateNormal];
+        button.hidden = NO;
+    } else {
+        [button setTitle:nil forState:UIControlStateNormal];
+        button.hidden = YES;
+    }
+
+    NSMethodSignature *signature = [[item.target class] instanceMethodSignatureForSelector:item.action];
+    NSInvocation *action = [NSInvocation invocationWithMethodSignature:signature];
+    action.target = item.target;
+    action.selector = item.action;
+    _barButtonActions[@(button.hash)] = action;
+
+    [button removeTarget:self action:@selector(_barButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(_barButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+@end
+
+@implementation UIViewController (ORNNavigationController)
+
+- (void)orn_setNavigationController:(ORNNavigationController *)navigationController
+{
+    objc_setAssociatedObject(self, @selector(orn_navigationController), navigationController, OBJC_ASSOCIATION_ASSIGN);
+}
+
+- (ORNNavigationController *)orn_navigationController
+{
+    return objc_getAssociatedObject(self, @selector(orn_navigationController));
+}
+
+- (UINavigationItem *)orn_navigationItem
+{
+    return [self orn_navigationController] ? [self orn_navigationController].navigationBar.item : [self orn_navigationItem];
+}
 
 @end
