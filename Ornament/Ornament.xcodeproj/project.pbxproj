@@ -107,12 +107,12 @@
 		4578EC8818665EB10053BF8E /* bg_bar_button_blue_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg_bar_button_blue_selected.png; path = Assets/bg_bar_button_blue_selected.png; sourceTree = "<group>"; };
 		4578EC8918665EB10053BF8E /* bg_bar_button_blue_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg_bar_button_blue_selected@2x.png"; path = "Assets/bg_bar_button_blue_selected@2x.png"; sourceTree = "<group>"; };
 		4578EC96186665720053BF8E /* ORNNavigationController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ORNNavigationController.xib; path = "View Controllers/ORNNavigationController.xib"; sourceTree = "<group>"; };
+		458DE020186A1C9000859047 /* UIApplication+ORNStatusBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIApplication+ORNStatusBar.h"; path = "Application/UIApplication+ORNStatusBar.h"; sourceTree = "<group>"; };
 		45B223941782072200CE5827 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		45E93495184EBF2D00CBF9F6 /* Example-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Example-Info.plist"; path = "Example/Example-Info.plist"; sourceTree = SOURCE_ROOT; };
 		45E93496184EBF2D00CBF9F6 /* Example-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Example-Prefix.pch"; path = "Example/Example-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		45E93497184EBF2D00CBF9F6 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Example/main.m; sourceTree = SOURCE_ROOT; };
 		45E9349A184EBFEE00CBF9F6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Example/Images.xcassets; sourceTree = SOURCE_ROOT; };
-		45F740791854301600478D29 /* UIApplication+ORNStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIApplication+ORNStatusBar.h"; path = "Application/UIApplication+ORNStatusBar.h"; sourceTree = "<group>"; };
 		45F7407A1854301600478D29 /* UIApplication+ORNStatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+ORNStatusBar.m"; path = "Application/UIApplication+ORNStatusBar.m"; sourceTree = "<group>"; };
 		45F7407C1854302F00478D29 /* bg_linen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg_linen.png; path = Assets/bg_linen.png; sourceTree = "<group>"; };
 		45F7407D1854302F00478D29 /* bg_linen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg_linen@2x.png"; path = "Assets/bg_linen@2x.png"; sourceTree = "<group>"; };
@@ -392,7 +392,7 @@
 		17CFB488182561FE00A63485 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				45F740791854301600478D29 /* UIApplication+ORNStatusBar.h */,
+				458DE020186A1C9000859047 /* UIApplication+ORNStatusBar.h */,
 				45F7407A1854301600478D29 /* UIApplication+ORNStatusBar.m */,
 			);
 			name = Application;

@@ -47,6 +47,11 @@ static ORNStatusBar *statusBar;
     statusBar.ornamentationStyle = style;
     [statusBar ornament];
     [self.keyWindow addSubview:statusBar];
+
+    if ([UIDevice orn_isIOS7]) {
+        UIStatusBarStyle statusBarStyle = (style == ORNStatusBarStyleDefault ? UIStatusBarStyleDefault : UIStatusBarStyleLightContent);
+        [UIApplication sharedApplication].statusBarStyle = statusBarStyle;
+    }
 }
 
 - (void)orn_setStatusBarHidden:(BOOL)hidden
