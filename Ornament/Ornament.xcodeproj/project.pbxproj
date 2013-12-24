@@ -107,6 +107,9 @@
 		4578EC8818665EB10053BF8E /* bg_bar_button_blue_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg_bar_button_blue_selected.png; path = Assets/bg_bar_button_blue_selected.png; sourceTree = "<group>"; };
 		4578EC8918665EB10053BF8E /* bg_bar_button_blue_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg_bar_button_blue_selected@2x.png"; path = "Assets/bg_bar_button_blue_selected@2x.png"; sourceTree = "<group>"; };
 		4578EC96186665720053BF8E /* ORNNavigationController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ORNNavigationController.xib; path = "View Controllers/ORNNavigationController.xib"; sourceTree = "<group>"; };
+		4578EC9D18667DBA0053BF8E /* ORNPropertyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNPropertyViewController.h; path = "View Controllers/ORNPropertyViewController.h"; sourceTree = "<group>"; };
+		4578EC9E18667DBA0053BF8E /* ORNPropertyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORNPropertyViewController.m; path = "View Controllers/ORNPropertyViewController.m"; sourceTree = "<group>"; };
+		4578ECA018667DD10053BF8E /* ORNPropertyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ORNPropertyViewController.xib; path = "View Controllers/ORNPropertyViewController.xib"; sourceTree = "<group>"; };
 		458DE020186A1C9000859047 /* UIApplication+ORNStatusBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIApplication+ORNStatusBar.h"; path = "Application/UIApplication+ORNStatusBar.h"; sourceTree = "<group>"; };
 		45B223941782072200CE5827 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		45E93495184EBF2D00CBF9F6 /* Example-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Example-Info.plist"; path = "Example/Example-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -358,6 +361,9 @@
 				4578EC96186665720053BF8E /* ORNNavigationController.xib */,
 				45F7409B185437AF00478D29 /* ORNTableViewController.h */,
 				45F7409C185437AF00478D29 /* ORNTableViewController.m */,
+				4578EC9D18667DBA0053BF8E /* ORNPropertyViewController.h */,
+				4578EC9E18667DBA0053BF8E /* ORNPropertyViewController.m */,
+				4578ECA018667DD10053BF8E /* ORNPropertyViewController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -546,6 +552,7 @@
 				4578EC9218665EB10053BF8E /* bg_bar_button_blue.png in Resources */,
 				45E9349B184EBFEE00CBF9F6 /* Images.xcassets in Resources */,
 				4578EC9018665EB10053BF8E /* bg_bar_button_black_translucent_selected.png in Resources */,
+				4578ECA118667DD10053BF8E /* ORNPropertyViewController.xib in Resources */,
 				4578EC9318665EB10053BF8E /* bg_bar_button_blue@2x.png in Resources */,
 				45F7408A1854302F00478D29 /* icn_chevron.png in Resources */,
 				45F740881854302F00478D29 /* icn_chevron_selected.png in Resources */,
@@ -638,6 +645,7 @@
 				45F740BB185438C700478D29 /* ORNTableView.m in Sources */,
 				45F740BA185438C700478D29 /* ORNTableHeaderView.m in Sources */,
 				45F740DF1854391200478D29 /* ORNShadow.m in Sources */,
+				4578EC9F18667DBA0053BF8E /* ORNPropertyViewController.m in Sources */,
 				45E93499184EBF2D00CBF9F6 /* main.m in Sources */,
 				45F740DC1854391200478D29 /* ORNLine.m in Sources */,
 				45F740E01854391200478D29 /* ORNShadowLayer.m in Sources */,
