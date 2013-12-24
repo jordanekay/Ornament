@@ -12,36 +12,6 @@
 
 @synthesize ornamentationStyle = _ornamentationStyle;
 
-- (void)_valueChanged
-{
-    if (self.containingCellIndexPath && [self.delegate respondsToSelector:@selector(switch:didSetOn:forIndexPath:)]) {
-        [self.delegate switch:self didSetOn:self.isOn forIndexPath:self.containingCellIndexPath];
-    }
-}
-
-#pragma mark - UIView
-
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    if (self = [super initWithFrame:frame]) {
-        [self addTarget:self action:@selector(_valueChanged) forControlEvents:UIControlEventValueChanged];
-    }
-    
-    return self;
-}
-
-#pragma mark - ORNBoolean
-
-- (void)setValue:(BOOL)value
-{
-    self.on = value;
-}
-
-- (BOOL)value
-{
-    return self.isOn;
-}
-
 #pragma mark - ORNOrnamentable
 
 - (void)ornament
