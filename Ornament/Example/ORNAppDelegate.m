@@ -16,25 +16,31 @@
 
 @implementation ORNAppDelegate
 
+- (void)_replaceTableViewController:(NSNotification *)notification
+{
+    ORNTableViewStyle style = [notification.userInfo[ORNDemoTableViewControllerTableViewStyle] unsignedIntegerValue];
+    ORNDemoTableViewController *tableViewController = [[ORNDemoTableViewController alloc] initWithTableViewStyle:style];
+    ORNNavigationController *navigationController =  (ORNNavigationController *)self.window.rootViewController;
+    navigationController.visibleViewController = tableViewController;
+
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:ORNDemoTableViewControllerTableViewStyle object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_replaceTableViewController:) name:ORNDemoTableViewControllerShouldReplaceNotification object:tableViewController];
+}
+
+#pragma mark - UIApplicationDelegate
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
     [ORNAppearance setupAppearance];
-    
-    [application orn_setStatusBarStyle:ORNStatusBarStyleDefault];
+
     ORNDemoTableViewController *tableViewController = [[ORNDemoTableViewController alloc] initWithTableViewStyle:ORNTableViewStyleGrouped];
     ORNNavigationController *navigationController = [[ORNNavigationController alloc] initWithRootViewController:tableViewController];
     self.window.rootViewController = navigationController;
     [application orn_setStatusBarHidden:NO];
 
-    CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
-    if ([UIDevice orn_isIOS7]) {
-        CGRect frame = navigationController.view.frame;
-        frame.origin.y += statusBarHeight;
-        frame.size.height -= statusBarHeight;
-        navigationController.view.frame = frame;
-    }
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_replaceTableViewController:) name:ORNDemoTableViewControllerShouldReplaceNotification object:tableViewController];
 
     return YES;
 }
