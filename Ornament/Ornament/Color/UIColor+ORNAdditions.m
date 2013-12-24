@@ -93,7 +93,7 @@ ORN_CACHED_COLOR(orn_pinstripeColor, [UIColor orn_groupedTableViewBackgroundColo
 - (UIColor *)orn_linenColor
 {
     UIColor *color;
-    UIImage *image = [UIImage imageNamed:@"bg_linen1"];
+    UIImage *image = [UIImage imageNamed:@"bg_linen"];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
     UIView *overlayView = [[UIView alloc] initWithFrame:(CGRect){.size = image.size}];
     overlayView.backgroundColor = [UIColor colorWithWhite:1.0f alpha:0.5f];
@@ -103,7 +103,6 @@ ORN_CACHED_COLOR(orn_pinstripeColor, [UIColor orn_groupedTableViewBackgroundColo
     color = [UIColor colorWithPatternImage:UIGraphicsGetImageFromCurrentImageContext()];
     UIGraphicsEndImageContext();
     return color;
-//    return [UIColor orn_darkLinenColor];
 }
 
 - (UIColor *)orn_colorWithNoise:(CGFloat)noise
