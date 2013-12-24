@@ -56,9 +56,6 @@
 		45F740BA185438C700478D29 /* ORNTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740AB185438C700478D29 /* ORNTableHeaderView.m */; };
 		45F740BB185438C700478D29 /* ORNTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740AD185438C700478D29 /* ORNTableView.m */; };
 		45F740BC185438C700478D29 /* ORNTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740AF185438C700478D29 /* ORNTableViewCell.m */; };
-		45F740BD185438C700478D29 /* ORNTableViewCellCollection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45F740B0185438C700478D29 /* ORNTableViewCellCollection.xib */; };
-		45F740BE185438C700478D29 /* ORNTableViewCellCollectionDark.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45F740B1185438C700478D29 /* ORNTableViewCellCollectionDark.xib */; };
-		45F740BF185438C700478D29 /* ORNTableViewCellContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740B3185438C700478D29 /* ORNTableViewCellContainerView.m */; };
 		45F740C0185438C700478D29 /* ORNTableViewColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740B5185438C700478D29 /* ORNTableViewColor.m */; };
 		45F740C5185438E700478D29 /* ORNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740C2185438E700478D29 /* ORNAppDelegate.m */; };
 		45F740C6185438E700478D29 /* ORNDemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740C4185438E700478D29 /* ORNDemoTableViewController.m */; };
@@ -133,7 +130,6 @@
 		45F740931854309400478D29 /* UIDevice+ORNVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+ORNVersion.m"; path = "Device/UIDevice+ORNVersion.m"; sourceTree = "<group>"; };
 		45F74095185430AB00478D29 /* UIFont+ORNSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+ORNSystem.h"; path = "Font/UIFont+ORNSystem.h"; sourceTree = "<group>"; };
 		45F74096185430AB00478D29 /* UIFont+ORNSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+ORNSystem.m"; path = "Font/UIFont+ORNSystem.m"; sourceTree = "<group>"; };
-		45F74098185430C800478D29 /* ORNBoolean.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ORNBoolean.h; path = Models/ORNBoolean.h; sourceTree = "<group>"; };
 		45F74099185437AF00478D29 /* ORNNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNNavigationController.h; path = "View Controllers/ORNNavigationController.h"; sourceTree = "<group>"; };
 		45F7409A185437AF00478D29 /* ORNNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORNNavigationController.m; path = "View Controllers/ORNNavigationController.m"; sourceTree = "<group>"; };
 		45F7409B185437AF00478D29 /* ORNTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNTableViewController.h; path = "View Controllers/ORNTableViewController.h"; sourceTree = "<group>"; };
@@ -153,10 +149,6 @@
 		45F740AD185438C700478D29 /* ORNTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORNTableView.m; path = Views/ORNTableView.m; sourceTree = "<group>"; };
 		45F740AE185438C700478D29 /* ORNTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNTableViewCell.h; path = Views/ORNTableViewCell.h; sourceTree = "<group>"; };
 		45F740AF185438C700478D29 /* ORNTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORNTableViewCell.m; path = Views/ORNTableViewCell.m; sourceTree = "<group>"; };
-		45F740B0185438C700478D29 /* ORNTableViewCellCollection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ORNTableViewCellCollection.xib; path = Views/ORNTableViewCellCollection.xib; sourceTree = "<group>"; };
-		45F740B1185438C700478D29 /* ORNTableViewCellCollectionDark.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ORNTableViewCellCollectionDark.xib; path = Views/ORNTableViewCellCollectionDark.xib; sourceTree = "<group>"; };
-		45F740B2185438C700478D29 /* ORNTableViewCellContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNTableViewCellContainerView.h; path = Views/ORNTableViewCellContainerView.h; sourceTree = "<group>"; };
-		45F740B3185438C700478D29 /* ORNTableViewCellContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORNTableViewCellContainerView.m; path = Views/ORNTableViewCellContainerView.m; sourceTree = "<group>"; };
 		45F740B4185438C700478D29 /* ORNTableViewColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNTableViewColor.h; path = Views/ORNTableViewColor.h; sourceTree = "<group>"; };
 		45F740B5185438C700478D29 /* ORNTableViewColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORNTableViewColor.m; path = Views/ORNTableViewColor.m; sourceTree = "<group>"; };
 		45F740B6185438C700478D29 /* ORNTableViewConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNTableViewConstants.h; path = Views/ORNTableViewConstants.h; sourceTree = "<group>"; };
@@ -339,10 +331,6 @@
 				45F740AD185438C700478D29 /* ORNTableView.m */,
 				45F740AE185438C700478D29 /* ORNTableViewCell.h */,
 				45F740AF185438C700478D29 /* ORNTableViewCell.m */,
-				45F740B0185438C700478D29 /* ORNTableViewCellCollection.xib */,
-				45F740B1185438C700478D29 /* ORNTableViewCellCollectionDark.xib */,
-				45F740B2185438C700478D29 /* ORNTableViewCellContainerView.h */,
-				45F740B3185438C700478D29 /* ORNTableViewCellContainerView.m */,
 				45F740B4185438C700478D29 /* ORNTableViewColor.h */,
 				45F740B5185438C700478D29 /* ORNTableViewColor.m */,
 				45F740B6185438C700478D29 /* ORNTableViewConstants.h */,
@@ -407,7 +395,6 @@
 		17CFB4891825624500A63485 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				45F74098185430C800478D29 /* ORNBoolean.h */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -548,7 +535,6 @@
 				45F740891854302F00478D29 /* icn_chevron_selected@2x.png in Resources */,
 				4578EC8F18665EB10053BF8E /* bg_bar_button_black_translucent@2x.png in Resources */,
 				4578EC8B18665EB10053BF8E /* bg_bar_button_black@2x.png in Resources */,
-				45F740BE185438C700478D29 /* ORNTableViewCellCollectionDark.xib in Resources */,
 				4578EC9218665EB10053BF8E /* bg_bar_button_blue.png in Resources */,
 				45E9349B184EBFEE00CBF9F6 /* Images.xcassets in Resources */,
 				4578EC9018665EB10053BF8E /* bg_bar_button_black_translucent_selected.png in Resources */,
@@ -559,7 +545,6 @@
 				4578EC9418665EB10053BF8E /* bg_bar_button_blue_selected.png in Resources */,
 				45F740841854302F00478D29 /* bg_linen.png in Resources */,
 				4578EC8D18665EB10053BF8E /* bg_bar_button_black_selected@2x.png in Resources */,
-				45F740BD185438C700478D29 /* ORNTableViewCellCollection.xib in Resources */,
 				4578EC97186665720053BF8E /* ORNNavigationController.xib in Resources */,
 				45F740861854302F00478D29 /* icn_checkmark.png in Resources */,
 				4578EC9518665EB10053BF8E /* bg_bar_button_blue_selected@2x.png in Resources */,
@@ -622,7 +607,6 @@
 			files = (
 				45F740911854307200478D29 /* ORNSwitch.m in Sources */,
 				45F74097185430AB00478D29 /* UIFont+ORNSystem.m in Sources */,
-				45F740BF185438C700478D29 /* ORNTableViewCellContainerView.m in Sources */,
 				45F740DD1854391200478D29 /* ORNOrnament.m in Sources */,
 				45F740DB1854391200478D29 /* ORNLayout.m in Sources */,
 				45F740D91854391200478D29 /* ORNGradientLayer.m in Sources */,
