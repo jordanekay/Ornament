@@ -133,6 +133,14 @@
             lastViewController.view.frame = frame;
         }
     }
+
+    if (!viewController.wantsFullScreenLayout) {
+        CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
+        CGRect frame = viewController.view.frame;
+        frame.origin.y += statusBarHeight;
+        frame.size.height -= statusBarHeight;
+        viewController.view.frame = frame;
+    }
 }
 
 #pragma mark - NSObject

@@ -124,6 +124,11 @@ static NSMutableDictionary *footers;
     [self _layoutTableView];
 }
 
+- (BOOL)wantsFullScreenLayout
+{
+    return YES;
+}
+
 #pragma mark - UITableViewController
 
 - (UITableView *)tableView
