@@ -43,6 +43,8 @@
 		458DE038186A1CBD00859047 /* bg_switch_thumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 458DE02C186A1CBD00859047 /* bg_switch_thumb@2x.png */; };
 		458DE03B186A1CBD00859047 /* bg_switch_track.png in Resources */ = {isa = PBXBuildFile; fileRef = 458DE02F186A1CBD00859047 /* bg_switch_track.png */; };
 		458DE03C186A1CBD00859047 /* bg_switch_track@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 458DE030186A1CBD00859047 /* bg_switch_track@2x.png */; };
+		458DE042186A7E6100859047 /* ORNDemoMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 458DE040186A7E6100859047 /* ORNDemoMoreViewController.m */; };
+		458DE043186A7E6100859047 /* ORNDemoMoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 458DE041186A7E6100859047 /* ORNDemoMoreViewController.xib */; };
 		458DE050186A83BF00859047 /* bg_bar_button_done.png in Resources */ = {isa = PBXBuildFile; fileRef = 458DE04C186A83BF00859047 /* bg_bar_button_done.png */; };
 		458DE051186A83BF00859047 /* bg_bar_button_done@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 458DE04D186A83BF00859047 /* bg_bar_button_done@2x.png */; };
 		458DE052186A83BF00859047 /* bg_bar_button_done_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 458DE04E186A83BF00859047 /* bg_bar_button_done_pressed.png */; };
@@ -136,6 +138,9 @@
 		458DE02C186A1CBD00859047 /* bg_switch_thumb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg_switch_thumb@2x.png"; path = "Assets/bg_switch_thumb@2x.png"; sourceTree = "<group>"; };
 		458DE02F186A1CBD00859047 /* bg_switch_track.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg_switch_track.png; path = Assets/bg_switch_track.png; sourceTree = "<group>"; };
 		458DE030186A1CBD00859047 /* bg_switch_track@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg_switch_track@2x.png"; path = "Assets/bg_switch_track@2x.png"; sourceTree = "<group>"; };
+		458DE03F186A7E6100859047 /* ORNDemoMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNDemoMoreViewController.h; path = Example/ORNDemoMoreViewController.h; sourceTree = "<group>"; };
+		458DE040186A7E6100859047 /* ORNDemoMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORNDemoMoreViewController.m; path = Example/ORNDemoMoreViewController.m; sourceTree = "<group>"; };
+		458DE041186A7E6100859047 /* ORNDemoMoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ORNDemoMoreViewController.xib; path = Example/ORNDemoMoreViewController.xib; sourceTree = "<group>"; };
 		458DE04C186A83BF00859047 /* bg_bar_button_done.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg_bar_button_done.png; path = Assets/bg_bar_button_done.png; sourceTree = "<group>"; };
 		458DE04D186A83BF00859047 /* bg_bar_button_done@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg_bar_button_done@2x.png"; path = "Assets/bg_bar_button_done@2x.png"; sourceTree = "<group>"; };
 		458DE04E186A83BF00859047 /* bg_bar_button_done_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg_bar_button_done_pressed.png; path = Assets/bg_bar_button_done_pressed.png; sourceTree = "<group>"; };
@@ -493,6 +498,9 @@
 				45F740C2185438E700478D29 /* ORNAppDelegate.m */,
 				45F740C3185438E700478D29 /* ORNDemoTableViewController.h */,
 				45F740C4185438E700478D29 /* ORNDemoTableViewController.m */,
+				458DE03F186A7E6100859047 /* ORNDemoMoreViewController.h */,
+				458DE040186A7E6100859047 /* ORNDemoMoreViewController.m */,
+				458DE041186A7E6100859047 /* ORNDemoMoreViewController.xib */,
 				45E9349A184EBFEE00CBF9F6 /* Images.xcassets */,
 			);
 			name = Example;
@@ -592,6 +600,7 @@
 				4578EC8B18665EB10053BF8E /* bg_bar_button_black@2x.png in Resources */,
 				458DE036186A1CBD00859047 /* bg_switch_thumb_selected@2x.png in Resources */,
 				4578EC9218665EB10053BF8E /* bg_bar_button_blue.png in Resources */,
+				458DE043186A7E6100859047 /* ORNDemoMoreViewController.xib in Resources */,
 				458DE038186A1CBD00859047 /* bg_switch_thumb@2x.png in Resources */,
 				458DE053186A83BF00859047 /* bg_bar_button_done_pressed@2x.png in Resources */,
 				45E9349B184EBFEE00CBF9F6 /* Images.xcassets in Resources */,
@@ -684,6 +693,7 @@
 				45F7408E1854304E00478D29 /* UIColor+ORNAdditions.m in Sources */,
 				45F740DE1854391200478D29 /* ORNPath.m in Sources */,
 				4578EC7D18665BB60053BF8E /* UIImage+ORNAdditions.m in Sources */,
+				458DE042186A7E6100859047 /* ORNDemoMoreViewController.m in Sources */,
 				45F740BC185438C700478D29 /* ORNTableViewCell.m in Sources */,
 				45F7409D185437AF00478D29 /* ORNNavigationController.m in Sources */,
 				45F740B9185438C700478D29 /* ORNNavigationBar.m in Sources */,

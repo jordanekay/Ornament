@@ -10,7 +10,10 @@
 
 extern NSString *ORNDemoTableViewControllerShouldReplaceNotification;
 extern NSString *ORNDemoTableViewControllerTableViewStyle;
+extern NSString *ORNDemoTableViewControllerShouldShowMoreSection;
 
 @interface ORNDemoTableViewController : ORNTableViewController
+
+@property (nonatomic) BOOL shouldShowMoreSection;
 
 @end

@@ -9,6 +9,7 @@
 #import <libextobjc/EXTScope.h>
 #import <Mensa/MNSProperty.h>
 #import "NSArray+ORNFunctional.h"
+#import "ORNDemoMoreViewController.h"
 #import "ORNDemoTableViewController.h"
 #import "ORNNavigationController.h"
 #import "ORNPropertyViewController.h"
@@ -19,10 +20,10 @@
 #define RESET_LABEL @"Reset"
 #define STYLES_LABEL @"Styles"
 #define OPTIONS_LABEL @"Options"
-#define MORE_LABEL @"More"
 
 #define CURRENT_STYLE_LABEL @"Current Style"
 #define SHOW_MORE_SECTION_LABEL @"Show More Section"
+#define MORE_LABEL @"More"
 
 #define PLAIN_LABEL @"Plain"
 #define GROUPED_LABEL @"Grouped"
@@ -77,10 +78,16 @@ NSString *ORNDemoTableViewControllerShouldShowMoreSection = @"ORNDemoTableViewCo
 - (MNSProperty *)moreProperty
 {
     NSString *name = [MORE_LABEL stringByAppendingString:@"…"];
+
+    @weakify(self);
     MNSProperty *property = [[MNSProperty alloc] initWithName:name value:^{
-        NSLog(@"Hi");
+        @strongify(self);
+        ORNDemoMoreViewController *viewController = [[ORNDemoMoreViewController alloc] init];
+        ORNNavigationController *navigationController = [[ORNNavigationController alloc] initWithRootViewController:viewController];
+        [self presentViewController:navigationController animated:YES completion:nil];
     }];
     property.options |= MNSPropertyOptionHidesDisclosureForValue;
+
     return property;
 }
 
@@ -153,7 +160,7 @@ ORNNavigationBarStyle navigationBarStyleForTableViewStyle(ORNTableViewStyle styl
 {
     [super viewDidLoad];
 
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:RESET_LABEL style:UIBarButtonItemStyleBordered target:self action:@selector(_reset)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:RESET_LABEL style:UIBarButtonItemStyleBordered target:self action:@selector(_reset)];
 }
 
 - (NSString *)title
