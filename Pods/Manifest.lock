@@ -1,10 +1,14 @@
 PODS:
   - KGNoise (1.2.0)
+  - libextobjc/EXTScope (0.3):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/RuntimeExtensions (0.3)
   - Mensa (0.2.5)
   - TTSwitch (0.0.5)
 
 DEPENDENCIES:
   - KGNoise (from `https://github.com/jordanekay/KGNoise.git`)
+  - libextobjc/EXTScope
   - Mensa (from `https://github.com/jordanekay/Mensa.git`)
   - TTSwitch (from `https://github.com/jordanekay/TTSwitch.git`)
 
@@ -18,6 +22,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   KGNoise: b21f0a389b4b94589b76f331ad9083643a79d6e7
+  libextobjc: 820a79dbbbc498611e04fffd07d2d52a5588e7ac
   Mensa: 9343c142a518a10a5971882f7b9667b909eea207
   TTSwitch: 6f915da3c66d6c02c79a2761460b11143d6294fb
 
