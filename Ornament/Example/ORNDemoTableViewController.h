@@ -8,6 +8,9 @@
 
 #import "ORNTableViewController.h"
 
+extern NSString *ORNDemoTableViewControllerShouldReplaceNotification;
+extern NSString *ORNDemoTableViewControllerTableViewStyle;
+
 @interface ORNDemoTableViewController : ORNTableViewController
 
 @end

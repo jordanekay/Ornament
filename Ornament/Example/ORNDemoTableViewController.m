@@ -6,33 +6,137 @@
 //  Copyright (c) 2013 Jordan Kay. All rights reserved.
 //
 
+#import <Mensa/MNSProperty.h>
+#import "NSArray+ORNFunctional.h"
 #import "ORNDemoTableViewController.h"
 #import "ORNNavigationController.h"
+#import "ORNPropertyViewController.h"
 #import "ORNTableViewCell.h"
 #import "UIColor+ORNAdditions.h"
 
-enum {
-    ORNDemoTableViewSectionStyles,
-    ORNDemoTableViewSectionOptions,
-    ORNDemoTableViewSectionMore
-};
+#define TITLE_LABEL @"Ornament"
+#define RESET_LABEL @"Reset"
+#define STYLES_LABEL @"Styles"
+#define OPTIONS_LABEL @"Options"
+#define MORE_LABEL @"More"
 
-enum {
-    ORNDemoTableViewStatsCurrentStyle,
-    ORNDemoTableViewStatsSwitch
-};
+#define CURRENT_STYLE_LABEL @"Current Style"
+#define SHOW_MORE_SECTION_LABEL @"Show More Section"
+
+#define PLAIN_LABEL @"Plain"
+#define GROUPED_LABEL @"Grouped"
+#define GROUPED_ETCHED_LABEL @"Grouped Etched"
+#define CARD_LABEL @"Card"
+#define METAL_LABEL @"Metal"
+#define GROOVE_LABEL @"Groove"
+
+NSString *ORNDemoTableViewControllerShouldReplaceNotification = @"ORNDemoTableViewControllerShouldReplaceNotification";
+NSString *ORNDemoTableViewControllerTableViewStyle = @"ORNDemoTableViewControllerTableViewStyle";
+
+@interface ORNDemoTableViewController ()
+
+@property (nonatomic) NSArray *styles;
+@property (nonatomic) NSArray *options;
+@property (nonatomic) MNSProperty *moreProperty;
+@property (nonatomic, readonly) NSArray *styleNames;
+
+@end
 
 @implementation ORNDemoTableViewController
 {
     NSArray *_sections;
-    BOOL _isStatusBarOpaque;
+    BOOL _shouldShowMoreSection;
+}
+
+- (NSArray *)styles
+{
+    if (!_styles) {
+        _styles = [self.styleNames orn_mapWithBlock:^(NSString *name, NSUInteger idx) {
+            return [[MNSProperty alloc] initWithName:name value:(self.tableViewStyle == idx) ? @YES : @NO];
+        }];
+    }
+    return _styles;
+}
+
+- (NSArray *)options
+{
+    MNSProperty *currentStyleProperty = [[MNSProperty alloc] initWithName:CURRENT_STYLE_LABEL value:self.styleNames[self.tableViewStyle]];
+    MNSProperty *showMoreSectionProperty = [[MNSProperty alloc] initWithName:SHOW_MORE_SECTION_LABEL value:@NO];
+    showMoreSectionProperty.options |= MNSPropertyOptionAllowsUserInput;
+    showMoreSectionProperty.valueChangedBlock = ^(id value) {
+        NSLog(@"%@", value);
+    };
+    return @[currentStyleProperty, showMoreSectionProperty];
+}
+
+- (MNSProperty *)moreProperty
+{
+    NSString *name = [MORE_LABEL stringByAppendingString:@"…"];
+    MNSProperty *property = [[MNSProperty alloc] initWithName:name value:^{
+        NSLog(@"Hi");
+    }];
+    property.options |= MNSPropertyOptionHidesDisclosureForValue;
+    return property;
+}
+
+- (void)_switchTableViewStyle:(ORNTableViewStyle)style
+{
+    if (self.tableViewStyle != style) {
+        [self orn_navigationController].navigationBarStyle = navigationBarStyleForTableViewStyle(style);
+        NSDictionary *userInfo = @{ORNDemoTableViewControllerTableViewStyle: @(style)};
+        [[NSNotificationCenter defaultCenter] postNotificationName:ORNDemoTableViewControllerShouldReplaceNotification object:self userInfo:userInfo];
+    }
+}
+
+- (void)_reset
+{
+    [self _switchTableViewStyle:ORNTableViewStyleGrouped];
+}
+
+ORNNavigationBarStyle navigationBarStyleForTableViewStyle(ORNTableViewStyle style)
+{
+    ORNNavigationBarStyle navigationBarStyle;
+    switch (style) {
+        case ORNTableViewStylePlain:
+        case ORNTableViewStyleMetal:
+            navigationBarStyle = ORNNavigationBarStyleBlackTranslucent;
+            break;
+        case ORNTableViewStyleGrouped:
+        case ORNTableViewStyleCard:
+        case ORNTableViewStyleCustom:
+            navigationBarStyle = ORNNavigationBarStyleBlue;
+            break;
+        case ORNTableViewStyleGroupedEtched:
+            navigationBarStyle = ORNNavigationBarStyleBlueSimple;
+            break;
+        case ORNTableViewStyleGroove:
+            navigationBarStyle = ORNNavigationBarStyleBlack;
+            break;
+    }
+    return navigationBarStyle;
+}
+
+#pragma mark - NSObject
+
++ (void)initialize
+{
+    if (self == [ORNDemoTableViewController class]) {
+        [MNSViewControllerRegistrar registerViewControllerClass:[ORNPropertyViewController class] forModelClass:[MNSProperty class]];
+    }
 }
 
 #pragma mark - UIViewController
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:RESET_LABEL style:UIBarButtonItemStyleBordered target:self action:@selector(_reset)];
+}
+
 - (NSString *)title
 {
-    return @"Ornament";
+    return TITLE_LABEL;
 }
 
 - (BOOL)shouldAutorotate
@@ -40,137 +144,42 @@ enum {
     return NO;
 }
 
+#pragma mark - MNSTableViewController
+
+- (void)prepareToLoadHostedViewForViewController:(ORNPropertyViewController *)viewController
+{
+    viewController.displayStyle = (self.tableViewStyle == ORNTableViewStyleMetal) ? ORNPropertyDisplayStyleDark : ORNPropertyDisplayStyleLight;
+}
+
+- (void)selectObject:(MNSProperty *)property forViewController:(MNSPropertyViewController *)viewController
+{
+    [super selectObject:property forViewController:viewController];
+    NSUInteger index = [self.styles indexOfObject:property];
+    if (index != NSNotFound) {
+        ORNTableViewStyle style = (ORNTableViewStyle)index;
+        [self _switchTableViewStyle:style];
+    }
+}
+
+- (NSArray *)sections
+{
+    NSMutableArray *sections = [NSMutableArray array];
+    [sections addObject:[MNSTableViewSection sectionWithTitle:STYLES_LABEL objects:self.styles]];
+    [sections addObject:[MNSTableViewSection sectionWithTitle:OPTIONS_LABEL objects:self.options]];
+    if (_shouldShowMoreSection) {
+        [sections addObject:@[self.moreProperty]];
+    }
+    return sections;
+}
+
 #pragma mark - ORNTableViewController
 
 - (instancetype)initWithTableViewStyle:(ORNTableViewStyle)style
 {
     if (self = [super initWithTableViewStyle:style]) {
-        _sections = @[@[@"Plain", @"Grouped", @"Grouped Etched", @"Grouped Card", @"Grouped Metal", @"Grouped Groove", @"Custom"],
-                      @[@"Current Style", @"Opaque Status Bar"],
-                      @[@"More…"]];
+        _styleNames = @[PLAIN_LABEL, GROUPED_LABEL, GROUPED_ETCHED_LABEL, CARD_LABEL, METAL_LABEL, GROOVE_LABEL];
     }
     return self;
-}
-
-#pragma mark - UITableViewDataSource
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return _sections.count;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [_sections[section] count];
-}
-
-#pragma mark UITableViewDelegate
-
-- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return (indexPath.section != ORNDemoTableViewSectionOptions);
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [super tableView:tableView didSelectRowAtIndexPath:indexPath];
-    if (indexPath.section == ORNDemoTableViewSectionStyles) {
-        self.tableViewStyle = indexPath.row;
-
-        ORNNavigationController *navigationController = (ORNNavigationController *)self.navigationController;
-        if (navigationController) {
-            ORNNavigationBarStyle navigationBarStyle;
-            switch (self.tableViewStyle) {
-                case ORNTableViewStylePlain:
-                case ORNTableViewStyleMetal:
-                    navigationBarStyle = ORNNavigationBarStyleBlackTranslucent;
-                    break;
-                case ORNTableViewStyleGrouped:
-                case ORNTableViewStyleCard:
-                case ORNTableViewStyleCustom:
-                    navigationBarStyle = ORNNavigationBarStyleBlue;
-                    break;
-                case ORNTableViewStyleGroupedEtched:
-                    navigationBarStyle = ORNNavigationBarStyleBlueSimple;
-                    break;
-                case ORNTableViewStyleGroove:
-                    navigationBarStyle = ORNNavigationBarStyleBlack;
-                    break;
-            }
-            navigationController.navigationBarStyle = navigationBarStyle;
-        }
-    }
-}
-
-#pragma mark UITableViewDataSource
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    ORNTableViewCell *cell = (ORNTableViewCell *)[super tableView:tableView cellForRowAtIndexPath:indexPath];
-    NSString *text = _sections[indexPath.section][indexPath.row];
-    if (indexPath.section == ORNDemoTableViewSectionOptions && indexPath.row == ORNDemoTableViewStatsCurrentStyle) {
-        NSString *style = _sections[ORNDemoTableViewSectionStyles][self.tableViewStyle];
-        cell.textContents = @[text, style];
-    } else {
-        cell.textContents = @[text];
-    }
-    cell.booleanContents = @[@(_isStatusBarOpaque)];
-    return cell;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    switch (section) {
-        case ORNDemoTableViewSectionStyles:
-            return @"Styles";
-        case ORNDemoTableViewSectionOptions:
-            return @"Options";
-        default:
-            return nil;
-    }
-}
-
-#pragma mark ORNTableViewDelegate
-
-- (ORNTableViewCellStyle)tableView:(ORNTableView *)tableView cellStyleForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    switch (indexPath.section) {
-        case ORNDemoTableViewSectionStyles:
-            return ORNTableViewCellStyleDefault;
-        case ORNDemoTableViewSectionOptions:
-            switch (indexPath.row) {
-                case ORNDemoTableViewStatsCurrentStyle:
-                    return ORNTableViewCellStyleValue1;
-                default:
-                    return ORNTableViewCellStyleDefault;
-            }
-        default:
-            return ORNTableViewCellStyleCentered;
-    }
-}
-
-- (ORNTableViewCellAccessory)tableView:(ORNTableView *)tableView cellAccessoryTypeForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    switch (indexPath.section) {
-        case ORNDemoTableViewSectionStyles:
-            return (indexPath.row == self.tableViewStyle) ? ORNTableViewCellAccessoryCheckmark : ORNTableViewCellAccessoryNone;
-        case ORNDemoTableViewSectionOptions:
-            switch (indexPath.row) {
-                case ORNDemoTableViewStatsCurrentStyle:
-                    return ORNTableViewCellAccessoryNone;
-                default:
-                    return ORNTableViewCellAccessorySwitch;
-            }
-        default:
-            return ORNTableViewCellAccessoryNone;
-    }
-}
-
-#pragma mark - ORNSwitchDelegate
-
-- (void)switch:(ORNSwitch *)s didSetOn:(BOOL)on forIndexPath:(NSIndexPath *)indexPath
-{
-    _isStatusBarOpaque = on;
 }
 
 @end
