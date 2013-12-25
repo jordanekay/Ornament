@@ -90,8 +90,11 @@ static NSMutableDictionary *footers;
 
     ORNNavigationController *navigationController = [self orn_navigationController];
     if (navigationController) {
-        CGFloat navBarHeight = [self orn_navigationController].navigationBar.bounds.size.height;
-        insets.top += navBarHeight;
+        ORNNavigationBar *navigationBar = navigationController.navigationBar;
+        if (navigationBar.isTranslucentStyle) {
+            CGFloat navBarHeight = [self orn_navigationController].navigationBar.bounds.size.height;
+            insets.top += navBarHeight;
+        }
     }
 
     if (!self.isGroupedStyle) {

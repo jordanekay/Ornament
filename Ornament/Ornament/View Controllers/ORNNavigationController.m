@@ -134,13 +134,18 @@
         }
     }
 
+    frame = viewController.view.frame;
     if (!viewController.wantsFullScreenLayout) {
         CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
-        CGRect frame = viewController.view.frame;
         frame.origin.y += statusBarHeight;
         frame.size.height -= statusBarHeight;
-        viewController.view.frame = frame;
     }
+    if (!self.navigationBar.isTranslucentStyle) {
+        CGFloat navigationBarHeight = self.navigationBar.bounds.size.height;
+        frame.origin.y += navigationBarHeight;
+        frame.size.height -= navigationBarHeight;
+    }
+    viewController.view.frame = frame;
 }
 
 #pragma mark - NSObject

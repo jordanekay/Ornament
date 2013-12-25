@@ -40,7 +40,6 @@
 
 @property (nonatomic, readonly, getter = isBlackStyle) BOOL blackStyle;
 @property (nonatomic, readonly, getter = isSimpleStyle) BOOL simpleStyle;
-@property (nonatomic, readonly, getter = isTranslucentStyle) BOOL translucentStyle;
 
 @end
 

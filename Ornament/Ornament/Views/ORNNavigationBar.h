@@ -20,5 +20,6 @@ typedef NS_ENUM(NSUInteger, ORNNavigationBarStyle) {
 @property (nonatomic) UINavigationItem *item;
 @property (nonatomic) IBOutlet UIButton *leftBarButton;
 @property (nonatomic) IBOutlet UIButton *rightBarButton;
+@property (nonatomic, readonly, getter = isTranslucentStyle) BOOL translucentStyle;
 
 @end
