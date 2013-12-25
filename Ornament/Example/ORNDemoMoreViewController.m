@@ -22,7 +22,6 @@
 
 - (void)_dismiss
 {
-    [self.webView stopLoading];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -31,9 +30,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self _loadWebPage];
 
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:DONE_LABEL style:UIBarButtonItemStyleDone target:self action:@selector(_dismiss)];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self _loadWebPage];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [self.webView stopLoading];
 }
 
 - (NSString *)title
