@@ -26,14 +26,6 @@
 
 @end
 
-@interface UIViewController (ORNNavigationController)
-
-- (void)orn_setNavigationController:(ORNNavigationController *)navigationController;
-- (ORNNavigationController *)orn_navigationController;
-- (UINavigationItem *)orn_navigationItem;
-
-@end
-
 @implementation ORNNavigationController
 {
     UIView *_viewToPush;
@@ -76,6 +68,16 @@
     UIViewController *viewController = [viewControllers lastObject];
     [viewControllers removeObject:viewController];
     self.viewControllers = viewControllers;
+
+    if ([viewControllers count]) {
+
+    } else {
+        [viewController willMoveToParentViewController:nil];
+        [viewController.view removeFromSuperview];
+        [viewController removeFromParentViewController];
+    }
+    [self.navigationBar popNavigationItemAnimated:animated];
+
     return viewController;
 }
 
@@ -95,15 +97,16 @@
     return [self.viewControllers lastObject];
 }
 
+- (void)setVisibleViewController:(UIViewController *)visibleViewController
+{
+    [self popViewControllerAnimated:NO];
+    [self pushViewController:visibleViewController animated:NO];
+}
+
 - (void)_replaceViewController:(UIViewController *)lastViewController withViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
     CGRect frame = self.view.bounds;
     frame.origin.x += frame.size.width;
-    frame.origin.y = self.navigationBar.bounds.size.height;
-    frame.size.height -= frame.origin.y;
-    if ([UIDevice orn_isIOS7]) {
-        frame.origin.y -= [UIApplication sharedApplication].statusBarFrame.size.height;
-    }
     viewController.view.frame = frame;
 
     [self addChildViewController:viewController];
@@ -147,6 +150,15 @@
 {
     [super viewDidLoad];
     self.navigationBarStyle = _navigationBarStyle;
+
+    if ([UIDevice orn_isIOS7]) {
+        CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
+        for (NSLayoutConstraint *constraint in self.view.constraints) {
+            if (constraint.firstAttribute == NSLayoutAttributeTop) {
+                constraint.constant += statusBarHeight;
+            }
+        }
+    }
 }
 
 - (BOOL)shouldAutorotate
@@ -204,14 +216,16 @@
         button.hidden = YES;
     }
 
-    NSMethodSignature *signature = [[item.target class] instanceMethodSignatureForSelector:item.action];
-    NSInvocation *action = [NSInvocation invocationWithMethodSignature:signature];
-    action.target = item.target;
-    action.selector = item.action;
-    _barButtonActions[@(button.hash)] = action;
+    if (item.action) {
+        NSMethodSignature *signature = [[item.target class] instanceMethodSignatureForSelector:item.action];
+        NSInvocation *action = [NSInvocation invocationWithMethodSignature:signature];
+        action.target = item.target;
+        action.selector = item.action;
+        _barButtonActions[@(button.hash)] = action;
 
-    [button removeTarget:self action:@selector(_barButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-    [button addTarget:self action:@selector(_barButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+        [button removeTarget:nil action:nil forControlEvents:UIControlEventTouchUpInside];
+        [button addTarget:self action:@selector(_barButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    }
 }
 
 @end

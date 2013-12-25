@@ -66,12 +66,8 @@
 
 - (void)_setupStatusBar
 {
-    if ([UIDevice orn_isIOS7]) {
-        self.barStyle = (self.isBlackStyle) ? UIBarStyleBlack : UIBarStyleDefault;
-    } else {
-        self.barStyle = UIBarStyleBlackTranslucent;
+    if (![UIDevice orn_isIOS7]) {
         [self setShadowImage:[UIImage new]];
-        [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleBlackTranslucent;
     }
     [self setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
 
@@ -98,8 +94,10 @@
 {
     [self setTitleVerticalPositionAdjustment:TITLE_ADJUSTMENT forBarMetrics:UIBarMetricsDefault];
     [self.ornamentationLayer removeFromSuperlayer];
-    [self.layer insertSublayer:self.ornamentationLayer atIndex:0];
+    [self.layer addSublayer:self.ornamentationLayer];
 
+    [CATransaction begin];
+    [CATransaction setDisableActions:YES];
     if (self.isSimpleStyle) {
         self.ornamentationLayer.locations = GRADIENT_LOCATIONS_SIMPLE;
         [self.ornamentationLayer colorInView:self withOptions:ORNOrnamentTypeTint | ORNOrnamentTypeBorder, ORNOrnamentTypeTint | ORNOrnamentTypeBackground, ORNOrnamentTypeBackground | ORNOrnamentTypeShade, ORNOrnamentTypeBorder, nil];
@@ -107,6 +105,7 @@
         self.ornamentationLayer.locations = GRADIENT_LOCATIONS;
         [self.ornamentationLayer colorInView:self withOptions:ORNOrnamentTypeTint | ORNOrnamentTypeBorder, ORNOrnamentTypeTint | ORNOrnamentTypeBackground, ORNOrnamentTypeTint | ORNOrnamentTypeShade, ORNOrnamentTypeBackground, ORNOrnamentTypeBackground | ORNOrnamentTypeShade, ORNOrnamentTypeBorder, nil];
     }
+    [CATransaction commit];
 }
 
 - (void)_setupBarButtons
@@ -130,6 +129,13 @@
         [button setBackgroundImage:barButtonBackgroundImageHighlighted forState:UIControlStateHighlighted];
         [button setContentEdgeInsets:BAR_BUTTON_CONTENT_INSETS];
     }
+}
+
+#pragma mark - NSObject
+
+- (void)awakeFromNib
+{
+    self.backgroundColor = [UIColor clearColor];
 }
 
 #pragma mark - UIView
