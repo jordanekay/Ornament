@@ -56,7 +56,7 @@ NSString *ORNDemoTableViewControllerShouldShowMoreSection = @"ORNDemoTableViewCo
 {
     if (!_styles) {
         _styles = [self.styleNames orn_mapWithBlock:^(NSString *name, NSUInteger idx) {
-            return [[MNSProperty alloc] initWithName:name value:(self.tableViewStyle == idx) ? @YES : @NO];
+            return [[MNSProperty alloc] initWithName:name value:@(self.tableViewStyle == idx)];
         }];
     }
     return _styles;
