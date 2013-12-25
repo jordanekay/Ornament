@@ -135,7 +135,7 @@
     }
 
     frame = viewController.view.frame;
-    if (!viewController.wantsFullScreenLayout) {
+    if ([UIDevice orn_isIOS7] && !viewController.wantsFullScreenLayout) {
         CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
         frame.origin.y += statusBarHeight;
         frame.size.height -= statusBarHeight;
