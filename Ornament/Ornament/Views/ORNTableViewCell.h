@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Jordan Kay. All rights reserved.
 //
 
+#import <Mensa/MNSHostingTableViewCell.h>
+
 @class ORNTableView;
 @class ORNTableViewCellContainerView;
 @class ORNTableViewController;
@@ -27,14 +29,7 @@ typedef NS_ENUM(NSUInteger, ORNTableViewCellAccessory) {
     ORNTableViewCellAccessoryImage
 };
 
-enum {
-    ORNTableViewCellContentsTextLabel,
-    ORNTableViewCellContentsDetailTextLabel
-};
-
-@interface ORNTableViewCell : UITableViewCell
-
-- (instancetype)initWithOrnamentationStyle:(ORNTableViewCellStyle)style template:(NSString *)temp reuseIdentifier:(NSString *)reuseIdentifier;
+@interface ORNTableViewCell : MNSHostingTableViewCell
 
 /**
  * Custom cell background images, depending on which corners are rounded
@@ -43,9 +38,6 @@ enum {
 - (UIImage *)customBackgroundImageForRoundedCorners:(UIRectCorner)corners;
 - (UIImage *)customHighlightedBackgroundImageForRoundedCorners:(UIRectCorner)corners;
 
-@property (nonatomic) NSArray *textContents;
-@property (nonatomic) NSArray *imageContents;
-@property (nonatomic) NSArray *booleanContents;
 @property (nonatomic) BOOL highlightsContents;
 @property (nonatomic) BOOL sectionBreakAbove;
 @property (nonatomic) BOOL sectionBreakBelow;

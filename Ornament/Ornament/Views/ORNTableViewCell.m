@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 Jordan Kay. All rights reserved.
 //
 
-#import "ORNBoolean.h"
 #import "ORNColorable.h"
 #import "ORNGradientLayer.h"
 #import "ORNLayer.h"
@@ -15,7 +14,6 @@
 #import "ORNTableView.h"
 #import "ORNTableViewConstants.h"
 #import "ORNTableViewCell.h"
-#import "ORNTableViewCellContainerView.h"
 #import "ORNTableViewController.h"
 #import "UIColor+ORNAdditions.h"
 #import "UIDevice+ORNVersion.h"
@@ -35,9 +33,8 @@
 @property (nonatomic) ORNShadowLayer *highlightedInnerShadowLayer;
 @property (nonatomic) ORNGradientLayer *shadeLayer;
 @property (nonatomic) ORNGradientLayer *highlightedShadeLayer;
-@property (nonatomic) ORNTableViewCellContainerView *containerView;
 @property (nonatomic) UIImageView *backgroundView;
-@property (nonatomic) UIView *leftAccessoryView;
+@property (nonatomic, readonly) UIView *containerView;
 @property (nonatomic, readonly) UIRectCorner roundedCorners;
 
 @end
@@ -50,23 +47,6 @@
     CGFloat _strokeWidth;
 }
 
-- (instancetype)initWithOrnamentationStyle:(ORNTableViewCellStyle)style template:(NSString *)temp reuseIdentifier:(NSString *)reuseIdentifier
-{
-    if (self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier]) {
-        self.selectionStyle = UITableViewCellSelectionStyleNone;
-        self.backgroundView = [[UIImageView alloc] initWithFrame:CGRectZero];
-
-        _containerView = [[[[NSBundle mainBundle] loadNibNamed:temp owner:self options:nil] lastObject] subviews][style];
-        _containerView.backgroundColor = [UIColor clearColor];
-        [self.contentView addSubview:_containerView];
-
-        self.layer.masksToBounds = YES;
-        [self.layer addSublayer:self.separatorLayer];
-    }
-
-    return self;
-}
-
 - (UIImage *)customBackgroundImageForRoundedCorners:(UIRectCorner)corners
 {
     return nil;
@@ -77,51 +57,18 @@
     return nil;
 }
 
-- (void)setTextContents:(NSArray *)textContents
-{
-    if (_textContents != textContents) {
-        _textContents = [textContents copy];
-        NSArray *labels = self.containerView.labels;
-        [textContents enumerateObjectsUsingBlock:^(NSString *text, NSUInteger index, BOOL *stop) {
-            UILabel *label = labels[index];
-            label.text = text;
-            if (label.textAlignment == NSTextAlignmentLeft) {
-                [label sizeToFit];
-            }
-            if (index == [labels count] - 1) *stop = YES;
-        }];
-    }
-}
-
-- (void)setBooleanContents:(NSArray *)booleanContents
-{
-    if (_booleanContents != booleanContents) {
-        // TODO: leftAccessoryView
-        if ([self.accessoryView conformsToProtocol:@protocol(ORNBoolean)]) {
-            ((UIView<ORNBoolean> *)self.accessoryView).value = [[booleanContents lastObject] boolValue];
-        }
-    }
-}
-
-- (void)setHighlightsContents:(BOOL)highlightsContents
-{
-    if (_highlightsContents != highlightsContents) {
-        self.containerView.highlights = highlightsContents;
-    }
-}
-
 - (void)setHostTableView:(ORNTableView *)hostTableView
 {
     if (_hostTableView != hostTableView) {
         _hostTableView = hostTableView;
-        
+
         self.backgroundColor = [UIColor clearColor];
         _separatorLayer.backgroundColor = hostTableView.separatorColor.CGColor;
 
         [hostTableView orn_getOrnamentMeasurement:&_radius position:&_insets withOptions:ORNOrnamentTableViewScopeSection | ORNOrnamentTypeLayout];
         [hostTableView orn_getOrnamentMeasurement:&_strokeWidth position:NULL withOptions:ORNOrnamentTableViewScopeSection | ORNOrnamentTypeStroke];
         [hostTableView orn_getOrnamentMeasurement:&_borderWidth position:NULL withOptions:ORNOrnamentTableViewScopeCell | ORNOrnamentTypeBorder];
-        
+
         [self _addBorderLayer];
         [self _addInnerShadowLayers];
         [self _addShadeLayers];
@@ -141,7 +88,7 @@
     if (_sectionBreakBelow != sectionBreakBelow) {
         _sectionBreakBelow = sectionBreakBelow;
         _separatorLayer.hidden = sectionBreakBelow;
-        
+
         CGFloat cornerRadius = sectionBreakBelow ? (_radius - _strokeWidth) : 0.0f;
         _shadeLayer.cornerRadius = cornerRadius;
         _highlightedShadeLayer.cornerRadius = cornerRadius;
@@ -178,6 +125,11 @@
     return _highlightedShadeLayer ?: (_highlightedShadeLayer = [ORNGradientLayer layer]);
 }
 
+- (UIView *)containerView
+{
+    return [self.contentView.subviews firstObject];
+}
+
 - (UIRectCorner)roundedCorners
 {
     UIRectCorner roundedCorners = ~UIRectCornerAllCorners;
@@ -204,7 +156,7 @@
     ORNOrnamentOptions options = ORNOrnamentTableViewScopeSection | ORNOrnamentTypeShadow | ORNOrnamentShadowPositionSides;
     ORNShadowLayer *layer = [self.hostTableView isOrnamentedWithOptions:options | ORNOrnamentStateDefault] ? self.innerShadowLayer : nil;
     ORNShadowLayer *highlightedLayer = [self.hostTableView isOrnamentedWithOptions:options | ORNOrnamentStateHighlighted] ? self.highlightedInnerShadowLayer : nil;
-    
+
     CGFloat radius = _radius - _strokeWidth * 2;
     CGFloat separatorHeight = self.hostTableView.separatorHeight;
     layer.horizontalInset = _strokeWidth;
@@ -249,41 +201,19 @@
     backgroundFrame.size.height += (_insets.top + _insets.bottom + _radius * 2);
     containerFrame.origin.x += (_insets.left + separatorHeight);
     containerFrame.size.width -= (_insets.left + _insets.right + separatorHeight * 2);
-  
+
     if (self.sectionBreakAbove) {
         backgroundFrame.origin.y += (_insets.top + _radius);
         backgroundFrame.size.height -= (_insets.top + _radius);
         containerFrame.origin.y += (_insets.top + separatorHeight);
+        containerFrame.size.height -= (_insets.top + separatorHeight);
     }
     if (self.sectionBreakBelow) {
         backgroundFrame.size.height -= (_insets.bottom + _radius);
+        containerFrame.size.height -= (_insets.top + separatorHeight);
     }
-    
-    self.backgroundView.frame = backgroundFrame;
-    self.containerView.frame = containerFrame;
-}
 
-- (void)_layoutAccessoryView
-{
-    CGFloat separatorHeight = self.hostTableView.separatorHeight;
-    UIView *view = self.accessoryView ?: [self.subviews lastObject];
-    UIView *accessoryView = [view isKindOfClass:NSClassFromString(@"UITableViewCellScrollView")] ? [view.subviews lastObject] : view;
-    
-    CGRect accessoryFrame = accessoryView.frame;
-    CGRect containerFrame = self.containerView.frame;
-    CGFloat padding = ([self.accessoryView isKindOfClass:[UIImageView class]]) ? IMAGE_PADDING : CONTROL_PADDING;
-    accessoryFrame.origin.x -= (_insets.right + padding);
-    accessoryFrame.origin.y = floorf((containerFrame.size.height - accessoryFrame.size.height) / 2);
-    
-    if (self.sectionBreakAbove) {
-        accessoryFrame.origin.y += (floorf((_insets.top + separatorHeight) / 2) + LAYOUT_ADJUSTMENT);
-    }
-    if (self.sectionBreakBelow) {
-        accessoryFrame.origin.y -= floorf((_insets.bottom + separatorHeight) / 2);
-    }
-    
-    accessoryView.frame = accessoryFrame;
-    containerFrame.size.width -= (accessoryView.frame.size.width - ACCESSORY_PADDING);
+    self.backgroundView.frame = backgroundFrame;
     self.containerView.frame = containerFrame;
 }
 
@@ -335,7 +265,7 @@
         if (!self.sectionBreakBelow && _radius > MIN_SECTION_CORNER_RADIUS) {
             frame.size.height -= (_radius + (overStroke ? _strokeWidth : 0.0f));
         }
-        
+
         layer.frame = frame;
     }
 }
@@ -344,7 +274,7 @@
 {
     UIRectCorner roundedCorners = self.roundedCorners;
     ORNOrnamentOptions options = ORNOrnamentTableViewScopeSection | ORNOrnamentTypeShadow | ORNOrnamentShadowPositionSides;
-    
+
     if (_innerShadowLayer) {
         _innerShadowLayer.roundedCorners = roundedCorners;
         if (_innerShadowLayer.needsRecoloringOnLayout) {
@@ -359,9 +289,22 @@
     }
 }
 
+- (void)_setContainerViewHighlighted:(BOOL)highlighted
+{
+    if (self.highlightsContents) {
+        for (UIView *view in self.containerView.subviews) {
+            if ([view isKindOfClass:[UILabel class]]) {
+                ((UILabel *)view).highlighted = highlighted;
+            } else if ([view isKindOfClass:[UIImageView class]]) {
+                ((UIImageView *)view).highlighted = highlighted;
+            }
+        }
+    }
+}
+
 - (void)_unhighlightContainerView
 {
-    self.containerView.highlighted = NO;
+    [self _setContainerViewHighlighted:NO];
 }
 
 #pragma mark - UIView
@@ -369,11 +312,7 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-
     [self _layoutBackgroundView];
-    if (self.accessoryView || self.accessoryType != UITableViewCellAccessoryNone) {
-        [self _layoutAccessoryView];
-    }
 
     [CATransaction begin];
     [CATransaction setDisableActions:YES];
@@ -389,51 +328,26 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
-    return [self initWithOrnamentationStyle:(ORNTableViewCellStyle)style template:nil reuseIdentifier:reuseIdentifier];
-}
+    if ([super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier]) {
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        self.backgroundView = [[UIImageView alloc] initWithFrame:CGRectZero];
 
-- (void)prepareForReuse
-{
-    [super prepareForReuse];
-    self.accessoryView = nil;
-}
-
-- (void)setAccessoryType:(UITableViewCellAccessoryType)type
-{
-    ORNTableViewCellAccessory accessory = (ORNTableViewCellAccessory)type;
-    switch (accessory) {
-        case ORNTableViewCellAccessoryCheckmark:
-            self.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icn_checkmark"]];
-            break;
-        case ORNTableViewCellAccessoryChevron:
-            self.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icn_chevron"] highlightedImage:[UIImage imageNamed:@"icn_chevron_selected"]];
-            break;
-        case ORNTableViewCellAccessorySwitch:
-            if(!self.accessoryView) {
-                self.accessoryView = [[ORNSwitch alloc] init];
-            }
-            break;
-        case ORNTableViewCellAccessoryImage:
-            break;
-        default:
-            [super setAccessoryType:type];
-            break;
+        self.layer.masksToBounds = YES;
+        [self.layer addSublayer:self.separatorLayer];
     }
+    return self;
 }
 
 - (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated
 {
     [super setHighlighted:highlighted animated:YES];
-    
+
     if (highlighted) {
         self.backgroundView.image = [self customBackgroundImageForRoundedCorners:self.roundedCorners] ?: self.hostTableView.highlightedBackgroundImage;
+         [self _setContainerViewHighlighted:YES];
     } else {
         self.backgroundView.image = [self customHighlightedBackgroundImageForRoundedCorners:self.roundedCorners] ?: self.hostTableView.backgroundImage;
-    }
-    self.containerView.highlighted = highlighted;
-
-    if ([self.accessoryView isKindOfClass:[UIImageView class]]) {
-        ((UIImageView *)self.accessoryView).highlighted = highlighted;
+        [self _setContainerViewHighlighted:NO];
     }
 
     [CATransaction begin];
@@ -458,7 +372,7 @@
     if (!selected && animated) {
         self.backgroundView.image = self.hostTableView.highlightedBackgroundImage;
         [self _fillBorderLayerHighlighted:YES];
-        self.containerView.highlighted = YES;
+        [self _setContainerViewHighlighted:YES];
         self.userInteractionEnabled = NO;
         [UIView transitionWithView:self.backgroundView duration:ANIMATION_DURATION options:UIViewAnimationOptionCurveLinear | UIViewAnimationOptionTransitionCrossDissolve animations:^{
             self.backgroundView.image = self.hostTableView.backgroundImage;
@@ -472,6 +386,20 @@
         [CATransaction commit];
         [self performSelector:@selector(_unhighlightContainerView) withObject:nil afterDelay:ANIMATION_DURATION / 2];
     }
+}
+
+- (UITableViewCellSelectionStyle)selectionStyle
+{
+    return UITableViewCellSelectionStyleNone;
+}
+
+#pragma mark - MNSHostingTableViewCell
+
+- (void)useAsMetricsCellInTableView:(ORNTableView *)tableView
+{
+    UIEdgeInsets insets;
+    [tableView orn_getOrnamentMeasurement:NULL position:&insets withOptions:ORNOrnamentTableViewScopeSection | ORNOrnamentTypeLayout];
+    self.layoutInsets = insets;
 }
 
 @end
