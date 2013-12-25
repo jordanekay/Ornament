@@ -14,6 +14,7 @@
 #import "ORNNavigationController.h"
 #import "ORNPropertyViewController.h"
 #import "ORNTableViewCell.h"
+#import "UIApplication+ORNStatusBar.h"
 #import "UIColor+ORNAdditions.h"
 
 #define TITLE_LABEL @"Ornament"
@@ -48,6 +49,7 @@ NSString *ORNDemoTableViewControllerShouldShowMoreSection = @"ORNDemoTableViewCo
 @implementation ORNDemoTableViewController
 {
     NSUInteger _sectionCount;
+    ORNStatusBarStyle _statusBarStyle;
 }
 
 - (NSArray *)styles
@@ -82,9 +84,7 @@ NSString *ORNDemoTableViewControllerShouldShowMoreSection = @"ORNDemoTableViewCo
     @weakify(self);
     MNSProperty *property = [[MNSProperty alloc] initWithName:name value:^{
         @strongify(self);
-        ORNDemoMoreViewController *viewController = [[ORNDemoMoreViewController alloc] init];
-        ORNNavigationController *navigationController = [[ORNNavigationController alloc] initWithRootViewController:viewController];
-        [self presentViewController:navigationController animated:YES completion:nil];
+        [self _presentMoreViewController];
     }];
     property.options |= MNSPropertyOptionHidesDisclosureForValue;
 
@@ -114,6 +114,14 @@ NSString *ORNDemoTableViewControllerShouldShowMoreSection = @"ORNDemoTableViewCo
     NSDictionary *userInfo = @{ORNDemoTableViewControllerTableViewStyle: @(style), ORNDemoTableViewControllerShouldShowMoreSection: showMore ? @(self.shouldShowMoreSection) : @NO};
     [[NSNotificationCenter defaultCenter] postNotificationName:ORNDemoTableViewControllerShouldReplaceNotification object:self userInfo:userInfo];
 }
+
+- (void)_presentMoreViewController
+{
+    _statusBarStyle = [[UIApplication sharedApplication] orn_statusBarStyle];
+    ORNDemoMoreViewController *viewController = [[ORNDemoMoreViewController alloc] init];
+    ORNNavigationController *navigationController = [[ORNNavigationController alloc] initWithRootViewController:viewController];
+
+    [self presentViewController:navigationController animated:YES completion:nil];
 }
 
 - (void)_reset
@@ -160,6 +168,15 @@ ORNNavigationBarStyle navigationBarStyleForTableViewStyle(ORNTableViewStyle styl
     [super viewDidLoad];
 
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:RESET_LABEL style:UIBarButtonItemStyleBordered target:self action:@selector(_reset)];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+
+    if (self.presentedViewController) {
+        [[UIApplication sharedApplication] orn_setStatusBarStyle:_statusBarStyle];
+    }
 }
 
 - (NSString *)title

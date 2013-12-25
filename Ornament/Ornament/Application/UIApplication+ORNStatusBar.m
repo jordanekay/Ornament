@@ -35,6 +35,11 @@
 
 static ORNStatusBar *statusBar;
 
+- (ORNStatusBarStyle)orn_statusBarStyle
+{
+    return statusBar.ornamentationStyle;
+}
+
 - (void)orn_setStatusBarStyle:(ORNStatusBarStyle)style
 {
     [self orn_setStatusBarStyle:style animated:NO];
@@ -42,11 +47,22 @@ static ORNStatusBar *statusBar;
 
 - (void)orn_setStatusBarStyle:(ORNStatusBarStyle)style animated:(BOOL)animated
 {
-    [statusBar removeFromSuperview];
+    ORNStatusBar *lastStatusBar = statusBar;
     statusBar = [[ORNStatusBar alloc] init];
     statusBar.ornamentationStyle = style;
     [statusBar ornament];
     [self.keyWindow addSubview:statusBar];
+
+    if (animated) {
+        statusBar.alpha = 0.0f;
+        [UIView animateWithDuration:UINavigationControllerHideShowBarDuration animations:^{
+            statusBar.alpha = 1.0f;
+        } completion:^(BOOL finished) {
+            [lastStatusBar removeFromSuperview];
+        }];
+    } else {
+        [lastStatusBar removeFromSuperview];
+    }
 
     if ([UIDevice orn_isIOS7]) {
         UIStatusBarStyle statusBarStyle = (style == ORNStatusBarStyleDefault ? UIStatusBarStyleDefault : UIStatusBarStyleLightContent);

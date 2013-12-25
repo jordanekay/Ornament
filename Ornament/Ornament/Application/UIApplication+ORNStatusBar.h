@@ -14,6 +14,7 @@ typedef NS_ENUM(NSUInteger, ORNStatusBarStyle) {
 
 @interface UIApplication (ORNStatusBar)
 
+- (ORNStatusBarStyle)orn_statusBarStyle;
 - (void)orn_setStatusBarStyle:(ORNStatusBarStyle)style;
 - (void)orn_setStatusBarStyle:(ORNStatusBarStyle)style animated:(BOOL)animated;
 - (void)orn_setStatusBarHidden:(BOOL)hidden;
