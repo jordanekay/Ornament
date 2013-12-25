@@ -15,19 +15,20 @@
 #define TITLE_TEXT_SHADOW_COLOR [UIColor colorWithWhite:0.0f alpha:0.6f]
 #define TITLE_TEXT_SHADOW_OFFSET UIOffsetMake(0.0f, -1.0f)
 #define TITLE_ADJUSTMENT -5.0f
+#define SWITCH_THUMB_INSET 3.0f
 
 @implementation ORNAppearance
 
 + (void)setupAppearance
 {
-    [[ORNSwitch appearance] setTrackImage:[UIImage imageNamed:@"round-switch-track"]];
-    [[ORNSwitch appearance] setOverlayImage:[UIImage imageNamed:@"round-switch-overlay"]];
-    [[ORNSwitch appearance] setTrackMaskImage:[UIImage imageNamed:@"round-switch-mask"]];
-    [[ORNSwitch appearance] setThumbImage:[UIImage imageNamed:@"round-switch-thumb"]];
-    [[ORNSwitch appearance] setThumbHighlightImage:[UIImage imageNamed:@"round-switch-thumb-highlight"]];
-    [[ORNSwitch appearance] setThumbMaskImage:[UIImage imageNamed:@"round-switch-mask"]];
-    [[ORNSwitch appearance] setThumbInsetX:-3.0f];
-    [[ORNSwitch appearance] setThumbOffsetY:-3.0f];
+    [[ORNSwitch appearance] setTrackImage:[UIImage imageNamed:@"bg_switch_track"]];
+    [[ORNSwitch appearance] setOverlayImage:[UIImage imageNamed:@"bg_switch_overlay"]];
+    [[ORNSwitch appearance] setTrackMaskImage:[UIImage imageNamed:@"bg_switch_mask"]];
+    [[ORNSwitch appearance] setThumbImage:[UIImage imageNamed:@"bg_switch_thumb"]];
+    [[ORNSwitch appearance] setThumbHighlightImage:[UIImage imageNamed:@"bg_switch_thumb_highlight"]];
+    [[ORNSwitch appearance] setThumbMaskImage:[UIImage imageNamed:@"bg_switch_mask"]];
+    [[ORNSwitch appearance] setThumbInsetX:-SWITCH_THUMB_INSET];
+    [[ORNSwitch appearance] setThumbOffsetY:-SWITCH_THUMB_INSET];
 }
 
 @end
