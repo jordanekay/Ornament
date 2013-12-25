@@ -10,10 +10,11 @@
 #import "ORNSwitch.h"
 #import "ORNTableView.h"
 
-@interface ORNTableViewController : MNSTableViewController <ORNTableViewDelegate, ORNSwitchDelegate>
+@interface ORNTableViewController : MNSTableViewController
 
-- (instancetype)initWithTableViewStyle:(ORNTableViewStyle)style;
+- (instancetype)initWithTableViewStyle:(ORNTableViewStyle)style; // Designated initializer
 - (instancetype)initWithStyle:(UITableViewStyle)style __unavailable;
+- (void)ornamentTableView:(ORNTableView *)tableView;
 
 @property (nonatomic) ORNTableViewStyle tableViewStyle;
 @property (nonatomic, readonly) BOOL isGroupedStyle;

@@ -19,8 +19,6 @@ typedef NS_ENUM(NSUInteger, ORNTableViewStyle) {
     ORNTableViewStyleCustom
 };
 
-@protocol ORNTableViewDelegate;
-
 @interface ORNTableView : UITableView <ORNOrnamentable>
 
 - (instancetype)initWithFrame:(CGRect)frame ornamentationStyle:(ORNTableViewStyle)style;
@@ -33,17 +31,5 @@ typedef NS_ENUM(NSUInteger, ORNTableViewStyle) {
 @property (nonatomic, readonly) UIImage *backgroundImage;
 @property (nonatomic, readonly) UIImage *highlightedBackgroundImage;
 @property (nonatomic) BOOL pinsHeaderViewsToTop;
-
-@end
-
-@protocol ORNTableViewDelegate <UITableViewDelegate>
-
-- (NSString *)tableView:(ORNTableView *)tableView templateForRowAtIndexPath:(NSIndexPath *)indexPath;
-- (ORNTableViewCellStyle)tableView:(ORNTableView *)tableView cellStyleForRowAtIndexPath:(NSIndexPath *)indexPath;
-- (ORNTableViewCellAccessory)tableView:(ORNTableView *)tableView cellAccessoryTypeForRowAtIndexPath:(NSIndexPath *)indexPath;
-
-@optional
-
-- (void)ornamentTableView:(ORNTableView *)tableView;
 
 @end

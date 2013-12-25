@@ -8,9 +8,12 @@
 
 #import "ORNTableHeaderView.h"
 #import "ORNTableViewController.h"
+#import "ORNNavigationController.h"
 #import "UIApplication+ORNStatusBar.h"
 #import "UIDevice+ORNVersion.h"
 
+static NSString *cellIdentifier = @"ORNTableViewCell";
+static NSString *headerViewIdentifier = @"ORNTableHeaderView";
 static NSMutableDictionary *footers;
 
 @implementation ORNTableViewController
@@ -28,17 +31,9 @@ static NSMutableDictionary *footers;
     return self;
 }
 
-- (void)setTableViewStyle:(ORNTableViewStyle)style
+- (void)ornamentTableView:(ORNTableView *)tableView
 {
-    if (_tableViewStyle != style) {
-        _tableViewStyle = style;
-
-        UIView *view = self.view;
-        [self _setupTableView];
-        [self _layoutTableView:YES];
-        [[UIApplication sharedApplication] orn_setStatusBarHidden:NO];
-        [view removeFromSuperview];
-    }
+    // Subclasses implement
 }
 
 - (BOOL)isGroupedStyle
@@ -75,30 +70,32 @@ static NSMutableDictionary *footers;
     [view addSubview:tableView];
 
     [tableView ornament];
-    if ([tableView.delegate respondsToSelector:@selector(ornamentTableView:)]) {
-        [tableView.delegate performSelector:@selector(ornamentTableView:) withObject:tableView];
-    }
+    [self ornamentTableView:tableView];
+
     [tableView orn_getOrnamentMeasurement:NULL position:&_tableViewInsets withOptions:ORNOrnamentTableViewScopeTable | ORNOrnamentTypeLayout];
     [tableView orn_getOrnamentMeasurement:NULL position:&_tableViewSectionInsets withOptions:ORNOrnamentTableViewScopeSection | ORNOrnamentTypeLayout];
 
     self.view = view;
 }
 
-- (void)_layoutTableView:(BOOL)hasLaidOut
+- (void)_layoutTableView
 {
     UIEdgeInsets insets = self.tableView.contentInset;
     insets.bottom = _tableViewSectionInsets.bottom - _tableViewInsets.bottom;
-    
-    if (self.isGroupedStyle || self.navigationController) {
-        insets.top += 1.0f;
-    }
-    if (![UIDevice orn_isIOS7] || (hasLaidOut || !self.navigationController)) {
+
+    if ([UIDevice orn_isIOS7]) {
         CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
         insets.top += statusBarHeight;
     }
-    if (!([UIDevice orn_isIOS7] && !hasLaidOut) && self.navigationController.navigationBar.isTranslucent) {
-        CGFloat navBarHeight = self.navigationController.navigationBar.bounds.size.height;
+
+    ORNNavigationController *navigationController = [self orn_navigationController];
+    if (navigationController) {
+        CGFloat navBarHeight = [self orn_navigationController].navigationBar.bounds.size.height;
         insets.top += navBarHeight;
+    }
+
+    if (!self.isGroupedStyle) {
+        insets.top += 1.0f;
     }
 
     UIEdgeInsets scrollIndicatorInsets = self.tableView.scrollIndicatorInsets;
@@ -124,12 +121,7 @@ static NSMutableDictionary *footers;
 - (void)loadView
 {
     [self _setupTableView];
-    [self _layoutTableView:NO];
-}
-
-- (BOOL)wantsFullScreenLayout
-{
-    return YES;
+    [self _layoutTableView];
 }
 
 #pragma mark - UITableViewController
@@ -157,10 +149,9 @@ static NSMutableDictionary *footers;
 
 - (UIView *)tableView:(ORNTableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    static NSString *identifier = @"ORNTableHeaderView";
-    ORNTableHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:identifier];
+    ORNTableHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:headerViewIdentifier];
     if (!headerView) {
-        headerView = [[ORNTableHeaderView alloc] initWithReuseIdentifier:identifier];
+        headerView = [[ORNTableHeaderView alloc] initWithReuseIdentifier:headerViewIdentifier];
         headerView.ornamentationStyle = tableView.ornamentationStyle;
         headerView.groupedStyle = self.isGroupedStyle;
         headerView.usesUppercaseTitles = self.usesUppercaseSectionHeaderTitles;
@@ -204,47 +195,28 @@ static NSMutableDictionary *footers;
 
 - (CGFloat)tableView:(ORNTableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    return (_tableViewSectionInsets.top < 0.0f && ![self tableView:tableView titleForHeaderInSection:section + 1]) ? tableView.separatorHeight : 0.0f;
+    return (_tableViewSectionInsets.top < 0.0f && (tableView.numberOfSections <= section + 1 || ![self tableView:tableView titleForHeaderInSection:section + 1])) ? tableView.separatorHeight : 0.0f;
 }
 
 #pragma mark UITableViewDataSource
 
 - (UITableViewCell *)tableView:(ORNTableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ORNTableViewCellStyle style = [self tableView:tableView cellStyleForRowAtIndexPath:indexPath];
-    NSString *identifier = [NSString stringWithFormat:@"%i", style];
-    ORNTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    ORNTableViewCell *cell = (ORNTableViewCell *)[super tableView:tableView cellForRowAtIndexPath:indexPath];
     if (!cell) {
-        NSString *template = [self tableView:tableView templateForRowAtIndexPath:indexPath];
-        cell = [[ORNTableViewCell alloc] initWithOrnamentationStyle:style template:template reuseIdentifier:identifier];
-        cell.highlightsContents = (self.tableViewStyle != ORNTableViewStyleGroove);
+        cell = [[ORNTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
+
     cell.hostTableView = tableView;
-    cell.accessoryType = [self tableView:tableView cellAccessoryTypeForRowAtIndexPath:indexPath];
-    // TODO: leftAccessoryView
-    if ([cell.accessoryView isKindOfClass:[ORNSwitch class]]) {
-        ORNSwitch *accessorySwitch = (ORNSwitch *)cell.accessoryView;
-        accessorySwitch.containingCellIndexPath = indexPath;
-        accessorySwitch.delegate = self;
-    }
+    cell.highlightsContents = (self.tableViewStyle != ORNTableViewStyleGroove);
     return cell;
 }
 
-#pragma mark ORNTableViewDelegate
+#pragma mark - MNSTableViewController
 
-- (NSString *)tableView:(ORNTableView *)tableView templateForRowAtIndexPath:(NSIndexPath *)indexPath
++ (Class)cellClass
 {
-    return (self.tableViewStyle == ORNTableViewStyleMetal) ? @"ORNTableViewCellCollectionDark" : @"ORNTableViewCellCollection";
-}
-
-- (ORNTableViewCellStyle)tableView:(ORNTableView *)tableView cellStyleForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return ORNTableViewCellStyleDefault;
-}
-
-- (ORNTableViewCellAccessory)tableView:(ORNTableView *)tableView cellAccessoryTypeForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return ORNTableViewCellAccessoryNone;
+    return [ORNTableViewCell class];
 }
 
 @end
