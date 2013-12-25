@@ -113,7 +113,7 @@
     [self.view insertSubview:viewController.view belowSubview:self.navigationBar];
     [viewController didMoveToParentViewController:self];
 
-    frame.origin.x = 0;
+    frame.origin.x = 0.0f;
     if (animated) {
         [UIView animateWithDuration:ANIMATION_DURATION animations:^{
             viewController.view.frame = frame;
