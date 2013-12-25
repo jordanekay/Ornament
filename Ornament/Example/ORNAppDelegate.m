@@ -19,7 +19,11 @@
 - (void)_replaceTableViewController:(NSNotification *)notification
 {
     ORNTableViewStyle style = [notification.userInfo[ORNDemoTableViewControllerTableViewStyle] unsignedIntegerValue];
+    BOOL shouldShowMoreSection = [notification.userInfo[ORNDemoTableViewControllerShouldShowMoreSection] boolValue];
+
     ORNDemoTableViewController *tableViewController = [[ORNDemoTableViewController alloc] initWithTableViewStyle:style];
+    tableViewController.shouldShowMoreSection = shouldShowMoreSection;
+
     ORNNavigationController *navigationController =  (ORNNavigationController *)self.window.rootViewController;
     navigationController.visibleViewController = tableViewController;
 

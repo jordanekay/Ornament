@@ -33,6 +33,7 @@
 
 NSString *ORNDemoTableViewControllerShouldReplaceNotification = @"ORNDemoTableViewControllerShouldReplaceNotification";
 NSString *ORNDemoTableViewControllerTableViewStyle = @"ORNDemoTableViewControllerTableViewStyle";
+NSString *ORNDemoTableViewControllerShouldShowMoreSection = @"ORNDemoTableViewControllerShouldShowMoreSection";
 
 @interface ORNDemoTableViewController ()
 
@@ -46,7 +47,6 @@ NSString *ORNDemoTableViewControllerTableViewStyle = @"ORNDemoTableViewControlle
 @implementation ORNDemoTableViewController
 {
     NSUInteger _sectionCount;
-    BOOL _shouldShowMoreSection;
 }
 
 - (NSArray *)styles
@@ -64,7 +64,7 @@ NSString *ORNDemoTableViewControllerTableViewStyle = @"ORNDemoTableViewControlle
     MNSProperty *currentStyleProperty = [[MNSProperty alloc] initWithName:CURRENT_STYLE_LABEL value:self.styleNames[self.tableViewStyle]];
 
     @weakify(self);
-    MNSProperty *showMoreSectionProperty = [[MNSProperty alloc] initWithName:SHOW_MORE_SECTION_LABEL value:@NO];
+    MNSProperty *showMoreSectionProperty = [[MNSProperty alloc] initWithName:SHOW_MORE_SECTION_LABEL value:@(self.shouldShowMoreSection)];
     showMoreSectionProperty.options |= MNSPropertyOptionAllowsUserInput;
     showMoreSectionProperty.valueChangedBlock = ^(id value) {
         @strongify(self);
@@ -86,16 +86,17 @@ NSString *ORNDemoTableViewControllerTableViewStyle = @"ORNDemoTableViewControlle
 
 - (void)_toggleShouldShowMoreSection
 {
-    _shouldShowMoreSection = !_shouldShowMoreSection;
+    self.shouldShowMoreSection = !self.shouldShowMoreSection;
     [self reloadBackingSectionsWithTableViewReload:NO];
 
-    if (_shouldShowMoreSection) {
-        NSIndexSet *sections = [NSIndexSet indexSetWithIndex:_sectionCount - 1];
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:_sectionCount - 1];
+    NSUInteger section = (_shouldShowMoreSection ? _sectionCount - 1 : _sectionCount);
+    NSIndexSet *sections = [NSIndexSet indexSetWithIndex:section];
+
+    if (self.shouldShowMoreSection) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:section];
         [self.tableView insertSections:sections withRowAnimation:UITableViewRowAnimationLeft];
         [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
     } else {
-        NSIndexSet *sections = [NSIndexSet indexSetWithIndex:_sectionCount];
         [self.tableView deleteSections:sections withRowAnimation:UITableViewRowAnimationLeft];
     }
 }
@@ -104,7 +105,7 @@ NSString *ORNDemoTableViewControllerTableViewStyle = @"ORNDemoTableViewControlle
 {
     if (self.tableViewStyle != style) {
         [self orn_navigationController].navigationBarStyle = navigationBarStyleForTableViewStyle(style);
-        NSDictionary *userInfo = @{ORNDemoTableViewControllerTableViewStyle: @(style)};
+        NSDictionary *userInfo = @{ORNDemoTableViewControllerTableViewStyle: @(style), ORNDemoTableViewControllerShouldShowMoreSection: @(self.shouldShowMoreSection)};
         [[NSNotificationCenter defaultCenter] postNotificationName:ORNDemoTableViewControllerShouldReplaceNotification object:self userInfo:userInfo];
     }
 }
@@ -187,7 +188,7 @@ ORNNavigationBarStyle navigationBarStyleForTableViewStyle(ORNTableViewStyle styl
     NSMutableArray *sections = [NSMutableArray array];
     [sections addObject:[MNSTableViewSection sectionWithTitle:STYLES_LABEL objects:self.styles]];
     [sections addObject:[MNSTableViewSection sectionWithTitle:OPTIONS_LABEL objects:self.options]];
-    if (_shouldShowMoreSection) {
+    if (self.shouldShowMoreSection) {
         [sections addObject:@[self.moreProperty]];
     }
     _sectionCount = [sections count];
