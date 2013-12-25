@@ -21,6 +21,11 @@
     // Subclasses implement
 }
 
+- (BOOL)canSelectObject:(id)object
+{
+    return YES;
+}
+
 - (UIView *)viewForObject:(id)object
 {
     return self.view;

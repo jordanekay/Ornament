@@ -1,6 +1,6 @@
 //
 //  MNSTableViewSection.h
-//  Pods
+//  Mensa
 //
 //  Created by Jordan Kay on 12/6/13.
 //  Copyright (c) 2013 toxicsoftware. All rights reserved.
@@ -12,9 +12,8 @@
 + (instancetype)sectionWithTitle:(NSString *)title objects:(NSArray *)objects;
 + (instancetype)sectionWithTitle:(NSString *)title objects:(NSArray *)objects summary:(NSString *)summary;
 
-@property (nonatomic, readonly) NSUInteger count;
-@property (nonatomic, readonly) NSString *title;
-@property (nonatomic, readonly) NSString *summary;
+@property (nonatomic, copy, readonly) NSString *title;
+@property (nonatomic, copy, readonly) NSString *summary;
 
 @end
 

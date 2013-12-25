@@ -13,7 +13,11 @@
 
 @interface MNSTableViewController : UITableViewController
 
++ (Class)cellClass;
+- (void)reloadBackingSectionsWithTableViewReload:(BOOL)fully;
+- (void)prepareToLoadHostedViewForViewController:(MNSHostedViewController *)viewController;
 - (void)hostViewController:(MNSHostedViewController *)viewController withObject:(id)object;
+- (BOOL)canSelectObject:(id)object forViewController:(MNSHostedViewController *)viewController;
 - (void)selectObject:(id)object forViewController:(MNSHostedViewController *)viewController;
 
 @property (nonatomic, readonly) NSArray *sections;

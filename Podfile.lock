@@ -1,6 +1,6 @@
 PODS:
   - KGNoise (1.2.0)
-  - Mensa (0.1.0)
+  - Mensa (0.2.5)
   - TTSwitch (0.0.5)
 
 DEPENDENCIES:
@@ -18,7 +18,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   KGNoise: b21f0a389b4b94589b76f331ad9083643a79d6e7
-  Mensa: 61480bac0afea1ee5faba8542673bb276a5e27fa
+  Mensa: 9343c142a518a10a5971882f7b9667b909eea207
   TTSwitch: 6f915da3c66d6c02c79a2761460b11143d6294fb
 
 COCOAPODS: 0.28.0

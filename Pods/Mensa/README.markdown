@@ -18,13 +18,20 @@ Use of UIViewControllers in table view cells and runtime generation of cell clas
 
 This is useful because table cells aren’t usable outside of tables. By hosting content inside a view controller and then hosting that view controller inside a cell you can reuse that UI in other parts of your app very easily. This is often handy.
 
-The technique generates at runtime a subclass of MNSHostingTableViewCell that hosts a specific view controller class. This allows you to register a cell class with your table view as needed. This technique works very well with cell reuse.
+The technique generates at runtime a subclass of `MNSHostingTableViewCell` that hosts a specific view controller class. This allows you to register a cell class with your table view as needed. This technique works very well with cell reuse.
 
 ## View controller registration for backing objects
 
 To populate their table view’s content, `MNSTableViewController` instances define a `sections` array populated with `MNSTableViewSection` (to include a section header or footer) or `NSArray` instances. To display the objects in each section, the table view controller registers a `MNSHostedViewController` subclass to use with each model object class. The view controller references a view (or set of views if needed, to customize the display of the object based on its properties) whose contents are updated based on the model object to display.
 
-This allows developers to consolidate display logic to a separate view controller for a view displaying that object in populating its contents and selecting it in a table view. Table view controller subclasses can customize this behavior further based on their own state or behavior specified wherever necessary.
+This allows developers to consolidate display logic to a separate view controller for a view displaying that object and populating its contents and selecting it in a table view. **More importantly, it provides a simple but robust way to display arbitrary lists of heterogeneous objects in a table view and process user input around them.** Table view controller subclasses can customize this behavior further based on their own state or behavior specified wherever necessary.
+
+## Example
+
+The demo example shows these three techniques in action. Our table view controller subclass maintains an array of objects to display in the table view. It displays `MNSNumber` instances with values from 1 to 100 and an `MNSPrimeFlag` instance below any prime number. Tapping on a number will display its factors. We register each model object class to use the appropriate view controller whose view will display instances of it and handle selection behavior. (Note that these view controllers are usable anywhere, not just in our table view cells, but we take advantage of cell height being automatically calculated through the view’s layout constraints.) In the table view controller, we use custom logic to shrink the font size of the label used to display the number as it increases.
+
+![Screenshot 1](https://dl.dropboxusercontent.com/u/11479646/iOS%20Simulator%20Screen%20shot%20Dec%208%2C%202013%2C%2010.53.09%20AM.png)
+![Screenshot 2](https://dl.dropboxusercontent.com/u/11479646/iOS%20Simulator%20Screen%20shot%20Dec%208%2C%202013%2C%2010.53.38%20AM.png)
 
 ## Requirements
 

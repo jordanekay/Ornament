@@ -1,6 +1,6 @@
 //
 //  MNSTableViewSection.m
-//  Pods
+//  Mensa
 //
 //  Created by Jordan Kay on 12/6/13.
 //  Copyright (c) 2013 toxicsoftware. All rights reserved.
@@ -10,9 +10,9 @@
 
 @interface MNSTableViewSection ()
 
+@property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSArray *objects;
-@property (nonatomic) NSString *title;
-@property (nonatomic) NSString *summary;
+@property (nonatomic, copy) NSString *summary;
 
 @end
 

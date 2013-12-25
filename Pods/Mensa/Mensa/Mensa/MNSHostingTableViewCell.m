@@ -9,19 +9,21 @@
 #import <objc/runtime.h>
 #import "MNSHostingTableViewCell.h"
 
-@interface MNSHostingTableViewCell ()
-
-@end
-
 @implementation MNSHostingTableViewCell
 
-- (void)loadHostedView
+- (void)loadHostedViewForObject:(id)object
 {
-    NSParameterAssert(self.hostedViewController.view.superview == NULL);
-    UIView *hostedView = self.hostedViewController.view;
+    UIView *hostedView = [self.hostedViewController viewForObject:object];
+    NSParameterAssert(hostedView.superview == NULL);
+
     hostedView.frame = self.contentView.bounds;
     hostedView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.contentView addSubview:hostedView];
+}
+
+- (void)useAsMetricsCellInTableView:(UITableView *)tableView
+{
+    // Subclasses implement
 }
 
 + (Class)subclassWithViewControllerClass:(Class)viewControllerClass
@@ -41,12 +43,13 @@
 	return class;
 }
 
-- (void)setParentViewController:(UIViewController *)parentViewController
+- (void)setParentViewController:(UIViewController *)parentViewController withObject:(id)object
 {
     if (_parentViewController != parentViewController) {
         if (_parentViewController) {
+            UIView *view = [self.hostedViewController viewForObject:object];
             [self.hostedViewController willMoveToParentViewController:nil];
-            [self.hostedViewController.view removeFromSuperview];
+            [view removeFromSuperview];
             [self.hostedViewController removeFromParentViewController];
         }
 
@@ -54,7 +57,7 @@
 
         if (_parentViewController) {
             [_parentViewController addChildViewController:self.hostedViewController];
-            [self loadHostedView];
+            [self loadHostedViewForObject:object];
             [self.hostedViewController didMoveToParentViewController:_parentViewController];
         }
     }
@@ -67,6 +70,8 @@
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
 		Class class = self.hostedViewControllerClass;
 		_hostedViewController = [[class alloc] initWithNibName:NSStringFromClass(class) bundle:nil];
+
+        self.contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     }
     return self;
 }

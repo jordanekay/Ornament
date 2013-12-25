@@ -21,20 +21,45 @@
 
 static NSString *cellIdentifier = @"MNSTableViewCell";
 
++ (Class)cellClass
+{
+    return [MNSHostingTableViewCell class];
+}
+
+- (void)reloadBackingSectionsWithTableViewReload:(BOOL)reload
+{
+    self.backingSections = self.sections;
+    if (reload) {
+        [self.tableView reloadData];
+    }
+}
+
+- (void)prepareToLoadHostedViewForViewController:(MNSHostedViewController *)viewController
+{
+    // Subclasses implement
+}
+
 - (void)hostViewController:(MNSHostedViewController *)viewController withObject:(id)object
 {
     UIView *view = [viewController viewForObject:object];
     [viewController updateView:view withObject:object];
 }
 
+- (BOOL)canSelectObject:(id)object forViewController:(MNSHostedViewController *)viewController
+{
+    return [viewController canSelectObject:object];
+}
+
 - (void)selectObject:(id)object forViewController:(MNSHostedViewController *)viewController
 {
-    [viewController selectObject:object];
+    if ([self canSelectObject:object forViewController:viewController]) {
+        [viewController selectObject:object];
+    }
 }
 
 - (void)setBackingSections:(NSArray *)backingSections
 {
-    if (_backingSections != backingSections) {
+    if (self.metricsCells && _backingSections != backingSections) {
         NSMutableArray *sections = [NSMutableArray arrayWithCapacity:[backingSections count]];
         for (id section in backingSections) {
             if ([section isKindOfClass:[NSArray class]]) {
@@ -45,7 +70,7 @@ static NSString *cellIdentifier = @"MNSTableViewCell";
             for (id object in section) {
                 Class modelClass = [object class];
                 if (!self.metricsCells[modelClass]) {
-                    MNSHostingTableViewCell *metricsCell = [self _metricsCellForModelClass:modelClass];
+                    MNSHostingTableViewCell *metricsCell = [self _metricsCellForObject:object];
                     if (metricsCell) {
                         self.metricsCells[(id<NSCopying>)modelClass] = metricsCell;
                     }
@@ -61,33 +86,26 @@ static NSString *cellIdentifier = @"MNSTableViewCell";
     return self.backingSections[indexPath.section][indexPath.row];
 }
 
-- (MNSHostingTableViewCell *)_metricsCellForModelClass:(Class)modelClass
+- (MNSHostingTableViewCell *)_metricsCellForObject:(id)object
 {
     MNSHostingTableViewCell *metricsCell;
+    Class modelClass = [object class];
 
     // MNSHostingTableViewCell dynamically generates a subclass of itself that automatically hosts a view controller of a specific class.
     Class viewControllerClass = [MNSViewControllerRegistrar viewControllerClassForModelClass:modelClass];
     if (viewControllerClass) {
-        Class cellClass = [MNSHostingTableViewCell subclassWithViewControllerClass:viewControllerClass];
+        Class cellClass = [[[self class] cellClass] subclassWithViewControllerClass:viewControllerClass];
         NSString *reuseIdentifier = NSStringFromClass(viewControllerClass);
         [self.tableView registerClass:cellClass forCellReuseIdentifier:reuseIdentifier];
 
         // Instead of storing a metrics cell we could just dequeue them as needed off of the table view. But due to the way our hosted cells work we can’t do that here
         metricsCell = [[cellClass alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-        [metricsCell loadHostedView];
+        [self prepareToLoadHostedViewForViewController:metricsCell.hostedViewController];
+        [metricsCell loadHostedViewForObject:object];
+        [metricsCell useAsMetricsCellInTableView:self.tableView];
     }
 
     return metricsCell;
-}
-
-#pragma mark - NSObject
-
-- (instancetype)initWithCoder:(NSCoder *)coder
-{
-    if (self = [super initWithCoder:coder]) {
-        _metricsCells = [NSMutableDictionary dictionary];
-    }
-    return self;
 }
 
 #pragma mark - UIViewController
@@ -95,8 +113,10 @@ static NSString *cellIdentifier = @"MNSTableViewCell";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    _metricsCells = [NSMutableDictionary dictionary];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellIdentifier];
-    self.backingSections = self.sections;
+    [self reloadBackingSectionsWithTableViewReload:NO];
 }
 
 #pragma mark - UITableViewDelegate
@@ -110,14 +130,14 @@ static NSString *cellIdentifier = @"MNSTableViewCell";
     if (metricsCell) {
         // We need to adjust the metrics cell’s frame to handle table width changes (e.g. rotations)
         CGRect frame = metricsCell.frame;
-        frame.size.width = self.tableView.bounds.size.width;
+        frame.size.width = self.tableView.bounds.size.width - metricsCell.layoutInsets.left - metricsCell.layoutInsets.right - 1.0f;
         metricsCell.frame = frame;
 
         // Set up the metrics cell using real populated content
         [self hostViewController:metricsCell.hostedViewController withObject:object];
 
         // Force a layout
-        [metricsCell layoutSubviews];
+        [metricsCell layoutIfNeeded];
 
         // Get the layout size; we ignore the width, in fact the width *could* conceivably be zero
         // Note: Using content view is intentional
@@ -133,6 +153,13 @@ static NSString *cellIdentifier = @"MNSTableViewCell";
     id object = [self _backingObjectForRowAtIndexPath:indexPath];
     MNSHostingTableViewCell *cell = (MNSHostingTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
     [self selectObject:object forViewController:cell.hostedViewController];
+}
+
+- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    id object = [self _backingObjectForRowAtIndexPath:indexPath];
+    MNSHostingTableViewCell *cell = (MNSHostingTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    return [self canSelectObject:object forViewController:cell.hostedViewController];
 }
 
 #pragma mark - UITableViewDataSource
@@ -166,8 +193,9 @@ static NSString *cellIdentifier = @"MNSTableViewCell";
     if (viewControllerClass) {
         NSString *reuseIdentifier = NSStringFromClass(viewControllerClass);
         cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
-        cell.parentViewController = self;
-        cell.selectionStyle = [cell.hostedViewController viewForObject:object].userInteractionEnabled ? UITableViewCellSelectionStyleBlue : UITableViewCellEditingStyleNone;
+        [self prepareToLoadHostedViewForViewController:cell.hostedViewController];
+        [cell setParentViewController:self withObject:object];
+        cell.userInteractionEnabled = [cell.hostedViewController viewForObject:object].userInteractionEnabled;
         [self hostViewController:cell.hostedViewController withObject:object];
     } else {
         cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
