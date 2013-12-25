@@ -108,18 +108,17 @@ NSString *ORNDemoTableViewControllerShouldShowMoreSection = @"ORNDemoTableViewCo
     }
 }
 
-- (void)_switchTableViewStyle:(ORNTableViewStyle)style
+- (void)_switchTableViewStyle:(ORNTableViewStyle)style persistShowMoreSection:(BOOL)showMore
 {
-    if (self.tableViewStyle != style) {
-        [self orn_navigationController].navigationBarStyle = navigationBarStyleForTableViewStyle(style);
-        NSDictionary *userInfo = @{ORNDemoTableViewControllerTableViewStyle: @(style), ORNDemoTableViewControllerShouldShowMoreSection: @(self.shouldShowMoreSection)};
-        [[NSNotificationCenter defaultCenter] postNotificationName:ORNDemoTableViewControllerShouldReplaceNotification object:self userInfo:userInfo];
-    }
+    [self orn_navigationController].navigationBarStyle = navigationBarStyleForTableViewStyle(style);
+    NSDictionary *userInfo = @{ORNDemoTableViewControllerTableViewStyle: @(style), ORNDemoTableViewControllerShouldShowMoreSection: showMore ? @(self.shouldShowMoreSection) : @NO};
+    [[NSNotificationCenter defaultCenter] postNotificationName:ORNDemoTableViewControllerShouldReplaceNotification object:self userInfo:userInfo];
+}
 }
 
 - (void)_reset
 {
-    [self _switchTableViewStyle:ORNTableViewStyleGrouped];
+    [self _switchTableViewStyle:ORNTableViewStyleGrouped persistShowMoreSection:NO];
 }
 
 ORNNavigationBarStyle navigationBarStyleForTableViewStyle(ORNTableViewStyle style)
@@ -186,7 +185,7 @@ ORNNavigationBarStyle navigationBarStyleForTableViewStyle(ORNTableViewStyle styl
     NSUInteger index = [self.styles indexOfObject:property];
     if (index != NSNotFound) {
         ORNTableViewStyle style = (ORNTableViewStyle)index;
-        [self _switchTableViewStyle:style];
+        [self _switchTableViewStyle:style persistShowMoreSection:YES];
     }
 }
 
