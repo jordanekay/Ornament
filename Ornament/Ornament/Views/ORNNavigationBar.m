@@ -119,14 +119,18 @@
     } else {
         [backgroundImageName appendString:@"_blue"];
     }
-    NSString *backgroundImageNameSelected = [backgroundImageName stringByAppendingString:@"_selected"];
+    NSString *backgroundImageNameSelected = [backgroundImageName stringByAppendingString:@"_pressed"];
 
     UIImage *barButtonBackgroundImage = [[UIImage imageNamed:backgroundImageName] orn_buttonBackgroundImage];
     UIImage *barButtonBackgroundImageHighlighted = [[UIImage imageNamed:backgroundImageNameSelected] orn_buttonBackgroundImage];
+    UIImage *barButtonBackgroundImageDone = [[UIImage imageNamed:@"bg_bar_button_done"] orn_buttonBackgroundImage];
+    UIImage *barButtonBackgroundImageDoneHighlighted = [[UIImage imageNamed:@"bg_bar_button_done_pressed"] orn_buttonBackgroundImage];
 
     for (UIButton *button in @[self.leftBarButton, self.rightBarButton]) {
         [button setBackgroundImage:barButtonBackgroundImage forState:UIControlStateNormal];
+        [button setBackgroundImage:barButtonBackgroundImageDone forState:UIControlStateSelected];
         [button setBackgroundImage:barButtonBackgroundImageHighlighted forState:UIControlStateHighlighted];
+        [button setBackgroundImage:barButtonBackgroundImageDoneHighlighted forState:UIControlStateSelected | UIControlStateHighlighted];
         [button setContentEdgeInsets:BAR_BUTTON_CONTENT_INSETS];
     }
 }

@@ -210,9 +210,11 @@
 {
     if (item) {
         [button setTitle:item.title forState:UIControlStateNormal];
+        button.selected = (item.style == UIBarButtonItemStyleDone);
         button.hidden = NO;
     } else {
         [button setTitle:nil forState:UIControlStateNormal];
+        button.selected = NO;
         button.hidden = YES;
     }
 
