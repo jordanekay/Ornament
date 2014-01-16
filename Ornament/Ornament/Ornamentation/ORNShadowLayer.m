@@ -49,7 +49,7 @@ static NSMutableDictionary *images;
     ORNShadow *shadow = (ORNShadow *)[view orn_ornamentWithOptions:options];
 
     CGFloat width = (_radius + shadow.blur + 2) * 2;
-    NSString *key = [NSString stringWithFormat:@"%f%f%f%f%i%f%@", width, _radius, self.horizontalInset, self.verticalInset, self.roundedCorners, shadow.blur, shadow.color];
+    NSString *key = [NSString stringWithFormat:@"%f%f%f%f%lu%f%@", width, _radius, self.horizontalInset, self.verticalInset, (unsigned long)self.roundedCorners, shadow.blur, shadow.color];
     UIImage *image = images[key];
     if (!image) {
         CGSize size = CGSizeMake(width, width);
