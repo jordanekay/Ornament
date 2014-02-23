@@ -27,6 +27,20 @@
     return (ORNPath *)path;
 }
 
++ (instancetype)pathWithRoundedRect:(CGRect)rect cornerRadius:(CGFloat)radius
+{
+    UIBezierPath *path = [super bezierPathWithRoundedRect:rect cornerRadius:radius];
+    object_setClass(path, self);
+    return (ORNPath *)path;
+}
+
++ (instancetype)pathWithRoundedRect:(CGRect)rect corners:(UIRectCorner)corners radius:(CGFloat)radius
+{
+    UIBezierPath *path = [super bezierPathWithRoundedRect:rect byRoundingCorners:corners cornerRadii:CGSizeMake(radius, radius)];
+    object_setClass(path, self);
+    return (ORNPath *)path;
+}
+
 #pragma mark ORNColorable
 
 - (void)colorInView:(UIView<ORNOrnamentable> *)view withOptions:(ORNOrnamentOptions)options, ...

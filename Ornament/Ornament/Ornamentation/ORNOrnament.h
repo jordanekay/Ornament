@@ -26,10 +26,10 @@ typedef NS_OPTIONS(NSUInteger, ORNOrnamentOptions) {
     ORNOrnamentStateDefault          = 1 << 13,
     ORNOrnamentStateHighlighted      = 1 << 14,
     
-    ORNOrnamentShadowPositionTop     = 1 << 15,
-    ORNOrnamentShadowPositionBottom  = 1 << 16,
-    ORNOrnamentShadowPositionSides   = 1 << 17,
-    ORNOrnamentShadowPositionOutside = 1 << 18
+    ORNOrnamentPositionTop           = 1 << 15,
+    ORNOrnamentPositionBottom        = 1 << 16,
+    ORNOrnamentPositionSides         = 1 << 17,
+    ORNOrnamentPositionOutside       = 1 << 18
 };
 
 typedef UIEdgeInsets ORNPosition;
@@ -81,7 +81,7 @@ ORNPosition ORNPositionMake(CGFloat horizontal, CGFloat vertical);
 - (void)orn_ornament:(ORNOrnament *)ornament withOptions:(ORNOrnamentOptions)options;
 - (BOOL)orn_isOrnamentedWithOptions:(ORNOrnamentOptions)options;
 - (NSArray *)orn_colorsForOptionsList:(NSArray *)list;
-- (void)orn_setShadowInRect:(CGRect)rect withStrokeRect:(CGRect)strokeRect strokeWidth:(CGFloat)strokeWidth radius:(CGFloat)radius options:(ORNOrnamentOptions)options withoutOptions:(ORNOrnamentOptions)options;
+- (void)orn_setShadowInRect:(CGRect)rect withStrokeRect:(CGRect)strokeRect strokeWidth:(CGFloat)strokeWidth radius:(CGFloat)radius roundedCorners:(UIRectCorner)corners options:(ORNOrnamentOptions)options withoutOptions:(ORNOrnamentOptions)options;
 - (void)orn_getOrnamentMeasurement:(CGFloat *)measurement position:(ORNPosition *)position withOptions:(ORNOrnamentOptions)options;
 
 @end

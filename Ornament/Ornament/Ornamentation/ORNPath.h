@@ -12,5 +12,7 @@
 
 + (instancetype)pathWithRect:(CGRect)rect;
 + (instancetype)pathWithOvalInRect:(CGRect)rect;
++ (instancetype)pathWithRoundedRect:(CGRect)rect cornerRadius:(CGFloat)radius;
++ (instancetype)pathWithRoundedRect:(CGRect)rect corners:(UIRectCorner)corners radius:(CGFloat)radius;
 
 @end

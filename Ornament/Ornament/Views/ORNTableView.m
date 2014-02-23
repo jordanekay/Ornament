@@ -92,7 +92,7 @@
     } else if (options & ORNOrnamentStateHighlighted) {
         [backgroundPath colorInView:self withOptions:ORNOrnamentTableViewScopeCell | ORNOrnamentTypeBackground |  ORNOrnamentStateHighlighted, nil];
     }
-    [self setInnerShadowInRect:backgroundRect withStrokeRect:strokeRect strokeWidth:strokeWidth radius:radius options:ORNOrnamentTableViewScopeSection | options withoutOptions:ORNOrnamentShadowPositionSides];
+    [self setInnerShadowInRect:backgroundRect withStrokeRect:strokeRect strokeWidth:strokeWidth radius:radius options:ORNOrnamentTableViewScopeSection | options withoutOptions:ORNOrnamentPositionSides];
     
     image = [UIGraphicsGetImageFromCurrentImageContext() resizableImageWithCapInsets:capInsets];
     CGContextRestoreGState(context);
@@ -154,15 +154,15 @@
             self.separatorColor = [ORNTableViewColor groupedEtchedCellSeparatorColor];
             [self ornament:SECTION_LAYOUT_GROUPED_ETCHED withOptions:ORNOrnamentTableViewScopeSection];
             [self ornament:CELL_BORDER_GROUPED_ETCHED withOptions:ORNOrnamentTableViewScopeCell | ORNOrnamentTypeBorder];
-            [self ornament:SECTION_SHADOW_GROUPED_ETCHED withOptions:ORNOrnamentTableViewScopeSection | ORNOrnamentTypeShadow | ORNOrnamentShadowPositionOutside];
-            [self ornament:SECTION_INNER_SHADOW_GROUPED_ETCHED withOptions:ORNOrnamentTableViewScopeSection | ORNOrnamentTypeShadow | ORNOrnamentShadowPositionTop];
+            [self ornament:SECTION_SHADOW_GROUPED_ETCHED withOptions:ORNOrnamentTableViewScopeSection | ORNOrnamentTypeShadow | ORNOrnamentPositionOutside];
+            [self ornament:SECTION_INNER_SHADOW_GROUPED_ETCHED withOptions:ORNOrnamentTableViewScopeSection | ORNOrnamentTypeShadow | ORNOrnamentPositionTop];
             break;
         case ORNTableViewStyleCard:
             tableLayout = TABLE_LAYOUT_CARD;
             self.superview.backgroundColor = [ORNTableViewColor cardBackgroundColor];
             self.separatorColor = [ORNTableViewColor cardCellSeparatorColor];
             [self ornament:SECTION_LAYOUT_CARD withOptions:ORNOrnamentTableViewScopeSection];
-            [self ornament:SECTION_SHADOW_CARD withOptions:ORNOrnamentTableViewScopeSection | ORNOrnamentTypeShadow | ORNOrnamentShadowPositionOutside];
+            [self ornament:SECTION_SHADOW_CARD withOptions:ORNOrnamentTableViewScopeSection | ORNOrnamentTypeShadow | ORNOrnamentPositionOutside];
             break;
         case ORNTableViewStyleMetal:
             tableLayout = TABLE_LAYOUT_METAL;
@@ -185,8 +185,8 @@
             self.backgroundColor = [ORNTableViewColor grooveBackgroundColor];
             self.separatorHeight = CELL_SEPARATOR_HEIGHT_GROOVE;
             [self ornament:SECTION_LAYOUT_GROOVE withOptions:ORNOrnamentTableViewScopeSection];
-            [self ornament:SECTION_SHADOW_GROOVE withOptions:ORNOrnamentTableViewScopeSection | ORNOrnamentTypeShadow | ORNOrnamentShadowPositionOutside | ORNOrnamentStateDefault];
-            [self ornament:SECTION_INNER_SHADOW_HIGHLIGHTED_GROOVE withOptions:ORNOrnamentTableViewScopeSection | ORNOrnamentTypeShadow | ORNOrnamentShadowPositionTop | ORNOrnamentShadowPositionBottom | ORNOrnamentShadowPositionSides | ORNOrnamentStateHighlighted];
+            [self ornament:SECTION_SHADOW_GROOVE withOptions:ORNOrnamentTableViewScopeSection | ORNOrnamentTypeShadow | ORNOrnamentPositionOutside | ORNOrnamentStateDefault];
+            [self ornament:SECTION_INNER_SHADOW_HIGHLIGHTED_GROOVE withOptions:ORNOrnamentTableViewScopeSection | ORNOrnamentTypeShadow | ORNOrnamentPositionTop | ORNOrnamentPositionBottom | ORNOrnamentPositionSides | ORNOrnamentStateHighlighted];
             [self ornament:CELL_SHADE_GROOVE withOptions:ORNOrnamentTableViewScopeCell | ORNOrnamentTypeShade | ORNOrnamentStateDefault];
             [self ornament:CELL_SHADE_HIGHLIGHTED_GROOVE withOptions:ORNOrnamentTableViewScopeCell | ORNOrnamentTypeShade | ORNOrnamentStateHighlighted];
             [self ornament:CELL_BORDER_GROOVE withOptions:ORNOrnamentTableViewScopeCell | ORNOrnamentTypeBorder | ORNOrnamentStateDefault];
@@ -213,13 +213,12 @@
 
 - (void)setOuterShadowInRect:(CGRect)rect radius:(CGFloat)radius options:(ORNOrnamentOptions)options
 {
-    options |= ORNOrnamentShadowPositionOutside;
-    [self orn_setShadowInRect:rect withStrokeRect:CGRectZero strokeWidth:0.0f radius:radius options:options withoutOptions:0];
+    [self orn_setShadowInRect:rect withStrokeRect:CGRectZero strokeWidth:0.0f radius:radius roundedCorners:0 options:options | ORNOrnamentPositionOutside withoutOptions:0];
 }
 
 - (void)setInnerShadowInRect:(CGRect)rect withStrokeRect:(CGRect)strokeRect strokeWidth:(CGFloat)strokeWidth radius:(CGFloat)radius options:(ORNOrnamentOptions)options withoutOptions:(ORNOrnamentOptions)withoutOptions
 {
-    [self orn_setShadowInRect:rect withStrokeRect:strokeRect strokeWidth:strokeWidth radius:radius options:options withoutOptions:ORNOrnamentShadowPositionOutside | withoutOptions];
+    [self orn_setShadowInRect:rect withStrokeRect:strokeRect strokeWidth:strokeWidth radius:radius  roundedCorners:0 options:options withoutOptions:ORNOrnamentPositionOutside | withoutOptions];
 }
 
 - (NSArray *)colorsForOptionsList:(NSArray *)list

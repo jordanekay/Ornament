@@ -153,7 +153,7 @@
 
 - (void)_addInnerShadowLayers
 {
-    ORNOrnamentOptions options = ORNOrnamentTableViewScopeSection | ORNOrnamentTypeShadow | ORNOrnamentShadowPositionSides;
+    ORNOrnamentOptions options = ORNOrnamentTableViewScopeSection | ORNOrnamentTypeShadow | ORNOrnamentPositionSides;
     ORNShadowLayer *layer = [self.hostTableView isOrnamentedWithOptions:options | ORNOrnamentStateDefault] ? self.innerShadowLayer : nil;
     ORNShadowLayer *highlightedLayer = [self.hostTableView isOrnamentedWithOptions:options | ORNOrnamentStateHighlighted] ? self.highlightedInnerShadowLayer : nil;
 
@@ -273,7 +273,7 @@
 - (void)_colorInnerShadowLayers
 {
     UIRectCorner roundedCorners = self.roundedCorners;
-    ORNOrnamentOptions options = ORNOrnamentTableViewScopeSection | ORNOrnamentTypeShadow | ORNOrnamentShadowPositionSides;
+    ORNOrnamentOptions options = ORNOrnamentTableViewScopeSection | ORNOrnamentTypeShadow | ORNOrnamentPositionSides;
 
     if (_innerShadowLayer) {
         _innerShadowLayer.roundedCorners = roundedCorners;

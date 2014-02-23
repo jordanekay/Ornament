@@ -139,13 +139,12 @@ ORNPosition ORNPositionMake(CGFloat horizontal, CGFloat vertical)
     return colors;
 }
 
-
-- (void)orn_setShadowInRect:(CGRect)rect withStrokeRect:(CGRect)strokeRect strokeWidth:(CGFloat)strokeWidth radius:(CGFloat)radius options:(ORNOrnamentOptions)options withoutOptions:(ORNOrnamentOptions)withoutOptions
+- (void)orn_setShadowInRect:(CGRect)rect withStrokeRect:(CGRect)strokeRect strokeWidth:(CGFloat)strokeWidth radius:(CGFloat)radius roundedCorners:(UIRectCorner)corners options:(ORNOrnamentOptions)options withoutOptions:(ORNOrnamentOptions)withoutOptions
 {
     options |= ORNOrnamentTypeShadow;
     ORNShadow *shadow = (ORNShadow *)[self orn_ornamentWithOptions:options withoutOptions:withoutOptions];
     if (shadow) {
-        if (options & ORNOrnamentShadowPositionOutside) {
+        if (options & ORNOrnamentPositionOutside) {
             // Zero-blur supported section shadow
             if (shadow.blur == 0.0f) {
                 // With zero blur, just offset a background behind it by the shadow offset
@@ -161,25 +160,26 @@ ORNPosition ORNPositionMake(CGFloat horizontal, CGFloat vertical)
             }
         } else {
             // Form inner shadow by appending a path to fill around then clip to
-            CGFloat inset = ([self orn_isOrnamentedWithOptions:ORNOrnamentShadowPositionSides]) ? 0.0f : -(shadow.blur - strokeWidth);
+            CGFloat inset = ([self orn_isOrnamentedWithOptions:ORNOrnamentPositionSides]) ? 0.0f : -(shadow.blur - strokeWidth);
             CGRect fillRect = CGRectInset(strokeRect, -radius, -radius);
             CGRect shadowRect = CGRectInset(rect, inset, 0.0f);
-            UIBezierPath *fillPath = [UIBezierPath bezierPathWithRect:fillRect];
-            UIBezierPath *shadowPath = [UIBezierPath bezierPathWithOvalInRect:shadowRect];
-            UIBezierPath *shadowClipPath = [UIBezierPath bezierPathWithOvalInRect:rect];
+            CGSize radii = CGSizeMake(radius, radius);
+            UIBezierPath *fillPath = corners ? [UIBezierPath bezierPathWithRoundedRect:fillRect byRoundingCorners:corners cornerRadii:radii] : [UIBezierPath bezierPathWithRect:fillRect];
+            UIBezierPath *shadowPath = corners ? [UIBezierPath bezierPathWithRoundedRect:shadowRect byRoundingCorners:corners cornerRadii:radii] : [UIBezierPath bezierPathWithOvalInRect:shadowRect];
+            UIBezierPath *shadowClipPath = corners ? [UIBezierPath bezierPathWithRoundedRect:rect byRoundingCorners:corners cornerRadii:radii] : [UIBezierPath bezierPathWithOvalInRect:rect];
             fillPath.usesEvenOddFillRule = YES;
             [fillPath appendPath:shadowPath];
             [shadowClipPath addClip];
             
             // Clip inner shadow for positions
-            if (!([self orn_isOrnamentedWithOptions:ORNOrnamentShadowPositionTop])) {
+            if (!([self orn_isOrnamentedWithOptions:ORNOrnamentPositionTop])) {
                 CGRect clipRect = fillRect;
                 clipRect.origin.y += floorf(clipRect.size.height / 2);
                 clipRect.size.height -= floorf(clipRect.size.height / 2);
                 UIBezierPath *clipPath = [UIBezierPath bezierPathWithRect:clipRect];
                 [clipPath addClip];
             }
-            if (!([self orn_isOrnamentedWithOptions:ORNOrnamentShadowPositionBottom])) {
+            if (!([self orn_isOrnamentedWithOptions:ORNOrnamentPositionBottom])) {
                 CGRect clipRect = fillRect;
                 clipRect.size.height = floorf(clipRect.size.height / 2) + 1.0f;
                 UIBezierPath *clipPath = [UIBezierPath bezierPathWithRect:clipRect];
