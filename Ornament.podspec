@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'Ornament'
-  s.version      = '0.2.0'
+  s.version      = '0.3.1'
   s.summary      = 'Ornament is a set of APIs used to provide visual ornamentation for iOS apps.'
   s.homepage     = 'https://www.github.com/jordanekay/Ornament'
   s.platform     = :ios, '6.0'
@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   }
   s.source = {
     :git => 'https://github.com/jordanekay/Ornament.git',
-    :tag => '0.2.0'
+    :tag => s.version.to_s
   }
   s.license = {
     :type => 'MIT'
