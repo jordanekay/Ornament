@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Jordan Kay. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
+
 @interface UIImage (ORNAdditions)
 
 - (UIImage *)orn_buttonBackgroundImage;

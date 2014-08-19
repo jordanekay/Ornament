@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Jordan Kay. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import "ORNOrnament.h"
 
 typedef NS_ENUM(NSUInteger, ORNNavigationBarStyle) {

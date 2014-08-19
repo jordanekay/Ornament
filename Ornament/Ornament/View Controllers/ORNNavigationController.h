@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Jordan Kay. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import "ORNNavigationBar.h"
 
 @interface ORNNavigationController : UIViewController

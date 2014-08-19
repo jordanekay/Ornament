@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Jordan Kay. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
+
 @interface UIDevice (ORNVersion)
 
 + (BOOL)orn_meetsVersion:(NSString *)version;

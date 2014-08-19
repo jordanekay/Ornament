@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Jordan Kay. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "ORNOrnament.h"
 
 @protocol ORNColorable <NSObject>

@@ -6,6 +6,9 @@
 //  Copyright (c) 2013 Jordan Kay. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
 @protocol ORNColorable;
 
 typedef NS_OPTIONS(NSUInteger, ORNOrnamentOptions) {
