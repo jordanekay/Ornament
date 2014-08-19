@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'Mensa'
-  s.version      = '0.9.1'
+  s.version      = '0.9.2'
   s.summary      = 'Smart, modern table views on iOS.'
   s.homepage     = 'https://www.github.com/jordanekay/Mensa'
   s.platform     = :ios, '6.0'
