@@ -15,6 +15,6 @@
 
 @interface MNSCollectionViewController : UICollectionViewController <MNSDataMediatorDelegate>
 
-- (void)reloadDataAndUpdateCollectionView;
+- (void)reloadDataAndUpdateCollectionView:(BOOL)update;
 
 @end
