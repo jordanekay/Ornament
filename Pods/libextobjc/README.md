@@ -14,28 +14,55 @@ libextobjc currently includes the following features:
  * **Compile-time checking of selectors** to ensure that an object declares a given selector, using EXTSelectorChecking.
  * **Easier use of weak variables in blocks**, using `@weakify`, `@unsafeify`, and `@strongify` from the EXTScope module.
  * **Scope-based resource cleanup**, using `@onExit` in the EXTScope module, for automatically cleaning up manually-allocated memory, file handles, locks, etc., at the end of a scope.
+ * **Algebraic data types** generated completely at compile-time, defined using EXTADT.
+ * **Synthesized properties for categories**, using EXTSynthesize.
+ * **Block-based coroutines**, using EXTCoroutine.
  * **EXTNil, which is like `NSNull`, but behaves much more closely to actual `nil`** (i.e., doesn't crash when sent unrecognized messages).
- * Synthesized properties for categories, using EXTSynthesize.
- * Algebraic data types generated completely at compile-time, defined using EXTADT.
- * Safer private methods, using EXTPrivateMethod, for declaring methods on a class, and getting notified if they conflict with other existing methods.
- * EXTBlockTarget, which extends the target-action mechanism with support for blocks.
- * EXTTuple, for multiple return values and assignment.
- * EXTPassthrough, to automatically implement methods that simply invoke the same method on another object.
- * Better variadic arguments, with support for packaging the arguments up as an array, using EXTVarargs.
- * Aspect-oriented programming, using EXTAspect.
- * Block-based coroutines, using EXTCoroutine.
- * Multimethods – methods which overload based on argument type – using EXTMultimethod.
- * Key-value annotations on properties, using EXTAnnotation.
- * Final methods – methods which cannot be overridden – using EXTFinalMethod.
- * EXTDispatchObject, which forwards messages to all objects in a given array.
- * EXTMaybe, which behaves like `NSError` _and_ `nil`, making it safe for use as an erroneous return value.
- * EXTMultiObject, which behaves like all of the objects in a given array (forwarding to the first one that responds to each message).
- * Primitive mixins, using EXTMixin.
- * Protocol categories, using EXTProtocolCategory, for adding methods to every class that implements a given protocol.
- * Convenience functions to install blocks as methods, using EXTBlockMethod.
- * Lots of extensions and additional functionality built on top of `<objc/runtime.h>`, including extremely customizable method injection, reflection upon object properties, and various functions to extend class hierarchy checks and method lookups.
+ * **Lots of extensions** and additional functionality built on top of `<objc/runtime.h>`, including extremely customizable method injection, reflection upon object properties, and various functions to extend class hierarchy checks and method lookups.
 
-Some of these are just proofs of concept, and not necessarily recommended for production code. Others (mainly those bolded in the list above) are quite valuable, and make Objective-C safer and/or more flexible. Check out the headers for more information.
+The [experimental](https://github.com/jspahrsummers/libextobjc/tree/experimental)
+branch contains additional features that may be interesting, but are not
+considered stable or safe for production use. Check out the headers for more
+information.
+
+# Running tests
+
+To execute libextobjc's tests, first run `git submodule update --init --recursive`
+to bring in the [xcconfigs](https://github.com/jspahrsummers/xcconfigs) submodule,
+then open the project file and choose the desired test target.
+
+# Adding to your project
+
+If you want to add libextobjc as a dependency to an **application**, add the
+repository as a [submodule](http://git-scm.com/book/en/Git-Tools-Submodules),
+then include the source files you care about in your Xcode project.
+
+If you want to add libextobjc as a dependency to a **framework or library**,
+prefer [subtree merging](http://git-scm.com/book/en/Git-Tools-Subtree-Merging),
+which will allow you to rename symbols to avoid conflicts, and make any tweaks
+you need to for your library.
+
+To create a libextobjc subtree:
+
+```
+$ git remote add libextobjc https://github.com/jspahrsummers/libextobjc.git
+$ git fetch libextobjc
+$ git read-tree --prefix=External/ -u libextobjc/master
+$ git reset
+```
+
+Rename any symbols or change whatever you want, `git add` the specific files
+that you want in your library, and then add them to your Xcode project.
+
+To bring in upstream changes later:
+
+```
+$ git fetch -p libextobjc
+$ git merge -Xsubtree=External/ libextobjc/master
+$ git reset
+```
+
+Then, again, just add the changes you want.
 
 # License
 
@@ -45,6 +72,4 @@ file for more information.
 
 # Requirements
 
-[libffi](https://github.com/jspahrsummers/libffi) is used for EXTAspect, but is not required for the other modules of the project. In order for the unit tests to build and pass, libffi must be retrieved using `git submodule update --init` after cloning the repository.
-
-libextobjc must be built with ARC enabled, and many of its macros require ARC in the calling files as well. MRC usage is not supported.
+libextobjc must be built with ARC enabled, and many of its macros require ARC in the calling files as well. MRR usage is not supported.

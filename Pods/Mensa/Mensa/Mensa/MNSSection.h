@@ -1,12 +1,14 @@
 //
-//  MNSTableViewSection.h
+//  MNSSection.h
 //  Mensa
 //
 //  Created by Jordan Kay on 12/6/13.
-//  Copyright (c) 2013 toxicsoftware. All rights reserved.
+//  Copyright (c) 2013 Jordan Kay. All rights reserved.
 //
 
-@interface MNSTableViewSection : NSObject
+#import <Foundation/Foundation.h>
+
+@interface MNSSection : NSObject
 
 + (instancetype)sectionWithObjects:(NSArray *)objects;
 + (instancetype)sectionWithTitle:(NSString *)title objects:(NSArray *)objects;
@@ -17,7 +19,7 @@
 
 @end
 
-@interface MNSTableViewSection (Subscripting)
+@interface MNSSection (Subscripting)
 
 - (id)objectAtIndexedSubscript:(NSUInteger)idx;
 

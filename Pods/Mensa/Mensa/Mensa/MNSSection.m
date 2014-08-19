@@ -1,14 +1,14 @@
 //
-//  MNSTableViewSection.m
+//  MNSSection.m
 //  Mensa
 //
 //  Created by Jordan Kay on 12/6/13.
-//  Copyright (c) 2013 toxicsoftware. All rights reserved.
+//  Copyright (c) 2013 Jordan Kay. All rights reserved.
 //
 
-#import "MNSTableViewSection.h"
+#import "MNSSection.h"
 
-@interface MNSTableViewSection ()
+@interface MNSSection ()
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSArray *objects;
@@ -16,7 +16,7 @@
 
 @end
 
-@implementation MNSTableViewSection
+@implementation MNSSection
 
 + (instancetype)sectionWithObjects:(NSArray *)objects
 {
@@ -30,7 +30,7 @@
 
 + (instancetype)sectionWithTitle:(NSString *)title objects:(NSArray *)objects summary:(NSString *)summary
 {
-    MNSTableViewSection *section = [MNSTableViewSection new];
+    MNSSection *section = [MNSSection new];
     section.title = title;
     section.objects = objects;
     section.summary = summary;

@@ -1,9 +1,9 @@
 PODS:
   - KGNoise (1.2.0)
-  - libextobjc/EXTScope (0.3):
+  - libextobjc/EXTScope (0.4):
     - libextobjc/RuntimeExtensions
-  - libextobjc/RuntimeExtensions (0.3)
-  - Mensa (0.2.5)
+  - libextobjc/RuntimeExtensions (0.4)
+  - Mensa (0.9.1)
   - TTSwitch (0.0.5)
 
 DEPENDENCIES:
@@ -22,8 +22,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   KGNoise: b21f0a389b4b94589b76f331ad9083643a79d6e7
-  libextobjc: 820a79dbbbc498611e04fffd07d2d52a5588e7ac
-  Mensa: 9343c142a518a10a5971882f7b9667b909eea207
+  libextobjc: ba42e4111f433273a886cd54f0ddaddb7f62f82f
+  Mensa: ad06ea88e4c7e0bf22733f32a7f4023e7adbac23
   TTSwitch: 6f915da3c66d6c02c79a2761460b11143d6294fb
 
-COCOAPODS: 0.28.0
+COCOAPODS: 0.33.1

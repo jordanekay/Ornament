@@ -15,8 +15,8 @@
 // Mensa
 #define COCOAPODS_POD_AVAILABLE_Mensa
 #define COCOAPODS_VERSION_MAJOR_Mensa 0
-#define COCOAPODS_VERSION_MINOR_Mensa 2
-#define COCOAPODS_VERSION_PATCH_Mensa 5
+#define COCOAPODS_VERSION_MINOR_Mensa 9
+#define COCOAPODS_VERSION_PATCH_Mensa 1
 
 // TTSwitch
 #define COCOAPODS_POD_AVAILABLE_TTSwitch
@@ -27,12 +27,12 @@
 // libextobjc/EXTScope
 #define COCOAPODS_POD_AVAILABLE_libextobjc_EXTScope
 #define COCOAPODS_VERSION_MAJOR_libextobjc_EXTScope 0
-#define COCOAPODS_VERSION_MINOR_libextobjc_EXTScope 3
+#define COCOAPODS_VERSION_MINOR_libextobjc_EXTScope 4
 #define COCOAPODS_VERSION_PATCH_libextobjc_EXTScope 0
 
 // libextobjc/RuntimeExtensions
 #define COCOAPODS_POD_AVAILABLE_libextobjc_RuntimeExtensions
 #define COCOAPODS_VERSION_MAJOR_libextobjc_RuntimeExtensions 0
-#define COCOAPODS_VERSION_MINOR_libextobjc_RuntimeExtensions 3
+#define COCOAPODS_VERSION_MINOR_libextobjc_RuntimeExtensions 4
 #define COCOAPODS_VERSION_PATCH_libextobjc_RuntimeExtensions 0
 

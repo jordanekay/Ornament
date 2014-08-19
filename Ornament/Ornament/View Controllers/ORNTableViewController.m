@@ -220,9 +220,9 @@ static NSMutableDictionary *footers;
     return cell;
 }
 
-#pragma mark - MNSTableViewController
+#pragma mark - MNSDataMediatorDelegate
 
-+ (Class)cellClass
+- (Class)cellClass:(MNSDataMediator *)dataMediator
 {
     return [ORNTableViewCell class];
 }

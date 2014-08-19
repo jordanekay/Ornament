@@ -94,7 +94,7 @@ NSString *ORNDemoTableViewControllerShouldShowMoreSection = @"ORNDemoTableViewCo
 - (void)_toggleShouldShowMoreSection
 {
     self.shouldShowMoreSection = !self.shouldShowMoreSection;
-    [self reloadBackingSectionsWithTableViewReload:NO];
+    [self reloadDataAndUpdateTableView:NO];
 
     NSUInteger section = (_shouldShowMoreSection ? _sectionCount - 1 : _sectionCount);
     NSIndexSet *sections = [NSIndexSet indexSetWithIndex:section];
@@ -189,35 +189,6 @@ ORNNavigationBarStyle navigationBarStyleForTableViewStyle(ORNTableViewStyle styl
     return NO;
 }
 
-#pragma mark - MNSTableViewController
-
-- (void)prepareToLoadHostedViewForViewController:(ORNPropertyViewController *)viewController
-{
-    viewController.displayStyle = (self.tableViewStyle == ORNTableViewStyleMetal) ? ORNPropertyDisplayStyleDark : ORNPropertyDisplayStyleLight;
-}
-
-- (void)selectObject:(MNSProperty *)property forViewController:(MNSPropertyViewController *)viewController
-{
-    [super selectObject:property forViewController:viewController];
-    NSUInteger index = [self.styles indexOfObject:property];
-    if (index != NSNotFound) {
-        ORNTableViewStyle style = (ORNTableViewStyle)index;
-        [self _switchTableViewStyle:style persistShowMoreSection:YES];
-    }
-}
-
-- (NSArray *)sections
-{
-    NSMutableArray *sections = [NSMutableArray array];
-    [sections addObject:[MNSTableViewSection sectionWithTitle:STYLES_LABEL objects:self.styles]];
-    [sections addObject:[MNSTableViewSection sectionWithTitle:OPTIONS_LABEL objects:self.options]];
-    if (self.shouldShowMoreSection) {
-        [sections addObject:@[self.moreProperty]];
-    }
-    _sectionCount = [sections count];
-    return sections;
-}
-
 #pragma mark - ORNTableViewController
 
 - (instancetype)initWithTableViewStyle:(ORNTableViewStyle)style
@@ -226,6 +197,34 @@ ORNNavigationBarStyle navigationBarStyleForTableViewStyle(ORNTableViewStyle styl
         _styleNames = @[PLAIN_LABEL, GROUPED_LABEL, GROUPED_ETCHED_LABEL, CARD_LABEL, METAL_LABEL, GROOVE_LABEL];
     }
     return self;
+}
+
+#pragma mark - MNSDataMediatorDelegate
+
+- (void)dataMediator:(MNSDataMediator *)dataMediator didSelectObject:(MNSProperty *)property
+{
+    NSUInteger index = [self.styles indexOfObject:property];
+    if (index != NSNotFound) {
+        ORNTableViewStyle style = (ORNTableViewStyle)index;
+        [self _switchTableViewStyle:style persistShowMoreSection:YES];
+    }
+}
+
+- (void)dataMediator:(MNSDataMediator *)dataMediator willLoadHostedViewForViewController:(ORNPropertyViewController *)viewController
+{
+    viewController.displayStyle = (self.tableViewStyle == ORNTableViewStyleMetal) ? ORNPropertyDisplayStyleDark : ORNPropertyDisplayStyleLight;
+}
+
+- (NSArray *)sections
+{
+    NSMutableArray *sections = [NSMutableArray array];
+    [sections addObject:[MNSSection sectionWithTitle:STYLES_LABEL objects:self.styles]];
+    [sections addObject:[MNSSection sectionWithTitle:OPTIONS_LABEL objects:self.options]];
+    if (self.shouldShowMoreSection) {
+        [sections addObject:@[self.moreProperty]];
+    }
+    _sectionCount = [sections count];
+    return sections;
 }
 
 @end

@@ -1,32 +1,32 @@
 //
-//  MNSHostingTableViewCell.m
+//  MNSHostingCollectionViewCell.m
 //  Mensa
 //
-//  Created by Jonathan Wight on 7/18/13.
-//  Copyright (c) 2013 Jordan Kay. All rights reserved.
+//  Created by Jordan Kay on 1/13/14.
+//  Copyright (c) 2014 Jordan Kay. All rights reserved.
 //
 
 #import <objc/runtime.h>
 #import "MNSHostedViewController.h"
-#import "MNSHostingTableViewCell.h"
+#import "MNSHostingCollectionViewCell.h"
 
-@implementation MNSHostingTableViewCell
+@implementation MNSHostingCollectionViewCell
 
 @synthesize layoutInsets = _layoutInsets;
 @synthesize hostedViewController = _hostedViewController;
 @synthesize hostedViewControllerClass = _hostedViewControllerClass;
 @synthesize parentViewController = _parentViewController;
 
-- (void)useAsMetricsCellInTableView:(UITableView *)tableView
+- (void)useAsMetricsCellInCollectionView:(UICollectionView *)tableView
 {
     // Subclasses implement
 }
 
-#pragma mark - UITableViewCell
+#pragma mark - UIView
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+- (id)initWithFrame:(CGRect)frame
 {
-    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+    if (self = [super initWithFrame:frame]) {
 		Class class = self.hostedViewControllerClass;
 		_hostedViewController = [[class alloc] initWithNibName:NSStringFromClass(class) bundle:nil];
 
