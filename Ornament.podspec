@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'Ornament'
-  s.version      = '0.3.3'
+  s.version      = '0.3.4'
   s.summary      = 'Ornament is a set of APIs used to provide visual ornamentation for iOS apps.'
   s.homepage     = 'https://www.github.com/jordanekay/Ornament'
   s.platform     = :ios, '6.0'
