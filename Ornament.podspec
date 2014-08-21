@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.license = {
     :type => 'MIT'
   }
-  s.source_files = 'Ornament/Ornament/**/*.{h,m}'
+  s.source_files = 'Ornament/Ornament/**/*.{h,m,swift}'
   s.dependency     'Mensa'
   s.dependency     'TTSwitch'
   s.dependency     'KGNoise'

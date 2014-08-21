@@ -110,6 +110,7 @@
 		2B916954D4384BD99E73178F /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		45161F7E18BAAC2A00494C35 /* ORNCapsuleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNCapsuleView.h; path = Views/ORNCapsuleView.h; sourceTree = "<group>"; };
 		45161F7F18BAAC2A00494C35 /* ORNCapsuleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORNCapsuleView.m; path = Views/ORNCapsuleView.m; sourceTree = "<group>"; };
+		454400F119A6785900625A88 /* OrnamentExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrnamentExtensions.swift; path = Extensions/OrnamentExtensions.swift; sourceTree = "<group>"; };
 		4578EC7B18665BB60053BF8E /* UIImage+ORNAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ORNAdditions.h"; path = "Views/UIImage+ORNAdditions.h"; sourceTree = "<group>"; };
 		4578EC7C18665BB60053BF8E /* UIImage+ORNAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ORNAdditions.m"; path = "Views/UIImage+ORNAdditions.m"; sourceTree = "<group>"; };
 		4578EC7E18665EB10053BF8E /* bg_bar_button_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg_bar_button_black.png; path = Assets/bg_bar_button_black.png; sourceTree = "<group>"; };
@@ -285,6 +286,7 @@
 				17CFB487182561EC00A63485 /* Color */,
 				17CFB4821825615600A63485 /* Controls */,
 				17CFB485182561CD00A63485 /* Device */,
+				454400F019A677F700625A88 /* Extensions */,
 				17CFB486182561DD00A63485 /* Font */,
 				17CFB4891825624500A63485 /* Models */,
 				17CFB46C18255A9F00A63485 /* Ornamentation */,
@@ -482,6 +484,14 @@
 				458DE030186A1CBD00859047 /* bg_switch_track@2x.png */,
 			);
 			name = Assets;
+			sourceTree = "<group>";
+		};
+		454400F019A677F700625A88 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				454400F119A6785900625A88 /* OrnamentExtensions.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		45C3798A1839919E00997F3F /* Utilities */ = {
@@ -820,14 +830,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Example/Example-Prefix.pch";
 				INFOPLIST_FILE = "Example/Example-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -838,12 +851,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Example/Example-Prefix.pch";
 				INFOPLIST_FILE = "Example/Example-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
