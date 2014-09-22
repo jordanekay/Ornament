@@ -7,6 +7,8 @@
 //
 
 #import <objc/runtime.h>
+#import "NSArray+ORNFunctional.h"
+#import "ORNOrnamentMacros.h"
 #import "ORNPath.h"
 
 @implementation ORNPath
@@ -45,10 +47,31 @@
 
 - (void)colorInView:(UIView<ORNOrnamentable> *)view withOptions:(ORNOrnamentOptions)options, ...
 {
-    UIColor *color = [view orn_ornamentWithOptions:options].color;
-    [color setFill];
-    [self fill];
+    NSMutableArray *optionsList = [NSMutableArray array];
+    ORN_MAKE_OPTIONS_LIST(optionsList, options);
+    NSMutableArray *colors = [NSMutableArray arrayWithArray:[view colorsForOptionsList:optionsList]];
+
+    NSUInteger count = [colors count];
+    if (count == 1) {
+        [[colors firstObject] setFill];
+        [self fill];
+    } else if (count == 2) {
+        CGFloat locations[2] = {0.0f, 1.0f};
+        CGPoint startPoint = self.bounds.origin;
+        CGPoint endPoint = CGPointMake(CGRectGetMinX(self.bounds), CGRectGetMaxY(self.bounds));
+        CGColorSpaceRef colorspace = CGColorSpaceCreateDeviceRGB();
+        CFArrayRef colorRefs = (__bridge CFArrayRef)[colors orn_mapWithBlock:^(UIColor *color, NSUInteger idx) {
+            return (__bridge id)color.CGColor;
+        }];
+        CGGradientRef gradient = CGGradientCreateWithColors(colorspace, colorRefs, locations);
+        CGContextRef context = UIGraphicsGetCurrentContext();
+
+        CGContextAddPath(context, self.CGPath);
+        CGContextClip(context);
+        CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, kNilOptions);
+        CGGradientRelease(gradient);
+        CGColorSpaceRelease(colorspace);
+    }
 }
 
 @end
-

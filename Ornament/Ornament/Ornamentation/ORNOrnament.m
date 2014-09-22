@@ -152,6 +152,7 @@ ORNPosition ORNPositionMake(CGFloat horizontal, CGFloat vertical)
                 // Otherwise set shadow normally
                 CGContextRef context = UIGraphicsGetCurrentContext();
                 CGSize offset = CGSizeMake(shadow.position.left, shadow.position.top);
+                CGContextSaveGState(context);
                 CGContextSetShadowWithColor(context, offset, shadow.blur, shadow.color.CGColor);
             }
         } else {

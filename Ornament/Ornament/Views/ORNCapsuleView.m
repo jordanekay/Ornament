@@ -30,7 +30,7 @@
 
     // Cached image for measurements
     CGFloat radius;
-    ORNPosition insets;
+    UIEdgeInsets insets;
     [self orn_getOrnamentMeasurement:&radius position:&insets withOptions:ORNOrnamentTypeLayout];
     CGRect bounds = self.isResizable ? (CGRect){.size = {insets.left + insets.right + radius * 2, insets.top + insets.bottom + radius * 2}} : self.bounds;
     NSValue *key = [NSValue valueWithCGRect:bounds];
@@ -40,12 +40,24 @@
         ORNPath *path;
         CGRect rect = UIEdgeInsetsInsetRect(bounds, insets);
         CGFloat borderWidth = 0.0f, strokeWidth = 0.0f;
+        BOOL hasOuterShadow = [self isOrnamentedWithOptions:ORNOrnamentTypeShadow | ORNOrnamentPositionOutside];
         [self orn_getOrnamentMeasurement:&borderWidth position:NULL withOptions:ORNOrnamentTypeBorder];
         [self orn_getOrnamentMeasurement:&strokeWidth position:NULL withOptions:ORNOrnamentTypeStroke];
         UIGraphicsBeginImageContextWithOptions(bounds.size, NO, 0.0f);
+        CGContextRef context = UIGraphicsGetCurrentContext();
 
         // Outer shadow
-        [self orn_setShadowInRect:rect withStrokeRect:CGRectZero strokeWidth:0.0f radius:radius roundedCorners:self.roundedCorners options:ORNOrnamentPositionOutside withoutOptions:0];
+        if (hasOuterShadow) {
+            CGFloat shadowRadius;
+            UIEdgeInsets shadowInsets;
+            [self orn_getOrnamentMeasurement:&shadowRadius position:&shadowInsets withOptions:ORNOrnamentTypeLayout | ORNOrnamentTypeShadow | ORNOrnamentPositionOutside];
+
+            CGRect shadowRect = UIEdgeInsetsInsetRect(rect, shadowInsets);
+            [self orn_setShadowInRect:shadowRect withStrokeRect:CGRectZero strokeWidth:0.0f radius:shadowRadius roundedCorners:self.roundedCorners options:ORNOrnamentPositionOutside withoutOptions:kNilOptions];
+            path = [ORNPath pathWithRoundedRect:shadowRect corners:self.roundedCorners radius:shadowRadius];
+            [path fill];
+            CGContextRestoreGState(context);
+        }
 
         // Stroke
         if (strokeWidth) {
@@ -61,9 +73,14 @@
             rect = [self _rectFromRect:rect withInset:borderWidth options:ORNOrnamentTypeBorder];
         }
 
-        // Background
         path = [ORNPath pathWithRoundedRect:rect corners:self.roundedCorners radius:radius];
-        [path colorInView:self withOptions:ORNOrnamentTypeBackground, nil];
+        if ([self isOrnamentedWithOptions:ORNOrnamentTypeShade]) {
+            // Background and shade
+            [path colorInView:self withOptions:ORNOrnamentTypeBackground, ORNOrnamentTypeShade, nil];
+        } else {
+            // Background
+            [path colorInView:self withOptions:ORNOrnamentTypeBackground, nil];
+        }
 
         // Inner shadow
         [self orn_setShadowInRect:rect withStrokeRect:rect strokeWidth:strokeWidth radius:radius roundedCorners:self.roundedCorners options:0 withoutOptions:ORNOrnamentPositionOutside];
@@ -105,7 +122,7 @@
 {
     if (!CGRectEqualToRect(self.frame, frame)) {
         [super setFrame:frame];
-        if (!self.isResizable || !self.backgroundImage) {
+        if ((!self.isResizable || !self.image) && !CGRectEqualToRect(frame, CGRectZero)) {
             [self ornament];
         }
     }
