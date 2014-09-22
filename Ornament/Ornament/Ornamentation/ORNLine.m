@@ -19,9 +19,4 @@
     }
 }
 
-- (ORNOrnamentOptions)implicitOptions
-{
-    return 0;
-}
-
 @end

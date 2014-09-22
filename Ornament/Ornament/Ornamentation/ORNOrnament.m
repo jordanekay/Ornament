@@ -95,11 +95,6 @@ ORNPosition ORNPositionMake(CGFloat horizontal, CGFloat vertical)
     return position;
 }
 
-- (ORNOrnamentOptions)implicitOptions
-{
-    return ORNOrnamentTypeBackground;
-}
-
 @end
 
 #pragma mark -
@@ -142,6 +137,7 @@ ORNPosition ORNPositionMake(CGFloat horizontal, CGFloat vertical)
 - (void)orn_setShadowInRect:(CGRect)rect withStrokeRect:(CGRect)strokeRect strokeWidth:(CGFloat)strokeWidth radius:(CGFloat)radius roundedCorners:(UIRectCorner)corners options:(ORNOrnamentOptions)options withoutOptions:(ORNOrnamentOptions)withoutOptions
 {
     options |= ORNOrnamentTypeShadow;
+    withoutOptions |= ORNOrnamentTypeLayout;
     ORNShadow *shadow = (ORNShadow *)[self orn_ornamentWithOptions:options withoutOptions:withoutOptions];
     if (shadow) {
         if (options & ORNOrnamentPositionOutside) {
