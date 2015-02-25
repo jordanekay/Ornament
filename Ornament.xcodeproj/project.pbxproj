@@ -14,7 +14,6 @@
 		172E8328177F5C4900D25532 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 172E8310177F5C4800D25532 /* UIKit.framework */; };
 		172E8330177F5C4900D25532 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 172E832E177F5C4900D25532 /* InfoPlist.strings */; };
 		172E8332177F5C4900D25532 /* OrnamentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 172E8331177F5C4900D25532 /* OrnamentTests.m */; };
-		2F259CE4A2964631A8271726 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E6971354147143AFBDEEB707 /* libPods.a */; };
 		45161F8018BAAC2A00494C35 /* ORNCapsuleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45161F7F18BAAC2A00494C35 /* ORNCapsuleView.m */; };
 		4578EC7D18665BB60053BF8E /* UIImage+ORNAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4578EC7C18665BB60053BF8E /* UIImage+ORNAdditions.m */; };
 		4578EC8A18665EB10053BF8E /* bg_bar_button_black.png in Resources */ = {isa = PBXBuildFile; fileRef = 4578EC7E18665EB10053BF8E /* bg_bar_button_black.png */; };
@@ -107,7 +106,6 @@
 		172E832D177F5C4900D25532 /* OrnamentTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OrnamentTests-Info.plist"; sourceTree = "<group>"; };
 		172E832F177F5C4900D25532 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		172E8331177F5C4900D25532 /* OrnamentTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrnamentTests.m; sourceTree = "<group>"; };
-		2B916954D4384BD99E73178F /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		45161F7E18BAAC2A00494C35 /* ORNCapsuleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNCapsuleView.h; path = Views/ORNCapsuleView.h; sourceTree = "<group>"; };
 		45161F7F18BAAC2A00494C35 /* ORNCapsuleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORNCapsuleView.m; path = Views/ORNCapsuleView.m; sourceTree = "<group>"; };
 		4578EC7B18665BB60053BF8E /* UIImage+ORNAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ORNAdditions.h"; path = "Views/UIImage+ORNAdditions.h"; sourceTree = "<group>"; };
@@ -215,7 +213,6 @@
 		45F740D61854391200478D29 /* ORNShadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORNShadow.m; path = Ornamentation/ORNShadow.m; sourceTree = "<group>"; };
 		45F740D71854391200478D29 /* ORNShadowLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNShadowLayer.h; path = Ornamentation/ORNShadowLayer.h; sourceTree = "<group>"; };
 		45F740D81854391200478D29 /* ORNShadowLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORNShadowLayer.m; path = Ornamentation/ORNShadowLayer.m; sourceTree = "<group>"; };
-		E6971354147143AFBDEEB707 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,7 +224,6 @@
 				172E830F177F5C4800D25532 /* CoreGraphics.framework in Frameworks */,
 				172E8311177F5C4800D25532 /* UIKit.framework in Frameworks */,
 				172E830D177F5C4800D25532 /* Foundation.framework in Frameworks */,
-				2F259CE4A2964631A8271726 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,7 +248,6 @@
 				172E832B177F5C4900D25532 /* OrnamentTests */,
 				172E830B177F5C4800D25532 /* Frameworks */,
 				172E830A177F5C4800D25532 /* Products */,
-				2B916954D4384BD99E73178F /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -272,7 +267,6 @@
 				172E830E177F5C4800D25532 /* CoreGraphics.framework */,
 				45B223941782072200CE5827 /* QuartzCore.framework */,
 				172E8310177F5C4800D25532 /* UIKit.framework */,
-				E6971354147143AFBDEEB707 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -518,11 +512,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 172E8335177F5C4900D25532 /* Build configuration list for PBXNativeTarget "Ornament" */;
 			buildPhases = (
-				27E436887E2E4684904B2893 /* Check Pods Manifest.lock */,
 				172E8305177F5C4700D25532 /* Sources */,
 				172E8306177F5C4700D25532 /* Frameworks */,
 				172E8307177F5C4700D25532 /* Resources */,
-				9D5E3215F2D9451D938133E1 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -644,39 +636,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		27E436887E2E4684904B2893 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		9D5E3215F2D9451D938133E1 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		172E8305177F5C4700D25532 /* Sources */ = {
@@ -816,7 +775,6 @@
 		};
 		172E8336177F5C4900D25532 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2B916954D4384BD99E73178F /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -837,7 +795,6 @@
 		};
 		172E8337177F5C4900D25532 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2B916954D4384BD99E73178F /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
