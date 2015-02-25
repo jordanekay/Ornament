@@ -10,10 +10,6 @@
 		172E830D177F5C4800D25532 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 172E830C177F5C4800D25532 /* Foundation.framework */; };
 		172E830F177F5C4800D25532 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 172E830E177F5C4800D25532 /* CoreGraphics.framework */; };
 		172E8311177F5C4800D25532 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 172E8310177F5C4800D25532 /* UIKit.framework */; };
-		172E8327177F5C4900D25532 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 172E830C177F5C4800D25532 /* Foundation.framework */; };
-		172E8328177F5C4900D25532 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 172E8310177F5C4800D25532 /* UIKit.framework */; };
-		172E8330177F5C4900D25532 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 172E832E177F5C4900D25532 /* InfoPlist.strings */; };
-		172E8332177F5C4900D25532 /* OrnamentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 172E8331177F5C4900D25532 /* OrnamentTests.m */; };
 		45161F8018BAAC2A00494C35 /* ORNCapsuleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45161F7F18BAAC2A00494C35 /* ORNCapsuleView.m */; };
 		4578EC7D18665BB60053BF8E /* UIImage+ORNAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4578EC7C18665BB60053BF8E /* UIImage+ORNAdditions.m */; };
 		4578EC8A18665EB10053BF8E /* bg_bar_button_black.png in Resources */ = {isa = PBXBuildFile; fileRef = 4578EC7E18665EB10053BF8E /* bg_bar_button_black.png */; };
@@ -50,6 +46,71 @@
 		458DE052186A83BF00859047 /* bg_bar_button_done_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 458DE04E186A83BF00859047 /* bg_bar_button_done_pressed.png */; };
 		458DE053186A83BF00859047 /* bg_bar_button_done_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 458DE04F186A83BF00859047 /* bg_bar_button_done_pressed@2x.png */; };
 		45B223951782072200CE5827 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B223941782072200CE5827 /* QuartzCore.framework */; };
+		45BA93B41A9D6FB100775266 /* Ornament.h in Headers */ = {isa = PBXBuildFile; fileRef = 45BA93B31A9D6FB100775266 /* Ornament.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45BA93CC1A9D70F900775266 /* UIApplication+ORNStatusBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 458DE020186A1C9000859047 /* UIApplication+ORNStatusBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45BA93CD1A9D70F900775266 /* UIColor+ORNAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F7408C1854304E00478D29 /* UIColor+ORNAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45BA93CE1A9D70F900775266 /* ORNSwitch.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F7408F1854307200478D29 /* ORNSwitch.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45BA93CF1A9D70F900775266 /* UIDevice+ORNVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F740921854309400478D29 /* UIDevice+ORNVersion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45BA93D01A9D70F900775266 /* UIFont+ORNSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F74095185430AB00478D29 /* UIFont+ORNSystem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45BA93D11A9D70F900775266 /* ORNColorable.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F740C71854391200478D29 /* ORNColorable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45BA93D21A9D70F900775266 /* ORNGradientLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F740C81854391200478D29 /* ORNGradientLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45BA93D31A9D70F900775266 /* ORNLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F740CA1854391200478D29 /* ORNLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45BA93D41A9D70F900775266 /* ORNLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F740CC1854391200478D29 /* ORNLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45BA93D51A9D70F900775266 /* ORNLine.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F740CE1854391200478D29 /* ORNLine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45BA93D61A9D70F900775266 /* ORNOrnament.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F740D01854391200478D29 /* ORNOrnament.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45BA93D71A9D70F900775266 /* ORNOrnamentMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F740D21854391200478D29 /* ORNOrnamentMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45BA93D81A9D70F900775266 /* ORNPath.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F740D31854391200478D29 /* ORNPath.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45BA93D91A9D70F900775266 /* ORNShadow.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F740D51854391200478D29 /* ORNShadow.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45BA93DA1A9D70F900775266 /* ORNShadowLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F740D71854391200478D29 /* ORNShadowLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45BA93DB1A9D70F900775266 /* NSArray+ORNFunctional.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F7409F1854382700478D29 /* NSArray+ORNFunctional.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45BA93DC1A9D70F900775266 /* ORNCaching.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F740A11854382700478D29 /* ORNCaching.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45BA93DD1A9D70F900775266 /* ORNSwizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F740A21854382700478D29 /* ORNSwizzle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45BA93DE1A9D70F900775266 /* ORNAppearance.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F740A6185438C700478D29 /* ORNAppearance.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45BA93DF1A9D70F900775266 /* ORNCapsuleView.h in Headers */ = {isa = PBXBuildFile; fileRef = 45161F7E18BAAC2A00494C35 /* ORNCapsuleView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45BA93E01A9D70F900775266 /* ORNNavigationBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F740A8185438C700478D29 /* ORNNavigationBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45BA93E11A9D70F900775266 /* ORNTableHeaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F740AA185438C700478D29 /* ORNTableHeaderView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45BA93E21A9D70F900775266 /* ORNTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F740AC185438C700478D29 /* ORNTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45BA93E31A9D70F900775266 /* ORNTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F740AE185438C700478D29 /* ORNTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45BA93E41A9D70F900775266 /* ORNTableViewColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F740B4185438C700478D29 /* ORNTableViewColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45BA93E51A9D70F900775266 /* ORNTableViewConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F740B6185438C700478D29 /* ORNTableViewConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45BA93E61A9D70F900775266 /* ORNTableViewOrnaments.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F740B7185438C700478D29 /* ORNTableViewOrnaments.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45BA93E71A9D70F900775266 /* UIImage+ORNAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4578EC7B18665BB60053BF8E /* UIImage+ORNAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45BA93E81A9D70F900775266 /* ORNNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F74099185437AF00478D29 /* ORNNavigationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45BA93E91A9D70F900775266 /* ORNTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F7409B185437AF00478D29 /* ORNTableViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45BA93EA1A9D70F900775266 /* ORNPropertyViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4578EC9D18667DBA0053BF8E /* ORNPropertyViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45BA93EB1A9D711500775266 /* UIApplication+ORNStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F7407A1854301600478D29 /* UIApplication+ORNStatusBar.m */; };
+		45BA93EC1A9D711500775266 /* UIColor+ORNAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F7408D1854304E00478D29 /* UIColor+ORNAdditions.m */; };
+		45BA93ED1A9D711500775266 /* ORNSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740901854307200478D29 /* ORNSwitch.m */; };
+		45BA93EE1A9D711500775266 /* UIDevice+ORNVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740931854309400478D29 /* UIDevice+ORNVersion.m */; };
+		45BA93EF1A9D711500775266 /* UIFont+ORNSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F74096185430AB00478D29 /* UIFont+ORNSystem.m */; };
+		45BA93F01A9D711500775266 /* ORNGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740C91854391200478D29 /* ORNGradientLayer.m */; };
+		45BA93F11A9D711500775266 /* ORNLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740CB1854391200478D29 /* ORNLayer.m */; };
+		45BA93F21A9D711500775266 /* ORNLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740CD1854391200478D29 /* ORNLayout.m */; };
+		45BA93F31A9D711500775266 /* ORNLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740CF1854391200478D29 /* ORNLine.m */; };
+		45BA93F41A9D711500775266 /* ORNOrnament.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740D11854391200478D29 /* ORNOrnament.m */; };
+		45BA93F51A9D711500775266 /* ORNPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740D41854391200478D29 /* ORNPath.m */; };
+		45BA93F61A9D711500775266 /* ORNShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740D61854391200478D29 /* ORNShadow.m */; };
+		45BA93F71A9D711500775266 /* ORNShadowLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740D81854391200478D29 /* ORNShadowLayer.m */; };
+		45BA93F81A9D711500775266 /* NSArray+ORNFunctional.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740A01854382700478D29 /* NSArray+ORNFunctional.m */; };
+		45BA93F91A9D711500775266 /* ORNSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740A31854382700478D29 /* ORNSwizzle.m */; };
+		45BA93FA1A9D711500775266 /* ORNAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740A7185438C700478D29 /* ORNAppearance.m */; };
+		45BA93FB1A9D711500775266 /* ORNCapsuleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45161F7F18BAAC2A00494C35 /* ORNCapsuleView.m */; };
+		45BA93FC1A9D711500775266 /* ORNNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740A9185438C700478D29 /* ORNNavigationBar.m */; };
+		45BA93FD1A9D711500775266 /* ORNTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740AB185438C700478D29 /* ORNTableHeaderView.m */; };
+		45BA93FE1A9D711500775266 /* ORNTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740AD185438C700478D29 /* ORNTableView.m */; };
+		45BA93FF1A9D711500775266 /* ORNTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740AF185438C700478D29 /* ORNTableViewCell.m */; };
+		45BA94001A9D711500775266 /* ORNTableViewColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740B5185438C700478D29 /* ORNTableViewColor.m */; };
+		45BA94011A9D711500775266 /* UIImage+ORNAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4578EC7C18665BB60053BF8E /* UIImage+ORNAdditions.m */; };
+		45BA94021A9D711500775266 /* ORNNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F7409A185437AF00478D29 /* ORNNavigationController.m */; };
+		45BA94031A9D711500775266 /* ORNTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F7409C185437AF00478D29 /* ORNTableViewController.m */; };
+		45BA94041A9D711500775266 /* ORNPropertyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4578EC9E18667DBA0053BF8E /* ORNPropertyViewController.m */; };
+		45BA95041A9D834C00775266 /* KGNoise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45BA95031A9D834C00775266 /* KGNoise.framework */; };
+		45BA95081A9D846D00775266 /* TTSwitch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45BA95071A9D846D00775266 /* TTSwitch.framework */; };
+		45BA950E1A9D853D00775266 /* libextobjc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45BA950D1A9D853D00775266 /* libextobjc.framework */; };
+		45DB6B851A9D88780097D963 /* Mensa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DB6B841A9D88780097D963 /* Mensa.framework */; };
+		45DB6B941A9D8BB50097D963 /* KGNoise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45BA95031A9D834C00775266 /* KGNoise.framework */; };
+		45DB6B981A9D8F7C0097D963 /* ORNNavigationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4578EC96186665720053BF8E /* ORNNavigationController.xib */; };
+		45DB6B991A9D8F7F0097D963 /* ORNPropertyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4578ECA018667DD10053BF8E /* ORNPropertyViewController.xib */; };
 		45E93499184EBF2D00CBF9F6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E93497184EBF2D00CBF9F6 /* main.m */; };
 		45E9349B184EBFEE00CBF9F6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45E9349A184EBFEE00CBF9F6 /* Images.xcassets */; };
 		45F7407B1854301600478D29 /* UIApplication+ORNStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F7407A1854301600478D29 /* UIApplication+ORNStatusBar.m */; };
@@ -87,25 +148,11 @@
 		45F740E01854391200478D29 /* ORNShadowLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740D81854391200478D29 /* ORNShadowLayer.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		172E8329177F5C4900D25532 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 172E8301177F5C4700D25532 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 172E8308177F5C4700D25532;
-			remoteInfo = Ornament;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		172E8309177F5C4800D25532 /* Ornament.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ornament.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		172E8309177F5C4800D25532 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		172E830C177F5C4800D25532 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		172E830E177F5C4800D25532 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		172E8310177F5C4800D25532 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		172E8324177F5C4900D25532 /* OrnamentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrnamentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		172E832D177F5C4900D25532 /* OrnamentTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OrnamentTests-Info.plist"; sourceTree = "<group>"; };
-		172E832F177F5C4900D25532 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		172E8331177F5C4900D25532 /* OrnamentTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrnamentTests.m; sourceTree = "<group>"; };
 		45161F7E18BAAC2A00494C35 /* ORNCapsuleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNCapsuleView.h; path = Views/ORNCapsuleView.h; sourceTree = "<group>"; };
 		45161F7F18BAAC2A00494C35 /* ORNCapsuleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORNCapsuleView.m; path = Views/ORNCapsuleView.m; sourceTree = "<group>"; };
 		4578EC7B18665BB60053BF8E /* UIImage+ORNAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ORNAdditions.h"; path = "Views/UIImage+ORNAdditions.h"; sourceTree = "<group>"; };
@@ -147,6 +194,13 @@
 		458DE04E186A83BF00859047 /* bg_bar_button_done_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg_bar_button_done_pressed.png; path = Assets/bg_bar_button_done_pressed.png; sourceTree = "<group>"; };
 		458DE04F186A83BF00859047 /* bg_bar_button_done_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg_bar_button_done_pressed@2x.png"; path = "Assets/bg_bar_button_done_pressed@2x.png"; sourceTree = "<group>"; };
 		45B223941782072200CE5827 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		45BA93AF1A9D6FB100775266 /* Ornament.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ornament.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45BA93B21A9D6FB100775266 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45BA93B31A9D6FB100775266 /* Ornament.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ornament.h; sourceTree = "<group>"; };
+		45BA95031A9D834C00775266 /* KGNoise.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KGNoise.framework; path = Carthage/Build/iOS/KGNoise.framework; sourceTree = "<group>"; };
+		45BA95071A9D846D00775266 /* TTSwitch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TTSwitch.framework; path = Carthage/Build/iOS/TTSwitch.framework; sourceTree = "<group>"; };
+		45BA950D1A9D853D00775266 /* libextobjc.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libextobjc.framework; path = Carthage/Build/iOS/libextobjc.framework; sourceTree = "<group>"; };
+		45DB6B841A9D88780097D963 /* Mensa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mensa.framework; path = Carthage/Build/iOS/Mensa.framework; sourceTree = "<group>"; };
 		45E93495184EBF2D00CBF9F6 /* Example-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Example-Info.plist"; path = "Example/Example-Info.plist"; sourceTree = SOURCE_ROOT; };
 		45E93496184EBF2D00CBF9F6 /* Example-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Example-Prefix.pch"; path = "Example/Example-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		45E93497184EBF2D00CBF9F6 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Example/main.m; sourceTree = SOURCE_ROOT; };
@@ -220,6 +274,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45DB6B941A9D8BB50097D963 /* KGNoise.framework in Frameworks */,
 				45B223951782072200CE5827 /* QuartzCore.framework in Frameworks */,
 				172E830F177F5C4800D25532 /* CoreGraphics.framework in Frameworks */,
 				172E8311177F5C4800D25532 /* UIKit.framework in Frameworks */,
@@ -227,12 +282,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		172E8321177F5C4900D25532 /* Frameworks */ = {
+		45BA93AB1A9D6FB100775266 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				172E8328177F5C4900D25532 /* UIKit.framework in Frameworks */,
-				172E8327177F5C4900D25532 /* Foundation.framework in Frameworks */,
+				45BA95041A9D834C00775266 /* KGNoise.framework in Frameworks */,
+				45BA950E1A9D853D00775266 /* libextobjc.framework in Frameworks */,
+				45DB6B851A9D88780097D963 /* Mensa.framework in Frameworks */,
+				45BA95081A9D846D00775266 /* TTSwitch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,7 +302,6 @@
 				45E9349C184EC00800CBF9F6 /* Example */,
 				172E8312177F5C4800D25532 /* Ornament */,
 				172E8313177F5C4800D25532 /* Supporting Files */,
-				172E832B177F5C4900D25532 /* OrnamentTests */,
 				172E830B177F5C4800D25532 /* Frameworks */,
 				172E830A177F5C4800D25532 /* Products */,
 			);
@@ -254,8 +310,8 @@
 		172E830A177F5C4800D25532 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				172E8309177F5C4800D25532 /* Ornament.app */,
-				172E8324177F5C4900D25532 /* OrnamentTests.xctest */,
+				172E8309177F5C4800D25532 /* Example.app */,
+				45BA93AF1A9D6FB100775266 /* Ornament.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -263,6 +319,10 @@
 		172E830B177F5C4800D25532 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				45BA95031A9D834C00775266 /* KGNoise.framework */,
+				45BA950D1A9D853D00775266 /* libextobjc.framework */,
+				45DB6B841A9D88780097D963 /* Mensa.framework */,
+				45BA95071A9D846D00775266 /* TTSwitch.framework */,
 				172E830C177F5C4800D25532 /* Foundation.framework */,
 				172E830E177F5C4800D25532 /* CoreGraphics.framework */,
 				45B223941782072200CE5827 /* QuartzCore.framework */,
@@ -274,6 +334,7 @@
 		172E8312177F5C4800D25532 /* Ornament */ = {
 			isa = PBXGroup;
 			children = (
+				45BA93B31A9D6FB100775266 /* Ornament.h */,
 				17CFB488182561FE00A63485 /* Application */,
 				450953EB17990415009B4F0F /* Assets */,
 				17CFB487182561EC00A63485 /* Color */,
@@ -292,30 +353,13 @@
 		172E8313177F5C4800D25532 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				45BA93B21A9D6FB100775266 /* Info.plist */,
 				45E93495184EBF2D00CBF9F6 /* Example-Info.plist */,
 				45E93496184EBF2D00CBF9F6 /* Example-Prefix.pch */,
 				45E93497184EBF2D00CBF9F6 /* main.m */,
 			);
 			name = "Supporting Files";
 			path = Ornament;
-			sourceTree = "<group>";
-		};
-		172E832B177F5C4900D25532 /* OrnamentTests */ = {
-			isa = PBXGroup;
-			children = (
-				172E8331177F5C4900D25532 /* OrnamentTests.m */,
-				172E832C177F5C4900D25532 /* Supporting Files */,
-			);
-			path = OrnamentTests;
-			sourceTree = "<group>";
-		};
-		172E832C177F5C4900D25532 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				172E832D177F5C4900D25532 /* OrnamentTests-Info.plist */,
-				172E832E177F5C4900D25532 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		17CFB46C18255A9F00A63485 /* Ornamentation */ = {
@@ -507,14 +551,75 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		45BA93AC1A9D6FB100775266 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45BA93DC1A9D70F900775266 /* ORNCaching.h in Headers */,
+				45BA93D71A9D70F900775266 /* ORNOrnamentMacros.h in Headers */,
+				45BA93B41A9D6FB100775266 /* Ornament.h in Headers */,
+				45BA93CD1A9D70F900775266 /* UIColor+ORNAdditions.h in Headers */,
+				45BA93EA1A9D70F900775266 /* ORNPropertyViewController.h in Headers */,
+				45BA93DB1A9D70F900775266 /* NSArray+ORNFunctional.h in Headers */,
+				45BA93D21A9D70F900775266 /* ORNGradientLayer.h in Headers */,
+				45BA93E21A9D70F900775266 /* ORNTableView.h in Headers */,
+				45BA93E01A9D70F900775266 /* ORNNavigationBar.h in Headers */,
+				45BA93E11A9D70F900775266 /* ORNTableHeaderView.h in Headers */,
+				45BA93D01A9D70F900775266 /* UIFont+ORNSystem.h in Headers */,
+				45BA93E61A9D70F900775266 /* ORNTableViewOrnaments.h in Headers */,
+				45BA93D41A9D70F900775266 /* ORNLayout.h in Headers */,
+				45BA93E81A9D70F900775266 /* ORNNavigationController.h in Headers */,
+				45BA93CE1A9D70F900775266 /* ORNSwitch.h in Headers */,
+				45BA93DD1A9D70F900775266 /* ORNSwizzle.h in Headers */,
+				45BA93E31A9D70F900775266 /* ORNTableViewCell.h in Headers */,
+				45BA93E51A9D70F900775266 /* ORNTableViewConstants.h in Headers */,
+				45BA93E41A9D70F900775266 /* ORNTableViewColor.h in Headers */,
+				45BA93D61A9D70F900775266 /* ORNOrnament.h in Headers */,
+				45BA93DA1A9D70F900775266 /* ORNShadowLayer.h in Headers */,
+				45BA93DE1A9D70F900775266 /* ORNAppearance.h in Headers */,
+				45BA93D11A9D70F900775266 /* ORNColorable.h in Headers */,
+				45BA93D31A9D70F900775266 /* ORNLayer.h in Headers */,
+				45BA93D91A9D70F900775266 /* ORNShadow.h in Headers */,
+				45BA93D51A9D70F900775266 /* ORNLine.h in Headers */,
+				45BA93E71A9D70F900775266 /* UIImage+ORNAdditions.h in Headers */,
+				45BA93D81A9D70F900775266 /* ORNPath.h in Headers */,
+				45BA93CC1A9D70F900775266 /* UIApplication+ORNStatusBar.h in Headers */,
+				45BA93E91A9D70F900775266 /* ORNTableViewController.h in Headers */,
+				45BA93CF1A9D70F900775266 /* UIDevice+ORNVersion.h in Headers */,
+				45BA93DF1A9D70F900775266 /* ORNCapsuleView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		172E8308177F5C4700D25532 /* Ornament */ = {
+		172E8308177F5C4700D25532 /* Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 172E8335177F5C4900D25532 /* Build configuration list for PBXNativeTarget "Ornament" */;
+			buildConfigurationList = 172E8335177F5C4900D25532 /* Build configuration list for PBXNativeTarget "Example" */;
 			buildPhases = (
 				172E8305177F5C4700D25532 /* Sources */,
 				172E8306177F5C4700D25532 /* Frameworks */,
 				172E8307177F5C4700D25532 /* Resources */,
+				45DB6B931A9D8A520097D963 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Example;
+			productName = Ornament;
+			productReference = 172E8309177F5C4800D25532 /* Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+		45BA93AE1A9D6FB100775266 /* Ornament */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45BA93C21A9D6FB200775266 /* Build configuration list for PBXNativeTarget "Ornament" */;
+			buildPhases = (
+				45BA93AA1A9D6FB100775266 /* Sources */,
+				45BA93AB1A9D6FB100775266 /* Frameworks */,
+				45BA93AC1A9D6FB100775266 /* Headers */,
+				45BA93AD1A9D6FB100775266 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -522,26 +627,8 @@
 			);
 			name = Ornament;
 			productName = Ornament;
-			productReference = 172E8309177F5C4800D25532 /* Ornament.app */;
-			productType = "com.apple.product-type.application";
-		};
-		172E8323177F5C4900D25532 /* OrnamentTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 172E8338177F5C4900D25532 /* Build configuration list for PBXNativeTarget "OrnamentTests" */;
-			buildPhases = (
-				172E8320177F5C4900D25532 /* Sources */,
-				172E8321177F5C4900D25532 /* Frameworks */,
-				172E8322177F5C4900D25532 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				172E832A177F5C4900D25532 /* PBXTargetDependency */,
-			);
-			name = OrnamentTests;
-			productName = OrnamentTests;
-			productReference = 172E8324177F5C4900D25532 /* OrnamentTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
+			productReference = 45BA93AF1A9D6FB100775266 /* Ornament.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -556,8 +643,9 @@
 					172E8308177F5C4700D25532 = {
 						DevelopmentTeam = SPP937VW7P;
 					};
-					172E8323177F5C4900D25532 = {
-						TestTargetID = 172E8308177F5C4700D25532;
+					45BA93AE1A9D6FB100775266 = {
+						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = SPP937VW7P;
 					};
 				};
 			};
@@ -573,8 +661,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				172E8308177F5C4700D25532 /* Ornament */,
-				172E8323177F5C4900D25532 /* OrnamentTests */,
+				172E8308177F5C4700D25532 /* Example */,
+				45BA93AE1A9D6FB100775266 /* Ornament */,
 			);
 		};
 /* End PBXProject section */
@@ -627,15 +715,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		172E8322177F5C4900D25532 /* Resources */ = {
+		45BA93AD1A9D6FB100775266 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				172E8330177F5C4900D25532 /* InfoPlist.strings in Resources */,
+				45DB6B981A9D8F7C0097D963 /* ORNNavigationController.xib in Resources */,
+				45DB6B991A9D8F7F0097D963 /* ORNPropertyViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		45DB6B931A9D8A520097D963 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/KGNoise.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/libextobjc.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Mensa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/TTSwitch.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		172E8305177F5C4700D25532 /* Sources */ = {
@@ -675,34 +784,40 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		172E8320177F5C4900D25532 /* Sources */ = {
+		45BA93AA1A9D6FB100775266 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				172E8332177F5C4900D25532 /* OrnamentTests.m in Sources */,
+				45BA93F11A9D711500775266 /* ORNLayer.m in Sources */,
+				45BA93EF1A9D711500775266 /* UIFont+ORNSystem.m in Sources */,
+				45BA93ED1A9D711500775266 /* ORNSwitch.m in Sources */,
+				45BA93F91A9D711500775266 /* ORNSwizzle.m in Sources */,
+				45BA94011A9D711500775266 /* UIImage+ORNAdditions.m in Sources */,
+				45BA93F31A9D711500775266 /* ORNLine.m in Sources */,
+				45BA93F51A9D711500775266 /* ORNPath.m in Sources */,
+				45BA93FD1A9D711500775266 /* ORNTableHeaderView.m in Sources */,
+				45BA93FE1A9D711500775266 /* ORNTableView.m in Sources */,
+				45BA94041A9D711500775266 /* ORNPropertyViewController.m in Sources */,
+				45BA94031A9D711500775266 /* ORNTableViewController.m in Sources */,
+				45BA93FF1A9D711500775266 /* ORNTableViewCell.m in Sources */,
+				45BA93F21A9D711500775266 /* ORNLayout.m in Sources */,
+				45BA93F71A9D711500775266 /* ORNShadowLayer.m in Sources */,
+				45BA94001A9D711500775266 /* ORNTableViewColor.m in Sources */,
+				45BA93EB1A9D711500775266 /* UIApplication+ORNStatusBar.m in Sources */,
+				45BA93FA1A9D711500775266 /* ORNAppearance.m in Sources */,
+				45BA94021A9D711500775266 /* ORNNavigationController.m in Sources */,
+				45BA93F61A9D711500775266 /* ORNShadow.m in Sources */,
+				45BA93EE1A9D711500775266 /* UIDevice+ORNVersion.m in Sources */,
+				45BA93FB1A9D711500775266 /* ORNCapsuleView.m in Sources */,
+				45BA93EC1A9D711500775266 /* UIColor+ORNAdditions.m in Sources */,
+				45BA93F81A9D711500775266 /* NSArray+ORNFunctional.m in Sources */,
+				45BA93FC1A9D711500775266 /* ORNNavigationBar.m in Sources */,
+				45BA93F01A9D711500775266 /* ORNGradientLayer.m in Sources */,
+				45BA93F41A9D711500775266 /* ORNOrnament.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		172E832A177F5C4900D25532 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 172E8308177F5C4700D25532 /* Ornament */;
-			targetProxy = 172E8329177F5C4900D25532 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		172E832E177F5C4900D25532 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				172E832F177F5C4900D25532 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		172E8333177F5C4900D25532 /* Debug */ = {
@@ -736,7 +851,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -767,7 +882,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -781,10 +896,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Example/Example-Prefix.pch";
 				INFOPLIST_FILE = "Example/Example-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -801,10 +920,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Example/Example-Prefix.pch";
 				INFOPLIST_FILE = "Example/Example-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -812,43 +935,69 @@
 			};
 			name = Release;
 		};
-		172E8339177F5C4900D25532 /* Debug */ = {
+		45BA93C31A9D6FB200775266 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Ornament.app/Ornament";
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
-					"$(SYSTEM_APPS_DIR)/Xcode5-DP.app/Contents/Developer/Library/Frameworks",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Example/Example-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "OrnamentTests/OrnamentTests-Info.plist";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = Ornament/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		172E833A177F5C4900D25532 /* Release */ = {
+		45BA93C41A9D6FB200775266 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Ornament.app/Ornament";
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
-					"$(SYSTEM_APPS_DIR)/Xcode5-DP.app/Contents/Developer/Library/Frameworks",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Example/Example-Prefix.pch";
-				INFOPLIST_FILE = "OrnamentTests/OrnamentTests-Info.plist";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = Ornament/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -864,7 +1013,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		172E8335177F5C4900D25532 /* Build configuration list for PBXNativeTarget "Ornament" */ = {
+		172E8335177F5C4900D25532 /* Build configuration list for PBXNativeTarget "Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				172E8336177F5C4900D25532 /* Debug */,
@@ -873,11 +1022,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		172E8338177F5C4900D25532 /* Build configuration list for PBXNativeTarget "OrnamentTests" */ = {
+		45BA93C21A9D6FB200775266 /* Build configuration list for PBXNativeTarget "Ornament" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				172E8339177F5C4900D25532 /* Debug */,
-				172E833A177F5C4900D25532 /* Release */,
+				45BA93C31A9D6FB200775266 /* Debug */,
+				45BA93C41A9D6FB200775266 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Jordan Kay. All rights reserved.
 //
 
+#import <Mensa/MNSPropertyView.h>
 #import <Mensa/MNSPropertyViewController.h>
-#import "MNSPropertyView.h"
 
 typedef NS_ENUM(NSUInteger, ORNPropertyDisplayStyle) {
     ORNPropertyDisplayStyleLight,

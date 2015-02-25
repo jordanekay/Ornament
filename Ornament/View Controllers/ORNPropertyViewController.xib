@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6249" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6243"/>
     </dependencies>
     <objects>
@@ -37,7 +36,7 @@
                         <constraint firstAttribute="width" constant="76" id="iPm-JR-W6x"/>
                     </constraints>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icn_checkmark.png" highlightedImage="icn_checkmark_selected.png" translatesAutoresizingMaskIntoConstraints="NO" id="h1k-Dp-zS3" userLabel="Checkmark View">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_checkmark.png" highlightedImage="icn_checkmark_selected.png" translatesAutoresizingMaskIntoConstraints="NO" id="h1k-Dp-zS3" userLabel="Checkmark View">
                     <rect key="frame" x="296" y="15" width="14" height="14"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_chevron.png" highlightedImage="icn_chevron_selected.png" translatesAutoresizingMaskIntoConstraints="NO" id="hRG-yd-gE6" userLabel="Disclosure View">

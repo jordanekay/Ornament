@@ -1,0 +1,695 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		451BA7381A9D5F920036074F /* MNSCollectionViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 458920961885B06F001EC015 /* MNSCollectionViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		451BA7391A9D5F920036074F /* MNSDataMediator.h in Headers */ = {isa = PBXBuildFile; fileRef = 4589208F18848D19001EC015 /* MNSDataMediator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		451BA73A1A9D5F920036074F /* MNSHostedViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F7404A1852B3AF00478D29 /* MNSHostedViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		451BA73B1A9D5F920036074F /* MNSHostingCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 4589208C1884877D001EC015 /* MNSHostingCollectionViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		451BA73C1A9D5F920036074F /* MNSHostingTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 454A191718511D99001F4296 /* MNSHostingTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		451BA73D1A9D5F920036074F /* MNSMultilineLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 45DFCF601856470B006968EF /* MNSMultilineLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		451BA73E1A9D5F920036074F /* MNSProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 45B9FF86185EBE840015805E /* MNSProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		451BA73F1A9D5F920036074F /* MNSPropertyView.h in Headers */ = {isa = PBXBuildFile; fileRef = 45B9FF88185EBE840015805E /* MNSPropertyView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		451BA7401A9D5F920036074F /* MNSPropertyViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 45DFED5B186153460080BD62 /* MNSPropertyViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		451BA7411A9D5F920036074F /* MNSSection.h in Headers */ = {isa = PBXBuildFile; fileRef = 454587F418528B320016E74B /* MNSSection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		451BA7421A9D5F920036074F /* MNSTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 454A191918511D99001F4296 /* MNSTableViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		451BA7431A9D5F920036074F /* MNSViewControllerRegistrar.h in Headers */ = {isa = PBXBuildFile; fileRef = 454587F718529DA20016E74B /* MNSViewControllerRegistrar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		451BA7441A9D5F920036074F /* MNSViewHosting.h in Headers */ = {isa = PBXBuildFile; fileRef = 4589208918847355001EC015 /* MNSViewHosting.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		451BA7451A9D5F9C0036074F /* MNSCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 458920971885B06F001EC015 /* MNSCollectionViewController.m */; };
+		451BA7461A9D5F9C0036074F /* MNSDataMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4589209018848D19001EC015 /* MNSDataMediator.m */; };
+		451BA7471A9D5F9C0036074F /* MNSHostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F7404B1852B3AF00478D29 /* MNSHostedViewController.m */; };
+		451BA7481A9D5F9C0036074F /* MNSHostingCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4589208D1884877D001EC015 /* MNSHostingCollectionViewCell.m */; };
+		451BA7491A9D5F9C0036074F /* MNSHostingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 454A191818511D99001F4296 /* MNSHostingTableViewCell.m */; };
+		451BA74A1A9D5F9C0036074F /* MNSMultilineLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DFCF611856470B006968EF /* MNSMultilineLabel.m */; };
+		451BA74B1A9D5F9C0036074F /* MNSProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B9FF87185EBE840015805E /* MNSProperty.m */; };
+		451BA74C1A9D5F9C0036074F /* MNSPropertyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B9FF89185EBE840015805E /* MNSPropertyView.m */; };
+		451BA74D1A9D5F9C0036074F /* MNSPropertyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DFED5C186153460080BD62 /* MNSPropertyViewController.m */; };
+		451BA74E1A9D5F9C0036074F /* MNSSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 454587F518528B320016E74B /* MNSSection.m */; };
+		451BA74F1A9D5F9C0036074F /* MNSTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 454A191A18511D99001F4296 /* MNSTableViewController.m */; };
+		451BA7501A9D5F9C0036074F /* MNSViewControllerRegistrar.m in Sources */ = {isa = PBXBuildFile; fileRef = 454587F818529DA20016E74B /* MNSViewControllerRegistrar.m */; };
+		451BA7511A9D5F9C0036074F /* MNSViewHosting.m in Sources */ = {isa = PBXBuildFile; fileRef = 4589208A18847355001EC015 /* MNSViewHosting.m */; };
+		454587F618528B320016E74B /* MNSSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 454587F518528B320016E74B /* MNSSection.m */; };
+		454587F918529DA20016E74B /* MNSViewControllerRegistrar.m in Sources */ = {isa = PBXBuildFile; fileRef = 454587F818529DA20016E74B /* MNSViewControllerRegistrar.m */; };
+		454587FC1852AB0A0016E74B /* MNSNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 454587FB1852AB0A0016E74B /* MNSNumber.m */; };
+		454A191B18511D99001F4296 /* MNSHostingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 454A191818511D99001F4296 /* MNSHostingTableViewCell.m */; };
+		454A191C18511D99001F4296 /* MNSTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 454A191A18511D99001F4296 /* MNSTableViewController.m */; };
+		454A191E18511DAB001F4296 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 454A191D18511DAB001F4296 /* Images.xcassets */; };
+		454A192118511DB1001F4296 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 454A191F18511DB1001F4296 /* Main.storyboard */; };
+		454A192918511DC4001F4296 /* MNSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 454A192318511DC4001F4296 /* MNSAppDelegate.m */; };
+		454A192A18511DC4001F4296 /* MNSNumberTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 454A192518511DC4001F4296 /* MNSNumberTableViewController.m */; };
+		454A192B18511DC4001F4296 /* MNSNumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 454A192718511DC4001F4296 /* MNSNumberViewController.m */; };
+		454A193118511DD4001F4296 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 454A192F18511DD4001F4296 /* main.m */; };
+		454A193418511DDC001F4296 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 454A193218511DDC001F4296 /* InfoPlist.strings */; };
+		454F2FE017A3113800DF45AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 454F2FDF17A3113800DF45AB /* Foundation.framework */; };
+		454F2FE217A3113800DF45AB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 454F2FE117A3113800DF45AB /* CoreGraphics.framework */; };
+		454F2FE417A3113800DF45AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 454F2FE317A3113800DF45AB /* UIKit.framework */; };
+		4589208B18847355001EC015 /* MNSViewHosting.m in Sources */ = {isa = PBXBuildFile; fileRef = 4589208A18847355001EC015 /* MNSViewHosting.m */; };
+		4589208E1884877D001EC015 /* MNSHostingCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4589208D1884877D001EC015 /* MNSHostingCollectionViewCell.m */; };
+		4589209118848D19001EC015 /* MNSDataMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4589209018848D19001EC015 /* MNSDataMediator.m */; };
+		458920981885B06F001EC015 /* MNSCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 458920971885B06F001EC015 /* MNSCollectionViewController.m */; };
+		4589209B1885B53B001EC015 /* MNSNumberCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4589209A1885B53B001EC015 /* MNSNumberCollectionViewController.m */; };
+		45B9FF8A185EBE840015805E /* MNSProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B9FF87185EBE840015805E /* MNSProperty.m */; };
+		45B9FF8B185EBE840015805E /* MNSPropertyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B9FF89185EBE840015805E /* MNSPropertyView.m */; };
+		45DB6B831A9D86DC0097D963 /* Mensa.h in Headers */ = {isa = PBXBuildFile; fileRef = 45DB6B821A9D86DC0097D963 /* Mensa.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45DFCF621856470B006968EF /* MNSMultilineLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DFCF611856470B006968EF /* MNSMultilineLabel.m */; };
+		45DFED5D186153460080BD62 /* MNSPropertyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DFED5C186153460080BD62 /* MNSPropertyViewController.m */; };
+		45F740461852B25700478D29 /* MNSNumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740451852B25700478D29 /* MNSNumberView.m */; };
+		45F7404C1852B3AF00478D29 /* MNSHostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F7404B1852B3AF00478D29 /* MNSHostedViewController.m */; };
+		45F740521853A2D200478D29 /* MNSPrimeFlag.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740511853A2D200478D29 /* MNSPrimeFlag.m */; };
+		45F740561853A2F100478D29 /* MNSPrimeFlagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740541853A2F100478D29 /* MNSPrimeFlagViewController.m */; };
+		45F740571853A2F100478D29 /* MNSPrimeFlagViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45F740551853A2F100478D29 /* MNSPrimeFlagViewController.xib */; };
+		45F7405A1853A30800478D29 /* MNSPrimeFlagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F740591853A30800478D29 /* MNSPrimeFlagView.m */; };
+		45F7405C1853A36D00478D29 /* MNSNumberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45F7405B1853A36D00478D29 /* MNSNumberViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		451BA72D1A9D5F610036074F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 454F2FD417A3113800DF45AB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 451BA7171A9D5F610036074F;
+			remoteInfo = Mensa;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		451BA7301A9D5F610036074F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		451BA7181A9D5F610036074F /* Mensa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mensa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		454587F418528B320016E74B /* MNSSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNSSection.h; path = Mensa/MNSSection.h; sourceTree = SOURCE_ROOT; };
+		454587F518528B320016E74B /* MNSSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNSSection.m; path = Mensa/MNSSection.m; sourceTree = SOURCE_ROOT; };
+		454587F718529DA20016E74B /* MNSViewControllerRegistrar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNSViewControllerRegistrar.h; path = Mensa/MNSViewControllerRegistrar.h; sourceTree = SOURCE_ROOT; };
+		454587F818529DA20016E74B /* MNSViewControllerRegistrar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNSViewControllerRegistrar.m; path = Mensa/MNSViewControllerRegistrar.m; sourceTree = SOURCE_ROOT; };
+		454587FA1852AB0A0016E74B /* MNSNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNSNumber.h; path = Example/MNSNumber.h; sourceTree = "<group>"; };
+		454587FB1852AB0A0016E74B /* MNSNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNSNumber.m; path = Example/MNSNumber.m; sourceTree = "<group>"; };
+		454A191718511D99001F4296 /* MNSHostingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNSHostingTableViewCell.h; path = Mensa/MNSHostingTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		454A191818511D99001F4296 /* MNSHostingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNSHostingTableViewCell.m; path = Mensa/MNSHostingTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		454A191918511D99001F4296 /* MNSTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNSTableViewController.h; path = Mensa/MNSTableViewController.h; sourceTree = SOURCE_ROOT; };
+		454A191A18511D99001F4296 /* MNSTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNSTableViewController.m; path = Mensa/MNSTableViewController.m; sourceTree = SOURCE_ROOT; };
+		454A191D18511DAB001F4296 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Example/Images.xcassets; sourceTree = "<group>"; };
+		454A192018511DB1001F4296 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Example/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		454A192218511DC4001F4296 /* MNSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNSAppDelegate.h; path = Example/MNSAppDelegate.h; sourceTree = "<group>"; };
+		454A192318511DC4001F4296 /* MNSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNSAppDelegate.m; path = Example/MNSAppDelegate.m; sourceTree = "<group>"; };
+		454A192418511DC4001F4296 /* MNSNumberTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNSNumberTableViewController.h; path = Example/MNSNumberTableViewController.h; sourceTree = "<group>"; };
+		454A192518511DC4001F4296 /* MNSNumberTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNSNumberTableViewController.m; path = Example/MNSNumberTableViewController.m; sourceTree = "<group>"; };
+		454A192618511DC4001F4296 /* MNSNumberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNSNumberViewController.h; path = Example/MNSNumberViewController.h; sourceTree = "<group>"; };
+		454A192718511DC4001F4296 /* MNSNumberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNSNumberViewController.m; path = Example/MNSNumberViewController.m; sourceTree = "<group>"; };
+		454A192D18511DD4001F4296 /* Example-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Example-Info.plist"; path = "Example/Example-Info.plist"; sourceTree = "<group>"; };
+		454A192E18511DD4001F4296 /* Example-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Example-Prefix.pch"; path = "Example/Example-Prefix.pch"; sourceTree = "<group>"; };
+		454A192F18511DD4001F4296 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Example/main.m; sourceTree = "<group>"; };
+		454A193318511DDC001F4296 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Example/en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		454F2FDC17A3113800DF45AB /* Mensa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mensa.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		454F2FDF17A3113800DF45AB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		454F2FE117A3113800DF45AB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		454F2FE317A3113800DF45AB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		454F2FFE17A3113800DF45AB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		4589208918847355001EC015 /* MNSViewHosting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNSViewHosting.h; path = Mensa/MNSViewHosting.h; sourceTree = SOURCE_ROOT; };
+		4589208A18847355001EC015 /* MNSViewHosting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNSViewHosting.m; path = Mensa/MNSViewHosting.m; sourceTree = SOURCE_ROOT; };
+		4589208C1884877D001EC015 /* MNSHostingCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNSHostingCollectionViewCell.h; path = Mensa/MNSHostingCollectionViewCell.h; sourceTree = SOURCE_ROOT; };
+		4589208D1884877D001EC015 /* MNSHostingCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNSHostingCollectionViewCell.m; path = Mensa/MNSHostingCollectionViewCell.m; sourceTree = SOURCE_ROOT; };
+		4589208F18848D19001EC015 /* MNSDataMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNSDataMediator.h; path = Mensa/MNSDataMediator.h; sourceTree = SOURCE_ROOT; };
+		4589209018848D19001EC015 /* MNSDataMediator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNSDataMediator.m; path = Mensa/MNSDataMediator.m; sourceTree = SOURCE_ROOT; };
+		458920961885B06F001EC015 /* MNSCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNSCollectionViewController.h; path = Mensa/MNSCollectionViewController.h; sourceTree = SOURCE_ROOT; };
+		458920971885B06F001EC015 /* MNSCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNSCollectionViewController.m; path = Mensa/MNSCollectionViewController.m; sourceTree = SOURCE_ROOT; };
+		458920991885B53B001EC015 /* MNSNumberCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNSNumberCollectionViewController.h; path = Example/MNSNumberCollectionViewController.h; sourceTree = "<group>"; };
+		4589209A1885B53B001EC015 /* MNSNumberCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNSNumberCollectionViewController.m; path = Example/MNSNumberCollectionViewController.m; sourceTree = "<group>"; };
+		45B9FF86185EBE840015805E /* MNSProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNSProperty.h; path = Mensa/MNSProperty.h; sourceTree = SOURCE_ROOT; };
+		45B9FF87185EBE840015805E /* MNSProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNSProperty.m; path = Mensa/MNSProperty.m; sourceTree = SOURCE_ROOT; };
+		45B9FF88185EBE840015805E /* MNSPropertyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNSPropertyView.h; path = Mensa/MNSPropertyView.h; sourceTree = SOURCE_ROOT; };
+		45B9FF89185EBE840015805E /* MNSPropertyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNSPropertyView.m; path = Mensa/MNSPropertyView.m; sourceTree = SOURCE_ROOT; };
+		45DB6B801A9D86970097D963 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45DB6B821A9D86DC0097D963 /* Mensa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Mensa.h; path = Mensa/Mensa.h; sourceTree = SOURCE_ROOT; };
+		45DFCF601856470B006968EF /* MNSMultilineLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNSMultilineLabel.h; path = Mensa/MNSMultilineLabel.h; sourceTree = SOURCE_ROOT; };
+		45DFCF611856470B006968EF /* MNSMultilineLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNSMultilineLabel.m; path = Mensa/MNSMultilineLabel.m; sourceTree = SOURCE_ROOT; };
+		45DFED5B186153460080BD62 /* MNSPropertyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNSPropertyViewController.h; path = Mensa/MNSPropertyViewController.h; sourceTree = SOURCE_ROOT; };
+		45DFED5C186153460080BD62 /* MNSPropertyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNSPropertyViewController.m; path = Mensa/MNSPropertyViewController.m; sourceTree = SOURCE_ROOT; };
+		45F740441852B25700478D29 /* MNSNumberView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNSNumberView.h; path = Example/MNSNumberView.h; sourceTree = "<group>"; };
+		45F740451852B25700478D29 /* MNSNumberView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNSNumberView.m; path = Example/MNSNumberView.m; sourceTree = "<group>"; };
+		45F7404A1852B3AF00478D29 /* MNSHostedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNSHostedViewController.h; path = Mensa/MNSHostedViewController.h; sourceTree = SOURCE_ROOT; };
+		45F7404B1852B3AF00478D29 /* MNSHostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNSHostedViewController.m; path = Mensa/MNSHostedViewController.m; sourceTree = SOURCE_ROOT; };
+		45F740501853A2D200478D29 /* MNSPrimeFlag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNSPrimeFlag.h; path = Example/MNSPrimeFlag.h; sourceTree = "<group>"; };
+		45F740511853A2D200478D29 /* MNSPrimeFlag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNSPrimeFlag.m; path = Example/MNSPrimeFlag.m; sourceTree = "<group>"; };
+		45F740531853A2F100478D29 /* MNSPrimeFlagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNSPrimeFlagViewController.h; path = Example/MNSPrimeFlagViewController.h; sourceTree = "<group>"; };
+		45F740541853A2F100478D29 /* MNSPrimeFlagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNSPrimeFlagViewController.m; path = Example/MNSPrimeFlagViewController.m; sourceTree = "<group>"; };
+		45F740551853A2F100478D29 /* MNSPrimeFlagViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MNSPrimeFlagViewController.xib; path = Example/MNSPrimeFlagViewController.xib; sourceTree = "<group>"; };
+		45F740581853A30800478D29 /* MNSPrimeFlagView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNSPrimeFlagView.h; path = Example/MNSPrimeFlagView.h; sourceTree = "<group>"; };
+		45F740591853A30800478D29 /* MNSPrimeFlagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNSPrimeFlagView.m; path = Example/MNSPrimeFlagView.m; sourceTree = "<group>"; };
+		45F7405B1853A36D00478D29 /* MNSNumberViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MNSNumberViewController.xib; path = Example/MNSNumberViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		451BA7141A9D5F610036074F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		454F2FD917A3113800DF45AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				454F2FE217A3113800DF45AB /* CoreGraphics.framework in Frameworks */,
+				454F2FE417A3113800DF45AB /* UIKit.framework in Frameworks */,
+				454F2FE017A3113800DF45AB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		451BA71A1A9D5F610036074F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				45DB6B801A9D86970097D963 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			path = ../Mensa;
+			sourceTree = "<group>";
+		};
+		45318BF11850FB93006F8527 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				454A191D18511DAB001F4296 /* Images.xcassets */,
+				454A191F18511DB1001F4296 /* Main.storyboard */,
+				454A192218511DC4001F4296 /* MNSAppDelegate.h */,
+				454A192318511DC4001F4296 /* MNSAppDelegate.m */,
+				458920991885B53B001EC015 /* MNSNumberCollectionViewController.h */,
+				4589209A1885B53B001EC015 /* MNSNumberCollectionViewController.m */,
+				454A192418511DC4001F4296 /* MNSNumberTableViewController.h */,
+				454A192518511DC4001F4296 /* MNSNumberTableViewController.m */,
+				454588001852AC2D0016E74B /* Number */,
+				45F7404F1853A2B100478D29 /* Prime Flag */,
+				454A191018511CC6001F4296 /* Supporting Files */,
+			);
+			name = Example;
+			sourceTree = "<group>";
+		};
+		454588001852AC2D0016E74B /* Number */ = {
+			isa = PBXGroup;
+			children = (
+				454587FA1852AB0A0016E74B /* MNSNumber.h */,
+				454587FB1852AB0A0016E74B /* MNSNumber.m */,
+				45F740441852B25700478D29 /* MNSNumberView.h */,
+				45F740451852B25700478D29 /* MNSNumberView.m */,
+				454A192618511DC4001F4296 /* MNSNumberViewController.h */,
+				454A192718511DC4001F4296 /* MNSNumberViewController.m */,
+				45F7405B1853A36D00478D29 /* MNSNumberViewController.xib */,
+			);
+			name = Number;
+			sourceTree = "<group>";
+		};
+		454A191018511CC6001F4296 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				454A192D18511DD4001F4296 /* Example-Info.plist */,
+				454A192E18511DD4001F4296 /* Example-Prefix.pch */,
+				454A192F18511DD4001F4296 /* main.m */,
+				454A193218511DDC001F4296 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		454F2FD317A3113800DF45AB = {
+			isa = PBXGroup;
+			children = (
+				4583626017A3A62C001FB4AE /* Mensa */,
+				45318BF11850FB93006F8527 /* Example */,
+				454F2FDE17A3113800DF45AB /* Frameworks */,
+				454F2FDD17A3113800DF45AB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		454F2FDD17A3113800DF45AB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				454F2FDC17A3113800DF45AB /* Mensa.app */,
+				451BA7181A9D5F610036074F /* Mensa.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		454F2FDE17A3113800DF45AB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				454F2FDF17A3113800DF45AB /* Foundation.framework */,
+				454F2FE117A3113800DF45AB /* CoreGraphics.framework */,
+				454F2FE317A3113800DF45AB /* UIKit.framework */,
+				454F2FFE17A3113800DF45AB /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4583626017A3A62C001FB4AE /* Mensa */ = {
+			isa = PBXGroup;
+			children = (
+				45DB6B821A9D86DC0097D963 /* Mensa.h */,
+				458920961885B06F001EC015 /* MNSCollectionViewController.h */,
+				458920971885B06F001EC015 /* MNSCollectionViewController.m */,
+				4589208F18848D19001EC015 /* MNSDataMediator.h */,
+				4589209018848D19001EC015 /* MNSDataMediator.m */,
+				45F7404A1852B3AF00478D29 /* MNSHostedViewController.h */,
+				45F7404B1852B3AF00478D29 /* MNSHostedViewController.m */,
+				4589208C1884877D001EC015 /* MNSHostingCollectionViewCell.h */,
+				4589208D1884877D001EC015 /* MNSHostingCollectionViewCell.m */,
+				454A191718511D99001F4296 /* MNSHostingTableViewCell.h */,
+				454A191818511D99001F4296 /* MNSHostingTableViewCell.m */,
+				45DFCF601856470B006968EF /* MNSMultilineLabel.h */,
+				45DFCF611856470B006968EF /* MNSMultilineLabel.m */,
+				45B9FF86185EBE840015805E /* MNSProperty.h */,
+				45B9FF87185EBE840015805E /* MNSProperty.m */,
+				45B9FF88185EBE840015805E /* MNSPropertyView.h */,
+				45B9FF89185EBE840015805E /* MNSPropertyView.m */,
+				45DFED5B186153460080BD62 /* MNSPropertyViewController.h */,
+				45DFED5C186153460080BD62 /* MNSPropertyViewController.m */,
+				454587F418528B320016E74B /* MNSSection.h */,
+				454587F518528B320016E74B /* MNSSection.m */,
+				454A191918511D99001F4296 /* MNSTableViewController.h */,
+				454A191A18511D99001F4296 /* MNSTableViewController.m */,
+				454587F718529DA20016E74B /* MNSViewControllerRegistrar.h */,
+				454587F818529DA20016E74B /* MNSViewControllerRegistrar.m */,
+				4589208918847355001EC015 /* MNSViewHosting.h */,
+				4589208A18847355001EC015 /* MNSViewHosting.m */,
+				451BA71A1A9D5F610036074F /* Supporting Files */,
+			);
+			name = Mensa;
+			path = SmartTables;
+			sourceTree = "<group>";
+		};
+		45F7404F1853A2B100478D29 /* Prime Flag */ = {
+			isa = PBXGroup;
+			children = (
+				45F740501853A2D200478D29 /* MNSPrimeFlag.h */,
+				45F740511853A2D200478D29 /* MNSPrimeFlag.m */,
+				45F740581853A30800478D29 /* MNSPrimeFlagView.h */,
+				45F740591853A30800478D29 /* MNSPrimeFlagView.m */,
+				45F740531853A2F100478D29 /* MNSPrimeFlagViewController.h */,
+				45F740541853A2F100478D29 /* MNSPrimeFlagViewController.m */,
+				45F740551853A2F100478D29 /* MNSPrimeFlagViewController.xib */,
+			);
+			name = "Prime Flag";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		451BA7151A9D5F610036074F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				451BA7381A9D5F920036074F /* MNSCollectionViewController.h in Headers */,
+				451BA73F1A9D5F920036074F /* MNSPropertyView.h in Headers */,
+				451BA7431A9D5F920036074F /* MNSViewControllerRegistrar.h in Headers */,
+				451BA73B1A9D5F920036074F /* MNSHostingCollectionViewCell.h in Headers */,
+				451BA73C1A9D5F920036074F /* MNSHostingTableViewCell.h in Headers */,
+				451BA7441A9D5F920036074F /* MNSViewHosting.h in Headers */,
+				451BA73D1A9D5F920036074F /* MNSMultilineLabel.h in Headers */,
+				451BA7391A9D5F920036074F /* MNSDataMediator.h in Headers */,
+				451BA73E1A9D5F920036074F /* MNSProperty.h in Headers */,
+				45DB6B831A9D86DC0097D963 /* Mensa.h in Headers */,
+				451BA7411A9D5F920036074F /* MNSSection.h in Headers */,
+				451BA73A1A9D5F920036074F /* MNSHostedViewController.h in Headers */,
+				451BA7401A9D5F920036074F /* MNSPropertyViewController.h in Headers */,
+				451BA7421A9D5F920036074F /* MNSTableViewController.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		451BA7171A9D5F610036074F /* Mensa */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 451BA7361A9D5F620036074F /* Build configuration list for PBXNativeTarget "Mensa" */;
+			buildPhases = (
+				451BA7131A9D5F610036074F /* Sources */,
+				451BA7141A9D5F610036074F /* Frameworks */,
+				451BA7151A9D5F610036074F /* Headers */,
+				451BA7161A9D5F610036074F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Mensa;
+			productName = Mensa;
+			productReference = 451BA7181A9D5F610036074F /* Mensa.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		454F2FDB17A3113800DF45AB /* Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 454F300E17A3113800DF45AB /* Build configuration list for PBXNativeTarget "Example" */;
+			buildPhases = (
+				454F2FD817A3113800DF45AB /* Sources */,
+				454F2FD917A3113800DF45AB /* Frameworks */,
+				454F2FDA17A3113800DF45AB /* Resources */,
+				451BA7301A9D5F610036074F /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				451BA72E1A9D5F610036074F /* PBXTargetDependency */,
+			);
+			name = Example;
+			productName = SmartTables;
+			productReference = 454F2FDC17A3113800DF45AB /* Mensa.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		454F2FD417A3113800DF45AB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = C;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = toxicsoftware;
+				TargetAttributes = {
+					451BA7171A9D5F610036074F = {
+						CreatedOnToolsVersion = 6.1;
+					};
+				};
+			};
+			buildConfigurationList = 454F2FD717A3113800DF45AB /* Build configuration list for PBXProject "Mensa" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 454F2FD317A3113800DF45AB;
+			productRefGroup = 454F2FDD17A3113800DF45AB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				454F2FDB17A3113800DF45AB /* Example */,
+				451BA7171A9D5F610036074F /* Mensa */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		451BA7161A9D5F610036074F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		454F2FDA17A3113800DF45AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45F7405C1853A36D00478D29 /* MNSNumberViewController.xib in Resources */,
+				454A192118511DB1001F4296 /* Main.storyboard in Resources */,
+				45F740571853A2F100478D29 /* MNSPrimeFlagViewController.xib in Resources */,
+				454A191E18511DAB001F4296 /* Images.xcassets in Resources */,
+				454A193418511DDC001F4296 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		451BA7131A9D5F610036074F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				451BA7451A9D5F9C0036074F /* MNSCollectionViewController.m in Sources */,
+				451BA7461A9D5F9C0036074F /* MNSDataMediator.m in Sources */,
+				451BA74C1A9D5F9C0036074F /* MNSPropertyView.m in Sources */,
+				451BA74D1A9D5F9C0036074F /* MNSPropertyViewController.m in Sources */,
+				451BA74E1A9D5F9C0036074F /* MNSSection.m in Sources */,
+				451BA7481A9D5F9C0036074F /* MNSHostingCollectionViewCell.m in Sources */,
+				451BA7511A9D5F9C0036074F /* MNSViewHosting.m in Sources */,
+				451BA7491A9D5F9C0036074F /* MNSHostingTableViewCell.m in Sources */,
+				451BA7501A9D5F9C0036074F /* MNSViewControllerRegistrar.m in Sources */,
+				451BA7471A9D5F9C0036074F /* MNSHostedViewController.m in Sources */,
+				451BA74F1A9D5F9C0036074F /* MNSTableViewController.m in Sources */,
+				451BA74A1A9D5F9C0036074F /* MNSMultilineLabel.m in Sources */,
+				451BA74B1A9D5F9C0036074F /* MNSProperty.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		454F2FD817A3113800DF45AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				454587FC1852AB0A0016E74B /* MNSNumber.m in Sources */,
+				4589208B18847355001EC015 /* MNSViewHosting.m in Sources */,
+				454A191C18511D99001F4296 /* MNSTableViewController.m in Sources */,
+				454A192A18511DC4001F4296 /* MNSNumberTableViewController.m in Sources */,
+				45F740561853A2F100478D29 /* MNSPrimeFlagViewController.m in Sources */,
+				45F740461852B25700478D29 /* MNSNumberView.m in Sources */,
+				4589209B1885B53B001EC015 /* MNSNumberCollectionViewController.m in Sources */,
+				4589208E1884877D001EC015 /* MNSHostingCollectionViewCell.m in Sources */,
+				45DFCF621856470B006968EF /* MNSMultilineLabel.m in Sources */,
+				454A192918511DC4001F4296 /* MNSAppDelegate.m in Sources */,
+				458920981885B06F001EC015 /* MNSCollectionViewController.m in Sources */,
+				454A192B18511DC4001F4296 /* MNSNumberViewController.m in Sources */,
+				45F740521853A2D200478D29 /* MNSPrimeFlag.m in Sources */,
+				45F7404C1852B3AF00478D29 /* MNSHostedViewController.m in Sources */,
+				454A193118511DD4001F4296 /* main.m in Sources */,
+				45B9FF8A185EBE840015805E /* MNSProperty.m in Sources */,
+				45DFED5D186153460080BD62 /* MNSPropertyViewController.m in Sources */,
+				45B9FF8B185EBE840015805E /* MNSPropertyView.m in Sources */,
+				454587F618528B320016E74B /* MNSSection.m in Sources */,
+				4589209118848D19001EC015 /* MNSDataMediator.m in Sources */,
+				454A191B18511D99001F4296 /* MNSHostingTableViewCell.m in Sources */,
+				454587F918529DA20016E74B /* MNSViewControllerRegistrar.m in Sources */,
+				45F7405A1853A30800478D29 /* MNSPrimeFlagView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		451BA72E1A9D5F610036074F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 451BA7171A9D5F610036074F /* Mensa */;
+			targetProxy = 451BA72D1A9D5F610036074F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		454A191F18511DB1001F4296 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				454A192018511DB1001F4296 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		454A193218511DDC001F4296 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				454A193318511DDC001F4296 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		451BA7321A9D5F620036074F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = Mensa/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		451BA7331A9D5F620036074F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = Mensa/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		454F300C17A3113800DF45AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		454F300D17A3113800DF45AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		454F300F17A3113800DF45AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Example/Example-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Example/Example-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = Mensa;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		454F301017A3113800DF45AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Example/Example-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Example/Example-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = Mensa;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		451BA7361A9D5F620036074F /* Build configuration list for PBXNativeTarget "Mensa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				451BA7321A9D5F620036074F /* Debug */,
+				451BA7331A9D5F620036074F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		454F2FD717A3113800DF45AB /* Build configuration list for PBXProject "Mensa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				454F300C17A3113800DF45AB /* Debug */,
+				454F300D17A3113800DF45AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		454F300E17A3113800DF45AB /* Build configuration list for PBXNativeTarget "Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				454F300F17A3113800DF45AB /* Debug */,
+				454F301017A3113800DF45AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 454F2FD417A3113800DF45AB /* Project object */;
+}

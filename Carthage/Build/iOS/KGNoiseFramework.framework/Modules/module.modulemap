@@ -1,6 +1,0 @@
-framework module KGNoiseFramework {
-  umbrella header "KGNoiseFramework.h"
-
-  export *
-  module * { export * }
-}

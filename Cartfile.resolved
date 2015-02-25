@@ -1,1 +1,4 @@
-github "jordanekay/KGNoise" "61542d7a86e199dfb70d5243ed0265ec13baed4d"
+github "jordanekay/KGNoise" "843ae2db90f7831758e75b428e0ae9de6c9e43ff"
+github "jordanekay/Mensa" "f09c97565b0e19fcb7c33e628210b50ed08005ac"
+github "jordanekay/TTSwitch" "2e611a2a7ec408907516363664a862197519c2de"
+github "jordanekay/libextobjc" "af99e01366fa680a50c5178401d370b774a7cf70"

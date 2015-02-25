@@ -1,2 +1,4 @@
-github "jordanekay/Mensa"
+github "jordanekay/TTSwitch" "carthage"
+github "jordanekay/Mensa" "carthage"
 github "jordanekay/KGNoise" "carthage"
+github "jordanekay/libextobjc" "extscope-framework"

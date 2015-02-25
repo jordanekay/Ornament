@@ -1,0 +1,6 @@
+framework module TTSwitch {
+  umbrella header "TTSwitch.h"
+
+  export *
+  module * { export * }
+}

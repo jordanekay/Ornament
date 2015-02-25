@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6205" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="NT8-Or-0g3">
+    <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6198"/>
+    </dependencies>
+    <scenes>
+        <!--Mensa-->
+        <scene sceneID="HHm-wt-Gnb">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="NT8-Or-0g3" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Mensa" id="zO6-MV-Ejz"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="F2Y-uu-LJz">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="0UF-42-V3V" kind="relationship" relationship="viewControllers" id="vSM-vR-co9"/>
+                        <segue destination="ukj-Vb-cjs" kind="relationship" relationship="viewControllers" id="zRi-fB-BMs"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JaN-T4-ThI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="520" y="275"/>
+        </scene>
+        <!--Mensa-->
+        <scene sceneID="NCb-7G-1Yk">
+            <objects>
+                <tableViewController id="ezj-Gn-dV6" customClass="MNSNumberTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="zKY-gU-EZz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Mensa" id="0Cj-sx-Zym"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pNc-DG-G1s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1411" y="-77"/>
+        </scene>
+        <!--Collection View-->
+        <scene sceneID="kEH-Ez-NyE">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="ukj-Vb-cjs" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Collection View" id="AOH-LS-JJF"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AA2-tC-MVv">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="TqT-b5-HlE" kind="relationship" relationship="rootViewController" id="U0D-pE-VlL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r3h-d4-F7o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="998" y="598"/>
+        </scene>
+        <!--Mensa-->
+        <scene sceneID="AFD-5h-BSe">
+            <objects>
+                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="TqT-b5-HlE" customClass="MNSNumberCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="cdw-bR-QpU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.39607843139999999" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="IO6-sI-pYw">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells/>
+                        <connections>
+                            <outlet property="dataSource" destination="TqT-b5-HlE" id="qUd-9Z-eoU"/>
+                            <outlet property="delegate" destination="TqT-b5-HlE" id="8tz-Zy-5jt"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Mensa" id="zXR-Eh-3eN">
+                        <barButtonItem key="rightBarButtonItem" title="Show Flags" id="xG3-3h-mnO">
+                            <connections>
+                                <action selector="togglePrimeFlags:" destination="TqT-b5-HlE" id="Ypf-WB-aN3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yo5-Hn-RNK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1411" y="598"/>
+        </scene>
+        <!--Table View-->
+        <scene sceneID="xg6-rG-cr9">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="0UF-42-V3V" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Table View" id="Y8g-oN-kq4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ca0-hZ-f23">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ezj-Gn-dV6" kind="relationship" relationship="rootViewController" id="bLG-DX-syV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gUQ-xR-eAT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="993" y="-77"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4">
+            <size key="portraitSize" width="320" height="568"/>
+            <size key="landscapeSize" width="568" height="320"/>
+        </simulatedScreenMetrics>
+    </simulatedMetricsContainer>
+</document>
