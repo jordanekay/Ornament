@@ -11,6 +11,7 @@
 		172E830F177F5C4800D25532 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 172E830E177F5C4800D25532 /* CoreGraphics.framework */; };
 		172E8311177F5C4800D25532 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 172E8310177F5C4800D25532 /* UIKit.framework */; };
 		45161F8018BAAC2A00494C35 /* ORNCapsuleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45161F7F18BAAC2A00494C35 /* ORNCapsuleView.m */; };
+		4535CCAE1AA042CB009E637C /* OrnamentExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4535CCAD1AA042CB009E637C /* OrnamentExtensions.swift */; };
 		4578EC7D18665BB60053BF8E /* UIImage+ORNAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4578EC7C18665BB60053BF8E /* UIImage+ORNAdditions.m */; };
 		4578EC8A18665EB10053BF8E /* bg_bar_button_black.png in Resources */ = {isa = PBXBuildFile; fileRef = 4578EC7E18665EB10053BF8E /* bg_bar_button_black.png */; };
 		4578EC8B18665EB10053BF8E /* bg_bar_button_black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4578EC7F18665EB10053BF8E /* bg_bar_button_black@2x.png */; };
@@ -155,6 +156,7 @@
 		172E8310177F5C4800D25532 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		45161F7E18BAAC2A00494C35 /* ORNCapsuleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORNCapsuleView.h; path = Views/ORNCapsuleView.h; sourceTree = "<group>"; };
 		45161F7F18BAAC2A00494C35 /* ORNCapsuleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORNCapsuleView.m; path = Views/ORNCapsuleView.m; sourceTree = "<group>"; };
+		4535CCAD1AA042CB009E637C /* OrnamentExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrnamentExtensions.swift; path = Ornamentation/OrnamentExtensions.swift; sourceTree = "<group>"; };
 		4578EC7B18665BB60053BF8E /* UIImage+ORNAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ORNAdditions.h"; path = "Views/UIImage+ORNAdditions.h"; sourceTree = "<group>"; };
 		4578EC7C18665BB60053BF8E /* UIImage+ORNAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ORNAdditions.m"; path = "Views/UIImage+ORNAdditions.m"; sourceTree = "<group>"; };
 		4578EC7E18665EB10053BF8E /* bg_bar_button_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg_bar_button_black.png; path = Assets/bg_bar_button_black.png; sourceTree = "<group>"; };
@@ -383,6 +385,7 @@
 				45F740D61854391200478D29 /* ORNShadow.m */,
 				45F740D71854391200478D29 /* ORNShadowLayer.h */,
 				45F740D81854391200478D29 /* ORNShadowLayer.m */,
+				4535CCAD1AA042CB009E637C /* OrnamentExtensions.swift */,
 			);
 			name = Ornamentation;
 			sourceTree = "<group>";
@@ -807,6 +810,7 @@
 				45BA93FA1A9D711500775266 /* ORNAppearance.m in Sources */,
 				45BA94021A9D711500775266 /* ORNNavigationController.m in Sources */,
 				45BA93F61A9D711500775266 /* ORNShadow.m in Sources */,
+				4535CCAE1AA042CB009E637C /* OrnamentExtensions.swift in Sources */,
 				45BA93EE1A9D711500775266 /* UIDevice+ORNVersion.m in Sources */,
 				45BA93FB1A9D711500775266 /* ORNCapsuleView.m in Sources */,
 				45BA93EC1A9D711500775266 /* UIColor+ORNAdditions.m in Sources */,
@@ -938,6 +942,7 @@
 		45BA93C31A9D6FB200775266 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -964,6 +969,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -973,6 +979,7 @@
 		45BA93C41A9D6FB200775266 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
