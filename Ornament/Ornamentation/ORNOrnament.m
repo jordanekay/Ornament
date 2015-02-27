@@ -89,12 +89,6 @@ const ORNPosition ORNPositionCentered = (ORNPosition){};
     return;
 }
 
-ORNPosition ORNPositionMake(CGFloat horizontal, CGFloat vertical)
-{
-    ORNPosition position = UIEdgeInsetsMake(vertical, horizontal, 0.0f, 0.0f);
-    return position;
-}
-
 @end
 
 #pragma mark -
@@ -107,7 +101,7 @@ ORNPosition ORNPositionMake(CGFloat horizontal, CGFloat vertical)
         if (!(options & ORNOrnamentStateDefault) && !(options & ORNOrnamentStateHighlighted)) {
             options |= ORNOrnamentStateDefault | ORNOrnamentStateHighlighted;
         }
-
+        
         options |= ornament.implicitOptions;
         [self _ornaments][@(options)] = ornament;
     }
@@ -115,10 +109,17 @@ ORNPosition ORNPositionMake(CGFloat horizontal, CGFloat vertical)
 
 - (BOOL)orn_isOrnamentedWithOptions:(ORNOrnamentOptions)options
 {
-    if ([self conformsToProtocol:@protocol(ORNOrnamentable)]) {
-        return ([self orn_ornamentWithOptions:options] != nil);
-    }
-    return NO;
+    return ([self orn_ornamentWithOptions:options] != nil);
+}
+
+- (void)orn_saveRepresentation:(id)representation inDictionary:(NSMutableDictionary *)dictionary
+{
+    dictionary[[self _ornaments]] = representation;
+}
+
+- (id)orn_retrieveRepresentationFromDictionary:(NSMutableDictionary *)dictionary
+{
+    return dictionary[[self _ornaments]];
 }
 
 - (NSArray *)orn_colorsForOptionsList:(NSArray *)list
@@ -193,10 +194,6 @@ ORNPosition ORNPositionMake(CGFloat horizontal, CGFloat vertical)
 
 - (void)orn_getOrnamentMeasurement:(CGFloat *)measurement position:(ORNPosition *)position withOptions:(ORNOrnamentOptions)options
 {
-    if (![self conformsToProtocol:@protocol(ORNOrnamentable)]) {
-        return;
-    }
-    
     ORNOrnament *ornament = [self orn_ornamentWithOptions:options];
     [ornament getMeasurement:measurement position:position];
 }
@@ -242,3 +239,9 @@ ORNPosition ORNPositionMake(CGFloat horizontal, CGFloat vertical)
 }
 
 @end
+
+ORNPosition ORNPositionMake(CGFloat horizontal, CGFloat vertical)
+{
+    ORNPosition position = UIEdgeInsetsMake(vertical, horizontal, 0.0f, 0.0f);
+    return position;
+}

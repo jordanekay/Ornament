@@ -12,6 +12,7 @@
 @interface ORNCapsuleView : UIImageView <ORNOrnamentable>
 
 @property (nonatomic) UIRectCorner roundedCorners;
-@property (nonatomic, getter = isResizable) BOOL resizable;
+@property (nonatomic, getter = isHorizontallyResizable) BOOL horizontallyResizable;
+@property (nonatomic, getter = isVerticallyResizable) BOOL verticallyResizable;
 
 @end

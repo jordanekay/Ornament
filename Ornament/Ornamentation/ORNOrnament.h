@@ -80,9 +80,12 @@ ORNPosition ORNPositionMake(CGFloat horizontal, CGFloat vertical);
 
 @interface UIView (ORNOrnament)
 
-- (ORNOrnament *)orn_ornamentWithOptions:(ORNOrnamentOptions)options;
 - (void)orn_ornament:(ORNOrnament *)ornament withOptions:(ORNOrnamentOptions)options;
 - (BOOL)orn_isOrnamentedWithOptions:(ORNOrnamentOptions)options;
+- (void)orn_saveRepresentation:(id)representation inDictionary:(NSMutableDictionary *)dictionary;
+- (id)orn_retrieveRepresentationFromDictionary:(NSMutableDictionary *)dictionary;
+
+- (ORNOrnament *)orn_ornamentWithOptions:(ORNOrnamentOptions)options;
 - (NSArray *)orn_colorsForOptionsList:(NSArray *)list;
 - (void)orn_setShadowInRect:(CGRect)rect withStrokeRect:(CGRect)strokeRect strokeWidth:(CGFloat)strokeWidth radius:(CGFloat)radius roundedCorners:(UIRectCorner)corners options:(ORNOrnamentOptions)options withoutOptions:(ORNOrnamentOptions)options;
 - (void)orn_getOrnamentMeasurement:(CGFloat *)measurement position:(ORNPosition *)position withOptions:(ORNOrnamentOptions)options;
